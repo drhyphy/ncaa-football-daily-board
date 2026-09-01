@@ -1,6 +1,6 @@
 # NCAA football moneyline timing report
 
-Generated: 2026-09-01T11:56:47Z
+Generated: 2026-09-01T12:04:54Z
 
 Each bucket represents a separate hypothetical entry strategy. Duplicate same-game snapshots inside a bucket are reduced to the latest snapshot. Price CLV is the primary timing metric; ROI and hit rate are secondary.
 
@@ -27,7 +27,7 @@ This matched comparison uses only games where the same side remained qualified i
 | D8+ | D7 | 0 | — | — | — |
 | D7 | D6 | 0 | — | — | — |
 | D6 | D5 | 1 | 0.0% | 0.0% | 0.0% |
-| D5 | D4 | 2 | 4.8% | 50.0% | -1.7% |
+| D5 | D4 | 2 | 4.1% | 50.0% | -1.0% |
 | D4 | D3 | 2 | 0.0% | 50.0% | 1.8% |
 | D3 | D2 | 0 | — | — | — |
 | D2 | D1 | 0 | — | — | — |
