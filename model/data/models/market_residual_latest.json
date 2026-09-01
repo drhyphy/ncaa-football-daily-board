@@ -1,0 +1,113 @@
+{
+  "artifact_version": "ncaaf-market-residual-v2-alpha75",
+  "created_at": "2026-08-30T13:20:31Z",
+  "eligibility": {
+    "bet_eligible_model": "market_fpi_residual",
+    "challengers": [
+      "market_public_ensemble",
+      "fpi_only",
+      "ratings_only",
+      "market_only"
+    ],
+    "historical_moneyline_roi_available": false
+  },
+  "live_alpha": {
+    "weeks_0_4": 0.21000000000000002,
+    "weeks_5_plus": 0.2925
+  },
+  "live_alpha_shrink": 0.75,
+  "market_win_model": {
+    "C": 0.1,
+    "coefficients": [
+      0.13468948180717752,
+      -0.07847979404138572
+    ],
+    "features": [
+      "market_home_margin",
+      "market_home_margin/sqrt(total)"
+    ],
+    "intercept": 0.07605371968974765,
+    "total_median": 52.5
+  },
+  "raw_alpha": {
+    "weeks_0_4": 0.28,
+    "weeks_5_plus": 0.39
+  },
+  "specification_status": "leading_candidate",
+  "training_games": 2805,
+  "training_seasons": [
+    2023,
+    2024,
+    2025
+  ],
+  "walk_forward_metrics": {
+    "all_available": [
+      {
+        "accuracy": 0.7660550458715596,
+        "brier": 0.1524005098946831,
+        "log_loss": 0.45571913221217236,
+        "minimum_season": 2021,
+        "model": "market_spread_total_all",
+        "n": 3052
+      },
+      {
+        "accuracy": 0.7655776355675311,
+        "brier": 0.1529020122277117,
+        "log_loss": 0.4570808168177003,
+        "minimum_season": 2021,
+        "model": "market_spread_total_paired",
+        "n": 2969
+      },
+      {
+        "accuracy": 0.7635567531155271,
+        "brier": 0.1531620671492085,
+        "log_loss": 0.4585646967395259,
+        "minimum_season": 2021,
+        "model": "fpi_game_projection",
+        "n": 2969
+      },
+      {
+        "accuracy": 0.7716402829235433,
+        "brier": 0.15017436222369393,
+        "log_loss": 0.4508189634347536,
+        "minimum_season": 2021,
+        "model": "market_fpi_residual",
+        "n": 2969
+      }
+    ],
+    "full_coverage_primary": [
+      {
+        "accuracy": 0.7524700988039521,
+        "brier": 0.1595147736189634,
+        "log_loss": 0.47324674997463073,
+        "minimum_season": 2024,
+        "model": "market_spread_total_all",
+        "n": 1923
+      },
+      {
+        "accuracy": 0.7506760411032991,
+        "brier": 0.16103486165915853,
+        "log_loss": 0.4772279468526971,
+        "minimum_season": 2024,
+        "model": "market_spread_total_paired",
+        "n": 1849
+      },
+      {
+        "accuracy": 0.7463493780421849,
+        "brier": 0.1627090745499189,
+        "log_loss": 0.48288203763717047,
+        "minimum_season": 2024,
+        "model": "fpi_game_projection",
+        "n": 1849
+      },
+      {
+        "accuracy": 0.7550027041644132,
+        "brier": 0.1588398286749683,
+        "log_loss": 0.4726014439147257,
+        "minimum_season": 2024,
+        "model": "market_fpi_residual",
+        "n": 1849
+      }
+    ]
+  }
+}
