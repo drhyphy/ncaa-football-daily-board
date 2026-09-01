@@ -27,3 +27,13 @@ def test_payload_is_json_safe_and_covers_fbs_fcs_board():
     json.dumps(payload, allow_nan=False)
     assert payload["scanned_games"] >= payload["qualifying_count"]
     assert payload["timing_buckets"]
+
+
+def test_watchlist_explains_every_failed_gate_in_plain_language():
+    payload = MODULE.build_payload()
+    assert payload["watchlist"]
+    for row in payload["watchlist"]:
+        assert len(row["gate_reasons"]) == len(row["flags"])
+        assert all("_" not in reason for reason in row["gate_reasons"])
+    ev_miss = next(row for row in payload["watchlist"] if "ev_below_threshold" in row["flags"])
+    assert any("needs +4.0%" in reason for reason in ev_miss["gate_reasons"])

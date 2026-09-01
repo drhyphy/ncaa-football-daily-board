@@ -92,7 +92,8 @@ main { min-height: 100vh; }
 .market-table td:first-child strong, .market-table td:first-child span, .market-table td:nth-child(2) strong, .market-table td:nth-child(2) span { display: block; }
 .market-table td:first-child strong { font: 600 14px var(--font-sans), sans-serif; }
 .market-table td:first-child span, .market-table td:nth-child(2) span { color: var(--muted); font-size: 8px; margin-top: 4px; text-transform: uppercase; }
-.gate-label { display: inline-block; padding: 6px 8px; background: #e9e5da; color: #6b4f46; font: 8px var(--font-mono), monospace; text-transform: uppercase; white-space: nowrap; }
+.reason-list { min-width: 235px; display: grid; gap: 6px; }
+.gate-label { display: block; width: fit-content; padding: 6px 8px; background: #e9e5da; color: #6b4f46; font: 8px/1.35 var(--font-mono), monospace; text-transform: uppercase; white-space: normal; }
 .pending-copy { border-top: 1px solid var(--line); padding-top: 22px; color: var(--muted); }
 
 .timing-section { background: var(--field); color: white; padding: 75px max(clamp(20px, 5vw, 72px), calc((100vw - 1320px) / 2)); display: grid; grid-template-columns: .8fr 1.55fr; gap: 70px; }

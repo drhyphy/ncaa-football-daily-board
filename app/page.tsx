@@ -22,6 +22,7 @@ type Bet = {
   book_count: number;
   qualifies: boolean;
   flags: string[];
+  gate_reasons: string[];
 };
 
 type TimingBucket = {
@@ -83,6 +84,7 @@ const sample: Board = {
     book_count: 5,
     qualifies: true,
     flags: [],
+    gate_reasons: [],
   })),
   watchlist: [],
   timing_status: "Collecting forward samples — no entry window selected yet.",
@@ -225,7 +227,7 @@ export default function Home() {
         {board.watchlist.length ? (
           <div className="market-table-wrap">
             <table className="market-table">
-              <thead><tr><th>Matchup / selection</th><th>Price</th><th>Model</th><th>Market</th><th>Edge</th><th>EV</th><th>Gate</th></tr></thead>
+              <thead><tr><th>Matchup / selection</th><th>Price</th><th>Model</th><th>Market</th><th>Edge</th><th>EV</th><th>Why it missed</th></tr></thead>
               <tbody>{board.watchlist.slice(0, 12).map((bet) => (
                 <tr key={`${bet.event_id}-${bet.side}`}>
                   <td><strong>{bet.selection}</strong><span>{bet.game}</span></td>
@@ -233,7 +235,13 @@ export default function Home() {
                   <td>{(bet.model_probability * 100).toFixed(1)}%</td><td>{(bet.market_probability * 100).toFixed(1)}%</td>
                   <td className="positive">{formatPercent(bet.probability_edge)}</td>
                   <td className={bet.expected_value >= 0 ? "positive" : ""}>{formatPercent(bet.expected_value)}</td>
-                  <td><span className="gate-label">{bet.flags[0]?.replaceAll("_", " ") ?? "watch"}</span></td>
+                  <td>
+                    <div className="reason-list">
+                      {(bet.gate_reasons?.length ? bet.gate_reasons : bet.flags.map((flag) => flag.replaceAll("_", " "))).map((reason) => (
+                        <span className="gate-label" key={reason}>{reason}</span>
+                      ))}
+                    </div>
+                  </td>
                 </tr>
               ))}</tbody>
             </table>

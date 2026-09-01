@@ -34,6 +34,29 @@ def _finite(value: object) -> float | None:
     return number if math.isfinite(number) else None
 
 
+def _gate_reasons(row: pd.Series, flags: list[str]) -> list[str]:
+    reasons: list[str] = []
+    for flag in flags:
+        if flag == "too_few_books":
+            count = int(float(row.get("book_count", 0)))
+            reasons.append(f"Only {count} {'book' if count == 1 else 'books'}; needs 3")
+        elif flag == "market_dispersion_high":
+            reasons.append(f"Book dispersion {float(row.get('consensus_dispersion', 0)):.1%}; max 4.5%")
+        elif flag == "edge_below_threshold":
+            reasons.append(f"Probability edge {float(row.get('probability_edge', 0)):+.1%}; needs +1.5%")
+        elif flag == "ev_below_threshold":
+            reasons.append(f"Model EV {float(row.get('expected_value', 0)):+.1%}; needs +4.0%")
+        elif flag == "schedule_unmatched":
+            reasons.append("No verified schedule match")
+        elif flag == "fpi_missing":
+            reasons.append("FPI matchup projection unavailable")
+        elif flag == "game_started":
+            reasons.append("Game had already started")
+        else:
+            reasons.append(flag.replace("_", " ").capitalize())
+    return reasons
+
+
 def _latest_snapshot() -> Path:
     candidates = sorted((MODEL_ROOT / "data" / "snapshots").glob("predictions_*.json"))
     if not candidates:
@@ -64,6 +87,7 @@ def _bet(row: pd.Series, rank: int, qualifies: bool) -> dict:
         "book_count": int(float(row.get("book_count", 0))),
         "qualifies": qualifies,
         "flags": flags,
+        "gate_reasons": _gate_reasons(row, flags),
     }
 
 
@@ -183,7 +207,8 @@ def archive_board(payload: dict, path: Path) -> None:
             existing = list(json.loads(path.read_text(encoding="utf-8")).get("boards", []))
         except (json.JSONDecodeError, AttributeError, TypeError):
             existing = []
-    boards = [payload, *[row for row in existing if row.get("generated_at") != payload["generated_at"]]][:14]
+    boards = [payload, *[row for row in existing if row.get("generated_at") != payload["generated_at"]]]
+    boards = sorted(boards, key=lambda row: str(row.get("generated_at", "")), reverse=True)[:14]
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps({"boards": boards}, indent=2, allow_nan=False) + "\n", encoding="utf-8")
 
