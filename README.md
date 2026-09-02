@@ -1,6 +1,6 @@
 # College Football Daily Moneyline Board
 
-This repository runs and publishes the NCAA football moneyline board without relying on a local computer. A scheduled GitHub Actions runner refreshes the full FBS and FCS market at 9:07 AM Eastern each day, executes the frozen 75%-residual model, appends the forward timing ledger, grades completed games, and publishes the resulting board to the hosted site.
+This repository runs and publishes the NCAA football moneyline board without relying on a local computer. A scheduled GitHub Actions runner refreshes the full FBS and FCS market at 6:30 AM Eastern each day, executes the frozen 75%-residual model, appends the forward timing ledger, grades completed games, and publishes the resulting board to the hosted site.
 
 ## Production model
 
