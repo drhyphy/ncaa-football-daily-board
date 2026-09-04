@@ -2,10 +2,15 @@ name: NCAA football daily board
 
 on:
   schedule:
-    # 6:30 AM Eastern: 10:30 UTC during EDT, 11:30 UTC during EST. The gate
-    # selects by the scheduled cron slot, so a delayed runner still executes.
+    # Guarded retries at 6:30, 6:45, and 7:00 AM Eastern. Both UTC sets are
+    # registered for daylight/standard time; the gate rejects DST duplicates
+    # and stops later retries once the day's board has been published.
     - cron: "30 10 * * *"
+    - cron: "45 10 * * *"
+    - cron: "0 11 * * *"
     - cron: "30 11 * * *"
+    - cron: "45 11 * * *"
+    - cron: "0 12 * * *"
   workflow_dispatch:
     inputs:
       run_label:
@@ -28,19 +33,20 @@ jobs:
       - name: Check out cloud model and ledger
         uses: actions/checkout@v4
 
-      - name: Select the 6:30 AM Eastern run
+      - name: Select an Eastern morning run
         id: gate
         shell: bash
         run: |
           set +e
           python scripts/scheduled_run_gate.py \
             --event-name "${{ github.event_name }}" \
-            --schedule "${{ github.event.schedule }}"
+            --schedule "${{ github.event.schedule }}" \
+            --board-file site-data/boards.json
           status=$?
           set -e
           if [ "$status" -eq 3 ]; then
             echo "should_run=false" >> "$GITHUB_OUTPUT"
-            echo "Skipping the DST duplicate; the other slot is 6:30 AM Eastern."
+            echo "Skipping a DST duplicate or a retry after today's board was published."
           elif [ "$status" -ne 0 ]; then
             exit "$status"
           else
