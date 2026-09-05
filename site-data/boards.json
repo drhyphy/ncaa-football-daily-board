@@ -2,6 +2,748 @@
   "boards": [
     {
       "schema_version": 1,
+      "generated_at": "2026-09-05T13:29:26Z",
+      "slate_date": "2026-09-05",
+      "run_label": "Sep 5 \u00b7 9:29 AM ET",
+      "model_version": "ncaaf-market-residual-v2-alpha75",
+      "week": 1,
+      "scanned_games": 129,
+      "schedule_matches": 129,
+      "qualifying_count": 1,
+      "alpha_label": "75% residual \u00b7 21% effective FPI",
+      "qualified_bets": [
+        {
+          "rank": 1,
+          "event_id": "8154373235ce2adf76b37ecd334601fc",
+          "game": "Tulane Green Wave at Duke Blue Devils",
+          "selection": "Tulane Green Wave",
+          "opponent": "Duke Blue Devils",
+          "side": "away",
+          "kickoff": "2026-09-05T19:30:00Z",
+          "sportsbook": "bovada",
+          "american_odds": 275,
+          "model_probability": 0.284177,
+          "market_probability": 0.261137,
+          "probability_edge": 0.02304,
+          "expected_value": 0.065664,
+          "stake_fraction": 0.002388,
+          "timing_bucket": "D0",
+          "book_count": 7,
+          "qualifies": true,
+          "flags": [],
+          "gate_reasons": []
+        }
+      ],
+      "watchlist": [
+        {
+          "rank": 1,
+          "event_id": "3cff947fac86cab5c41d4f7c0e9393ce",
+          "game": "Jacksonville State Gamecocks at Ohio Bobcats",
+          "selection": "Ohio Bobcats",
+          "opponent": "Jacksonville State Gamecocks",
+          "side": "home",
+          "kickoff": "2026-09-12T22:00:00Z",
+          "sportsbook": "fanduel",
+          "american_odds": -115,
+          "model_probability": 0.571534,
+          "market_probability": 0.522236,
+          "probability_edge": 0.049298,
+          "expected_value": 0.06852,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D7",
+          "book_count": 2,
+          "qualifies": false,
+          "flags": [
+            "too_few_books"
+          ],
+          "gate_reasons": [
+            "Only 2 books; needs 3"
+          ]
+        },
+        {
+          "rank": 2,
+          "event_id": "14620ae05bec8eaa19ca94156c71dff2",
+          "game": "San Diego State Aztecs at UCLA Bruins",
+          "selection": "San Diego State Aztecs",
+          "opponent": "UCLA Bruins",
+          "side": "away",
+          "kickoff": "2026-09-12T23:15:00Z",
+          "sportsbook": "fanduel",
+          "american_odds": 320,
+          "model_probability": 0.280447,
+          "market_probability": 0.238429,
+          "probability_edge": 0.042018,
+          "expected_value": 0.177878,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D7",
+          "book_count": 2,
+          "qualifies": false,
+          "flags": [
+            "too_few_books"
+          ],
+          "gate_reasons": [
+            "Only 2 books; needs 3"
+          ]
+        },
+        {
+          "rank": 3,
+          "event_id": "df510525b83238b6e856c80c353bb32a",
+          "game": "Ole Miss Rebels at Texas Longhorns",
+          "selection": "Texas Longhorns",
+          "opponent": "Ole Miss Rebels",
+          "side": "home",
+          "kickoff": "2026-10-24T16:00:00Z",
+          "sportsbook": "draftkings",
+          "american_odds": -310,
+          "model_probability": 0.763005,
+          "market_probability": 0.725753,
+          "probability_edge": 0.037252,
+          "expected_value": 0.009135,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D8+",
+          "book_count": 1,
+          "qualifies": false,
+          "flags": [
+            "too_few_books",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Only 1 book; needs 3",
+            "Model EV +0.9%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 4,
+          "event_id": "3da928fcc2533b3638a7a05f8cce5d12",
+          "game": "Alcorn State Braves at Southern Mississippi Golden Eagles",
+          "selection": "Southern Mississippi Golden Eagles",
+          "opponent": "Alcorn State Braves",
+          "side": "home",
+          "kickoff": "2026-09-05T21:00:00Z",
+          "sportsbook": "draftkings",
+          "american_odds": -900,
+          "model_probability": 0.911583,
+          "market_probability": 0.875661,
+          "probability_edge": 0.035922,
+          "expected_value": 0.01287,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D0",
+          "book_count": 4,
+          "qualifies": false,
+          "flags": [
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Model EV +1.3%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 5,
+          "event_id": "a2b7711390532d0014249f295a6d02b8",
+          "game": "Buffalo Bulls at Florida International Panthers",
+          "selection": "Buffalo Bulls",
+          "opponent": "Florida International Panthers",
+          "side": "away",
+          "kickoff": "2026-09-12T22:00:00Z",
+          "sportsbook": "fanduel",
+          "american_odds": 235,
+          "model_probability": 0.319178,
+          "market_probability": 0.285559,
+          "probability_edge": 0.033619,
+          "expected_value": 0.069248,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D7",
+          "book_count": 1,
+          "qualifies": false,
+          "flags": [
+            "too_few_books"
+          ],
+          "gate_reasons": [
+            "Only 1 book; needs 3"
+          ]
+        },
+        {
+          "rank": 6,
+          "event_id": "685a8722f297502fa85e4cd8c7e54b1c",
+          "game": "Ohio State Buckeyes at Indiana Hoosiers",
+          "selection": "Ohio State Buckeyes",
+          "opponent": "Indiana Hoosiers",
+          "side": "away",
+          "kickoff": "2026-10-17T16:00:00Z",
+          "sportsbook": "draftkings",
+          "american_odds": -110,
+          "model_probability": 0.544148,
+          "market_probability": 0.517364,
+          "probability_edge": 0.026783,
+          "expected_value": 0.038827,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D8+",
+          "book_count": 3,
+          "qualifies": false,
+          "flags": [
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Model EV +3.9%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 7,
+          "event_id": "1bb9e45b6e7ed1200104ed018eff9093",
+          "game": "UCLA Bruins at California Golden Bears",
+          "selection": "California Golden Bears",
+          "opponent": "UCLA Bruins",
+          "side": "home",
+          "kickoff": "2026-09-06T02:30:00Z",
+          "sportsbook": "bovada",
+          "american_odds": 115,
+          "model_probability": 0.479685,
+          "market_probability": 0.45323,
+          "probability_edge": 0.026455,
+          "expected_value": 0.031323,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D0",
+          "book_count": 7,
+          "qualifies": false,
+          "flags": [
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Model EV +3.1%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 8,
+          "event_id": "4c69ecf41bb2d36dfeedeae23acc5b86",
+          "game": "Texas Longhorns at Texas A&M Aggies",
+          "selection": "Texas Longhorns",
+          "opponent": "Texas A&M Aggies",
+          "side": "away",
+          "kickoff": "2026-11-28T00:30:00Z",
+          "sportsbook": "draftkings",
+          "american_odds": -142,
+          "model_probability": 0.589707,
+          "market_probability": 0.563492,
+          "probability_edge": 0.026215,
+          "expected_value": 0.004994,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D8+",
+          "book_count": 1,
+          "qualifies": false,
+          "flags": [
+            "too_few_books",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Only 1 book; needs 3",
+            "Model EV +0.5%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 9,
+          "event_id": "baa1d54d3e3162e5a550681144369eee",
+          "game": "New Mexico State Aggies at Hawaii Rainbow Warriors",
+          "selection": "Hawaii Rainbow Warriors",
+          "opponent": "New Mexico State Aggies",
+          "side": "home",
+          "kickoff": "2026-09-13T04:00:00Z",
+          "sportsbook": "draftkings",
+          "american_odds": -395,
+          "model_probability": 0.791735,
+          "market_probability": 0.765902,
+          "probability_edge": 0.025833,
+          "expected_value": -0.007826,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D7",
+          "book_count": 1,
+          "qualifies": false,
+          "flags": [
+            "too_few_books",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Only 1 book; needs 3",
+            "Model EV -0.8%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 10,
+          "event_id": "18c682b142ecfadb8d6d801f5fb9aac7",
+          "game": "South Alabama Jaguars at Tulane Green Wave",
+          "selection": "Tulane Green Wave",
+          "opponent": "South Alabama Jaguars",
+          "side": "home",
+          "kickoff": "2026-09-12T23:00:00Z",
+          "sportsbook": "draftkings",
+          "american_odds": -380,
+          "model_probability": 0.784574,
+          "market_probability": 0.76,
+          "probability_edge": 0.024574,
+          "expected_value": -0.008959,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D7",
+          "book_count": 1,
+          "qualifies": false,
+          "flags": [
+            "too_few_books",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Only 1 book; needs 3",
+            "Model EV -0.9%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 11,
+          "event_id": "df569f05eeee15a5fdf95bd5ce086d6d",
+          "game": "UNLV Rebels at Hawaii Rainbow Warriors",
+          "selection": "Hawaii Rainbow Warriors",
+          "opponent": "UNLV Rebels",
+          "side": "home",
+          "kickoff": "2026-09-06T02:00:00Z",
+          "sportsbook": "draftkings",
+          "american_odds": 130,
+          "model_probability": 0.447174,
+          "market_probability": 0.42316,
+          "probability_edge": 0.024014,
+          "expected_value": 0.028499,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D0",
+          "book_count": 7,
+          "qualifies": false,
+          "flags": [
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Model EV +2.8%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 12,
+          "event_id": "1427645d6020f742eece986c58bdb29d",
+          "game": "California Golden Bears at Syracuse Orange",
+          "selection": "Syracuse Orange",
+          "opponent": "California Golden Bears",
+          "side": "home",
+          "kickoff": "2026-09-12T19:30:00Z",
+          "sportsbook": "fanduel",
+          "american_odds": 105,
+          "model_probability": 0.496244,
+          "market_probability": 0.472457,
+          "probability_edge": 0.023787,
+          "expected_value": 0.0173,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D7",
+          "book_count": 2,
+          "qualifies": false,
+          "flags": [
+            "too_few_books",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Only 2 books; needs 3",
+            "Model EV +1.7%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 13,
+          "event_id": "5f45291a1a5e01525b2e3aebe791c436",
+          "game": "Texas Longhorns at LSU Tigers",
+          "selection": "Texas Longhorns",
+          "opponent": "LSU Tigers",
+          "side": "away",
+          "kickoff": "2026-11-14T16:00:00Z",
+          "sportsbook": "draftkings",
+          "american_odds": -142,
+          "model_probability": 0.586456,
+          "market_probability": 0.563492,
+          "probability_edge": 0.022964,
+          "expected_value": -0.000547,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D8+",
+          "book_count": 1,
+          "qualifies": false,
+          "flags": [
+            "too_few_books",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Only 1 book; needs 3",
+            "Model EV -0.1%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 14,
+          "event_id": "63efb66a308ba1892fb100b7341a76d8",
+          "game": "Western Kentucky Hilltoppers at Nevada Wolf Pack",
+          "selection": "Western Kentucky Hilltoppers",
+          "opponent": "Nevada Wolf Pack",
+          "side": "away",
+          "kickoff": "2026-09-06T02:30:00Z",
+          "sportsbook": "draftkings",
+          "american_odds": -108,
+          "model_probability": 0.521296,
+          "market_probability": 0.5,
+          "probability_edge": 0.021296,
+          "expected_value": 0.003977,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D0",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Model EV +0.4%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 15,
+          "event_id": "65571f1cab1a260aae4a220e38dbbc1d",
+          "game": "LSU Tigers at Ole Miss Rebels",
+          "selection": "LSU Tigers",
+          "opponent": "Ole Miss Rebels",
+          "side": "away",
+          "kickoff": "2026-09-19T23:30:00Z",
+          "sportsbook": "draftkings",
+          "american_odds": 110,
+          "model_probability": 0.479448,
+          "market_probability": 0.458444,
+          "probability_edge": 0.021004,
+          "expected_value": 0.006841,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D8+",
+          "book_count": 2,
+          "qualifies": false,
+          "flags": [
+            "too_few_books",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Only 2 books; needs 3",
+            "Model EV +0.7%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 16,
+          "event_id": "9ed02ffe3e126a8ec8846278bf18d393",
+          "game": "Alabama Crimson Tide at Tennessee Volunteers",
+          "selection": "Alabama Crimson Tide",
+          "opponent": "Tennessee Volunteers",
+          "side": "away",
+          "kickoff": "2026-10-17T16:00:00Z",
+          "sportsbook": "draftkings",
+          "american_odds": -120,
+          "model_probability": 0.542177,
+          "market_probability": 0.521739,
+          "probability_edge": 0.020438,
+          "expected_value": -0.006009,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D8+",
+          "book_count": 1,
+          "qualifies": false,
+          "flags": [
+            "too_few_books",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Only 1 book; needs 3",
+            "Model EV -0.6%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 17,
+          "event_id": "08c5bac0240cbc3ba996fb55a75504f2",
+          "game": "UTSA Roadrunners at Texas State Bobcats",
+          "selection": "Texas State Bobcats",
+          "opponent": "UTSA Roadrunners",
+          "side": "home",
+          "kickoff": "2026-09-12T19:30:00Z",
+          "sportsbook": "fanduel",
+          "american_odds": -102,
+          "model_probability": 0.519641,
+          "market_probability": 0.5,
+          "probability_edge": 0.019641,
+          "expected_value": 0.029093,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D7",
+          "book_count": 2,
+          "qualifies": false,
+          "flags": [
+            "too_few_books",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Only 2 books; needs 3",
+            "Model EV +2.9%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 18,
+          "event_id": "703674067da3f80611ece581818f3863",
+          "game": "Middle Tennessee Blue Raiders at Marshall Thundering Herd",
+          "selection": "Middle Tennessee Blue Raiders",
+          "opponent": "Marshall Thundering Herd",
+          "side": "away",
+          "kickoff": "2026-09-12T23:00:00Z",
+          "sportsbook": "draftkings",
+          "american_odds": 650,
+          "model_probability": 0.146785,
+          "market_probability": 0.127907,
+          "probability_edge": 0.018878,
+          "expected_value": 0.100889,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D7",
+          "book_count": 1,
+          "qualifies": false,
+          "flags": [
+            "too_few_books"
+          ],
+          "gate_reasons": [
+            "Only 1 book; needs 3"
+          ]
+        },
+        {
+          "rank": 19,
+          "event_id": "00f194290bfcdfebb1d8456057b20614",
+          "game": "Alabama Crimson Tide at LSU Tigers",
+          "selection": "Alabama Crimson Tide",
+          "opponent": "LSU Tigers",
+          "side": "away",
+          "kickoff": "2026-11-07T16:00:00Z",
+          "sportsbook": "draftkings",
+          "american_odds": 154,
+          "model_probability": 0.396365,
+          "market_probability": 0.377533,
+          "probability_edge": 0.018832,
+          "expected_value": 0.006767,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D8+",
+          "book_count": 1,
+          "qualifies": false,
+          "flags": [
+            "too_few_books",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Only 1 book; needs 3",
+            "Model EV +0.7%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 20,
+          "event_id": "6474599b7377102869153e25af140533",
+          "game": "Washington Huskies at Oregon Ducks",
+          "selection": "Oregon Ducks",
+          "opponent": "Washington Huskies",
+          "side": "home",
+          "kickoff": "2026-11-28T16:00:00Z",
+          "sportsbook": "draftkings",
+          "american_odds": -700,
+          "model_probability": 0.85868,
+          "market_probability": 0.84,
+          "probability_edge": 0.01868,
+          "expected_value": -0.018652,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D8+",
+          "book_count": 1,
+          "qualifies": false,
+          "flags": [
+            "too_few_books",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Only 1 book; needs 3",
+            "Model EV -1.9%; needs +4.0%"
+          ]
+        }
+      ],
+      "timing_status": "No timing bucket has 50 graded signals yet.",
+      "timing_buckets": [
+        {
+          "label": "D8+",
+          "window": "192+ hours",
+          "signals": 0,
+          "graded": 0,
+          "price_clv": null,
+          "roi": null
+        },
+        {
+          "label": "D7",
+          "window": "168\u2013192 hours",
+          "signals": 0,
+          "graded": 0,
+          "price_clv": null,
+          "roi": null
+        },
+        {
+          "label": "D6",
+          "window": "144\u2013168 hours",
+          "signals": 1,
+          "graded": 0,
+          "price_clv": null,
+          "roi": null
+        },
+        {
+          "label": "D5",
+          "window": "120\u2013144 hours",
+          "signals": 3,
+          "graded": 1,
+          "price_clv": -0.0222222222222221,
+          "roi": -1.0
+        },
+        {
+          "label": "D4",
+          "window": "96\u2013120 hours",
+          "signals": 3,
+          "graded": 2,
+          "price_clv": -0.01917562724014335,
+          "roi": 0.5249999999999999
+        },
+        {
+          "label": "D3",
+          "window": "72\u201396 hours",
+          "signals": 3,
+          "graded": 2,
+          "price_clv": -0.0172043010752688,
+          "roi": 0.6000000000000001
+        },
+        {
+          "label": "D2",
+          "window": "48\u201372 hours",
+          "signals": 2,
+          "graded": 1,
+          "price_clv": -0.0666666666666666,
+          "roi": -1.0
+        },
+        {
+          "label": "D1",
+          "window": "24\u201348 hours",
+          "signals": 4,
+          "graded": 2,
+          "price_clv": -0.0030465949820788017,
+          "roi": 0.575
+        },
+        {
+          "label": "D0",
+          "window": "0\u201324 hours",
+          "signals": 3,
+          "graded": 2,
+          "price_clv": 0.0,
+          "roi": 0.55
+        }
+      ],
+      "price_history": [
+        {
+          "event_id": "8154373235ce2adf76b37ecd334601fc",
+          "side": "away",
+          "selection": "Tulane Green Wave",
+          "snapshots": [
+            {
+              "captured_at": "2026-08-24T13:01:58Z",
+              "timing_bucket": "D8+",
+              "american_odds": 320,
+              "expected_value": 0.118911,
+              "qualifies": true
+            },
+            {
+              "captured_at": "2026-08-25T13:10:23Z",
+              "timing_bucket": "D8+",
+              "american_odds": 285,
+              "expected_value": 0.035355,
+              "qualifies": false
+            },
+            {
+              "captured_at": "2026-08-26T15:33:26Z",
+              "timing_bucket": "D8+",
+              "american_odds": 290,
+              "expected_value": 0.036147,
+              "qualifies": false
+            },
+            {
+              "captured_at": "2026-08-27T13:02:27Z",
+              "timing_bucket": "D8+",
+              "american_odds": 289,
+              "expected_value": 0.036324,
+              "qualifies": false
+            },
+            {
+              "captured_at": "2026-08-30T01:01:07Z",
+              "timing_bucket": "D6",
+              "american_odds": 300,
+              "expected_value": 0.065629,
+              "qualifies": true
+            },
+            {
+              "captured_at": "2026-08-30T13:21:55Z",
+              "timing_bucket": "D6",
+              "american_odds": 300,
+              "expected_value": 0.099454,
+              "qualifies": true
+            },
+            {
+              "captured_at": "2026-08-31T14:42:41Z",
+              "timing_bucket": "D5",
+              "american_odds": 300,
+              "expected_value": 0.099454,
+              "qualifies": true
+            },
+            {
+              "captured_at": "2026-09-01T11:56:45Z",
+              "timing_bucket": "D4",
+              "american_odds": 265,
+              "expected_value": 0.076925,
+              "qualifies": true
+            },
+            {
+              "captured_at": "2026-09-01T12:04:52Z",
+              "timing_bucket": "D4",
+              "american_odds": 270,
+              "expected_value": 0.091677,
+              "qualifies": true
+            },
+            {
+              "captured_at": "2026-09-02T10:45:15Z",
+              "timing_bucket": "D3",
+              "american_odds": 265,
+              "expected_value": 0.081039,
+              "qualifies": true
+            },
+            {
+              "captured_at": "2026-09-03T11:16:20Z",
+              "timing_bucket": "D2",
+              "american_odds": 270,
+              "expected_value": 0.095847,
+              "qualifies": true
+            },
+            {
+              "captured_at": "2026-09-03T14:40:05Z",
+              "timing_bucket": "D2",
+              "american_odds": 260,
+              "expected_value": 0.06623,
+              "qualifies": true
+            },
+            {
+              "captured_at": "2026-09-04T11:08:48Z",
+              "timing_bucket": "D1",
+              "american_odds": 270,
+              "expected_value": 0.095847,
+              "qualifies": true
+            },
+            {
+              "captured_at": "2026-09-05T13:29:26Z",
+              "timing_bucket": "D0",
+              "american_odds": 275,
+              "expected_value": 0.065664,
+              "qualifies": true
+            }
+          ]
+        }
+      ],
+      "research_disclaimer": "Forward paper research only; prices can move after capture."
+    },
+    {
+      "schema_version": 1,
       "generated_at": "2026-09-04T11:08:48Z",
       "slate_date": "2026-09-04",
       "run_label": "Sep 4 \u00b7 7:08 AM ET",
