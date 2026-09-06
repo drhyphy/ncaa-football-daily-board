@@ -16,9 +16,11 @@ The public-ratings blend, FPI-only, ratings-only, and market-only candidates rem
 
 ## Cloud workflow
 
-`.github/workflows/daily-board.yml` is the independent production runner. It needs one repository secret:
+`.github/workflows/daily-board.yml` is the independent production runner. Its preferred feed uses one repository secret:
 
 - `ODDS_API_KEY`
+
+If that feed is unavailable, missing, or out of quota, the workflow automatically falls back to Covers' public NCAA odds comparison page. The fallback archives the source page, refreshes both FBS and FCS schedules from ESPN, normalizes the same moneyline/spread/total contract, and fails closed unless the existing three-approved-book requirement can be met. No fallback credential is required.
 
 The workflow can also be started manually from the GitHub Actions page. Its committed ledger survives ephemeral runners, and `site-data/boards.json` is the site&apos;s public, cloud-generated data feed. The dashboard therefore continues to refresh even when the local model never runs.
 

@@ -6,11 +6,13 @@ import tempfile
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
+from zoneinfo import ZoneInfo
 
 import pandas as pd
 import requests
 
 from .config import Settings
+from .covers_odds import COVERS_ODDS_URL, parse_covers_odds
 from .storage import atomic_write_bytes, atomic_write_json, sha256_bytes, utc_now
 from .teams import normalize_team
 
@@ -18,6 +20,7 @@ from .teams import normalize_team
 ODDS_BASE_URL = "https://api.the-odds-api.com/v4"
 ODDS_SPORT = "americanfootball_ncaaf"
 ESPN_SCOREBOARD_URL = "https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard"
+EASTERN = ZoneInfo("America/New_York")
 
 
 def _atomic_write_parquet(path: Path, frame: pd.DataFrame) -> None:
@@ -262,6 +265,45 @@ class DataClient:
             "remaining_unmatched": int(remaining),
         }
 
+    def refresh_espn_schedule_window(self, start: date, end: date) -> dict[str, int]:
+        """Merge public FBS and FCS schedule rows for an explicit date window."""
+        schedule_path = self.settings.raw_dir / "sportsdataverse" / f"cfb_schedule_{self.settings.season}.parquet"
+        schedule = pd.read_parquet(schedule_path) if schedule_path.exists() else pd.DataFrame()
+        incoming_frames: list[pd.DataFrame] = []
+        archive_dir = self.settings.raw_dir / "espn_scoreboard"
+        archive_dir.mkdir(parents=True, exist_ok=True)
+        stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+        for group in (80, 81):
+            response = self.session.get(
+                ESPN_SCOREBOARD_URL,
+                params={"dates": f"{start:%Y%m%d}-{end:%Y%m%d}", "limit": 1000, "groups": group},
+                headers={"User-Agent": "curl/8.7.1", "Accept": "application/json,text/plain,*/*"},
+                timeout=self.timeout,
+            )
+            response.raise_for_status()
+            content = response.content
+            raw_path = archive_dir / f"scoreboard_g{group}_{start:%Y%m%d}_{end:%Y%m%d}_{stamp}.json"
+            atomic_write_bytes(raw_path, content)
+            atomic_write_json(
+                raw_path.with_suffix(".meta.json"),
+                {
+                    "source_url": response.url,
+                    "retrieved_at": utc_now(),
+                    "sha256": sha256_bytes(content),
+                    "group": group,
+                },
+            )
+            frame = parse_espn_scoreboard(response.json())
+            if not frame.empty:
+                incoming_frames.append(frame)
+        incoming_rows = 0
+        if incoming_frames:
+            incoming = pd.concat(incoming_frames, ignore_index=True).drop_duplicates("game_id", keep="last")
+            incoming_rows = len(incoming)
+            schedule = merge_schedule_frames(schedule, incoming)
+            _atomic_write_parquet(schedule_path, schedule)
+        return {"incoming_rows": incoming_rows, "merged_schedule_rows": len(schedule)}
+
     def archive_totals_season(self, season: int, refresh: bool = False) -> dict[str, Path]:
         """Archive final-game inputs used to construct strictly lagged totals features."""
         paths: dict[str, Path] = {}
@@ -306,24 +348,38 @@ class DataClient:
     def current_odds(self, refresh: bool = True) -> tuple[Path, dict[str, str]]:
         odds_dir = self.settings.raw_dir / "the_odds_api"
         if not refresh:
-            cached = sorted(path for path in odds_dir.glob("ncaaf_*.json") if not path.name.endswith(".meta.json"))
+            cached = sorted(
+                [
+                    path
+                    for directory in (odds_dir, self.settings.raw_dir / "covers")
+                    for path in directory.glob("ncaaf_*.json")
+                    if not path.name.endswith(".meta.json")
+                ],
+                key=lambda candidate: candidate.name,
+            )
             if cached:
                 return cached[-1], {}
         now = datetime.now(timezone.utc)
         timestamp = now.strftime("%Y%m%dT%H%M%SZ")
         path = odds_dir / f"ncaaf_{timestamp}.json"
-        response = self.session.get(
-            f"{ODDS_BASE_URL}/sports/{ODDS_SPORT}/odds",
-            params={
-                "apiKey": find_odds_api_key(self.settings),
-                "regions": "us",
-                "markets": "h2h,spreads,totals",
-                "oddsFormat": "american",
-                "dateFormat": "iso",
-            },
-            timeout=self.timeout,
-        )
-        response.raise_for_status()
+        try:
+            response = self.session.get(
+                f"{ODDS_BASE_URL}/sports/{ODDS_SPORT}/odds",
+                params={
+                    "apiKey": find_odds_api_key(self.settings),
+                    "regions": "us",
+                    "markets": "h2h,spreads,totals",
+                    "oddsFormat": "american",
+                    "dateFormat": "iso",
+                },
+                timeout=self.timeout,
+            )
+            response.raise_for_status()
+            primary_payload = response.json()
+            if not isinstance(primary_payload, list):
+                raise ValueError("The Odds API response was not an event list")
+        except (requests.RequestException, RuntimeError, ValueError) as error:
+            return self._covers_current_odds(timestamp, error)
         content = response.content
         atomic_write_bytes(path, content)
         quota = {key.lower(): value for key, value in response.headers.items() if key.lower().startswith("x-requests-")}
@@ -334,10 +390,81 @@ class DataClient:
                 "retrieved_at": utc_now(),
                 "sha256": sha256_bytes(content),
                 "quota_headers": quota,
-                "event_count": len(response.json()),
+                "event_count": len(primary_payload),
             },
         )
         return path, quota
+
+    def _covers_current_odds(self, timestamp: str, primary_error: Exception) -> tuple[Path, dict[str, str]]:
+        """Collect the public Covers comparison board when the paid feed is unavailable."""
+        local_today = datetime.now(EASTERN).date()
+        schedule_path = self.settings.raw_dir / "sportsdataverse" / f"cfb_schedule_{self.settings.season}.parquet"
+        try:
+            schedule_refresh: dict[str, Any] = self.refresh_espn_schedule_window(
+                local_today - timedelta(days=1), local_today + timedelta(days=15)
+            )
+        except (requests.RequestException, ValueError) as schedule_error:
+            if not schedule_path.exists():
+                raise
+            schedule_refresh = {"error_type": type(schedule_error).__name__, "used_existing_schedule": True}
+        response = self.session.get(
+            COVERS_ODDS_URL,
+            headers={
+                "User-Agent": "Mozilla/5.0 (compatible; ncaaf-moneyline-research/0.2)",
+                "Accept": "text/html,application/xhtml+xml",
+                "Accept-Language": "en-US,en;q=0.9",
+            },
+            timeout=self.timeout,
+        )
+        response.raise_for_status()
+        document = response.text
+        if 'id="moneyline-table"' not in document:
+            raise RuntimeError("Covers fallback response did not contain the NCAA moneyline table")
+
+        fallback_dir = self.settings.raw_dir / "covers"
+        raw_path = fallback_dir / f"ncaaf_{timestamp}.html"
+        atomic_write_bytes(raw_path, response.content)
+        schedule = pd.read_parquet(schedule_path)
+        payload, diagnostics = parse_covers_odds(document, schedule)
+        allowed = set(self.settings.allowed_books)
+        eligible_events = sum(
+            sum(
+                1
+                for bookmaker in event.get("bookmakers", [])
+                if bookmaker.get("key") in allowed
+                and any(market.get("key") == "h2h" for market in bookmaker.get("markets", []))
+            )
+            >= self.settings.min_books
+            for event in payload
+        )
+        if not payload or eligible_events == 0:
+            raise RuntimeError("Covers fallback did not provide a valid three-book NCAA moneyline consensus")
+
+        path = fallback_dir / f"ncaaf_{timestamp}.json"
+        content = json.dumps(payload, indent=2, sort_keys=True).encode("utf-8")
+        atomic_write_bytes(path, content)
+        status_code = getattr(getattr(primary_error, "response", None), "status_code", None)
+        failure = {
+            "error_type": type(primary_error).__name__,
+            "http_status": status_code,
+        }
+        diagnostics.update(
+            {
+                "source_url": COVERS_ODDS_URL,
+                "retrieved_at": utc_now(),
+                "sha256": sha256_bytes(content),
+                "raw_html_path": str(raw_path),
+                "eligible_three_book_events": eligible_events,
+                "primary_failure": failure,
+                "schedule_refresh": schedule_refresh,
+            }
+        )
+        atomic_write_json(path.with_suffix(".meta.json"), diagnostics)
+        return path, {
+            "odds_source": "covers_public_fallback",
+            "primary_http_status": str(status_code or "unavailable"),
+            "eligible_three_book_events": str(eligible_events),
+        }
 
 
 def load_json(path: Path) -> Any:
