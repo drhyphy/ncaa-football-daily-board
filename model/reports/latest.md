@@ -1,41 +1,39 @@
 # NCAA football moneyline research card
 
-Snapshot: 2026-09-05T13:29:26Z
+Snapshot: 2026-09-06T11:46:10Z
 
 Status: forward paper research only. Historical moneyline ROI has not been validated.
 
 Leading specification: 75% of fitted FPI residual (alpha 21.0% in weeks 0–4; 29.2% in weeks 5+).
 
-Qualified paper bets: 1
+Qualified paper bets: 0
 
-| Game | Selection | Best price | Model | Market | EV | Stake |
-|---|---:|---:|---:|---:|---:|---:|
-| Tulane Green Wave at Duke Blue Devils | Tulane Green Wave | +275 (bovada) | 28.4% | 26.1% | 6.6% | 0.24% |
+No recommended-model selections cleared every precommitted gate.
 
 ## Highest model-vs-market disagreements
 
 | Game | Side | Model | Market | Edge | EV | Eligible | Flags |
 |---|---:|---:|---:|---:|---:|---:|---|
-| Jacksonville State Gamecocks at Ohio Bobcats | Ohio Bobcats | 57.2% | 52.2% | 4.9% | 6.9% | no | too_few_books |
-| San Diego State Aztecs at UCLA Bruins | San Diego State Aztecs | 28.0% | 23.8% | 4.2% | 17.8% | no | too_few_books |
-| Ole Miss Rebels at Texas Longhorns | Texas Longhorns | 76.3% | 72.6% | 3.7% | 0.9% | no | too_few_books|ev_below_threshold |
-| Alcorn State Braves at Southern Mississippi Golden Eagles | Southern Mississippi Golden Eagles | 91.2% | 87.6% | 3.6% | 1.3% | no | ev_below_threshold |
-| Buffalo Bulls at Florida International Panthers | Buffalo Bulls | 31.9% | 28.6% | 3.4% | 6.9% | no | too_few_books |
-| Ohio State Buckeyes at Indiana Hoosiers | Ohio State Buckeyes | 54.4% | 51.7% | 2.7% | 3.9% | no | ev_below_threshold |
-| UCLA Bruins at California Golden Bears | California Golden Bears | 48.0% | 45.3% | 2.6% | 3.1% | no | ev_below_threshold |
-| Texas Longhorns at Texas A&M Aggies | Texas Longhorns | 59.0% | 56.3% | 2.6% | 0.5% | no | too_few_books|ev_below_threshold |
-| New Mexico State Aggies at Hawaii Rainbow Warriors | Hawaii Rainbow Warriors | 79.2% | 76.6% | 2.6% | -0.8% | no | too_few_books|ev_below_threshold |
-| South Alabama Jaguars at Tulane Green Wave | Tulane Green Wave | 78.5% | 76.0% | 2.5% | -0.9% | no | too_few_books|ev_below_threshold |
-| UNLV Rebels at Hawaii Rainbow Warriors | Hawaii Rainbow Warriors | 44.7% | 42.3% | 2.4% | 2.8% | no | ev_below_threshold |
-| California Golden Bears at Syracuse Orange | Syracuse Orange | 49.6% | 47.2% | 2.4% | 1.7% | no | too_few_books|ev_below_threshold |
-| Tulane Green Wave at Duke Blue Devils | Tulane Green Wave | 28.4% | 26.1% | 2.3% | 6.6% | yes | — |
-| Texas Longhorns at LSU Tigers | Texas Longhorns | 58.6% | 56.3% | 2.3% | -0.1% | no | too_few_books|ev_below_threshold |
-| Western Kentucky Hilltoppers at Nevada Wolf Pack | Western Kentucky Hilltoppers | 52.1% | 50.0% | 2.1% | 0.4% | no | ev_below_threshold |
-| LSU Tigers at Ole Miss Rebels | LSU Tigers | 47.9% | 45.8% | 2.1% | 0.7% | no | too_few_books|ev_below_threshold |
-| Alabama Crimson Tide at Tennessee Volunteers | Alabama Crimson Tide | 54.2% | 52.2% | 2.0% | -0.6% | no | too_few_books|ev_below_threshold |
-| UTSA Roadrunners at Texas State Bobcats | Texas State Bobcats | 52.0% | 50.0% | 2.0% | 2.9% | no | too_few_books|ev_below_threshold |
-| Middle Tennessee Blue Raiders at Marshall Thundering Herd | Middle Tennessee Blue Raiders | 14.7% | 12.8% | 1.9% | 10.1% | no | too_few_books |
-| Alabama Crimson Tide at LSU Tigers | Alabama Crimson Tide | 39.6% | 37.8% | 1.9% | 0.7% | no | too_few_books|ev_below_threshold |
+| Jacksonville State Gamecocks at Ohio Bobcats | Ohio Bobcats | 57.9% | 53.1% | 4.7% | 4.2% | no | too_few_books |
+| San Diego State Aztecs at UCLA Bruins | San Diego State Aztecs | 27.1% | 22.8% | 4.3% | 13.8% | no | too_few_books |
+| Buffalo Bulls at Florida International Panthers | Buffalo Bulls | 26.5% | 22.3% | 4.2% | 13.9% | no | too_few_books |
+| South Florida Bulls at Army Black Knights | South Florida Bulls | 40.8% | 37.1% | 3.7% | 5.3% | no | too_few_books |
+| Tulsa Golden Hurricane at Sam Houston Bearkats | Sam Houston Bearkats | 17.8% | 15.5% | 2.3% | 10.3% | no | too_few_books |
+| UTSA Roadrunners at Texas State Bobcats | Texas State Bobcats | 52.0% | 50.0% | 2.0% | -0.8% | no | too_few_books|ev_below_threshold |
+| UCF Knights at Pittsburgh Panthers | UCF Knights | 29.7% | 27.8% | 1.9% | 12.9% | no | too_few_books|market_dispersion_high |
+| California Golden Bears at Syracuse Orange | Syracuse Orange | 51.5% | 49.7% | 1.9% | -0.7% | no | too_few_books|ev_below_threshold |
+| South Alabama Jaguars at Tulane Green Wave | Tulane Green Wave | 80.5% | 78.7% | 1.7% | -2.2% | no | too_few_books|ev_below_threshold |
+| App State Mountaineers at East Carolina Pirates | East Carolina Pirates | 74.9% | 73.4% | 1.5% | -2.4% | no | too_few_books|ev_below_threshold |
+| Arizona State Sun Devils at Texas A&M Aggies | Texas A&M Aggies | 85.7% | 84.2% | 1.5% | -1.1% | no | too_few_books|edge_below_threshold|ev_below_threshold |
+| Alabama Crimson Tide at Kentucky Wildcats | Alabama Crimson Tide | 77.7% | 76.3% | 1.4% | -1.5% | no | too_few_books|edge_below_threshold|ev_below_threshold |
+| UNLV Rebels at North Texas Mean Green | North Texas Mean Green | 35.5% | 34.2% | 1.3% | -0.6% | no | too_few_books|edge_below_threshold|ev_below_threshold |
+| Rutgers Scarlet Knights at Boston College Eagles | Boston College Eagles | 62.8% | 61.5% | 1.3% | -1.3% | no | too_few_books|edge_below_threshold|ev_below_threshold |
+| Washington State Cougars at Kansas State Wildcats | Washington State Cougars | 11.9% | 10.6% | 1.3% | 7.1% | no | too_few_books|edge_below_threshold |
+| Mississippi State Bulldogs at Minnesota Golden Gophers | Minnesota Golden Gophers | 49.3% | 48.0% | 1.3% | 1.0% | no | too_few_books|edge_below_threshold|ev_below_threshold |
+| UL Monroe Warhawks at UAB Blazers | UL Monroe Warhawks | 24.1% | 22.9% | 1.2% | 3.5% | no | too_few_books|edge_below_threshold|ev_below_threshold |
+| Duke Blue Devils at Illinois Fighting Illini | Duke Blue Devils | 30.6% | 29.4% | 1.2% | 10.0% | no | too_few_books|market_dispersion_high|edge_below_threshold |
+| Missouri Tigers at Kansas Jayhawks | Kansas Jayhawks | 32.3% | 31.2% | 1.1% | 0.3% | no | edge_below_threshold|ev_below_threshold |
+| Tennessee Volunteers at Georgia Tech Yellow Jackets | Georgia Tech Yellow Jackets | 19.7% | 18.7% | 1.1% | 3.7% | no | too_few_books|edge_below_threshold|ev_below_threshold |
 
 Challengers (`market_public_ensemble`, `fpi_only`, `ratings_only`, `market_only`) are stored in the ledger but cannot trigger paper bets.
 
