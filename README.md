@@ -12,11 +12,11 @@ The only recommendation-eligible candidate is `ncaaf-market-residual-v2-alpha75`
 - a recommendation requires a schedule match, at least three books, no more than 4.5% consensus probability dispersion, at least 1.5% model probability edge, and at least 4% modeled EV;
 - stakes are one-tenth Kelly, capped at 0.5% of bankroll, for paper tracking only.
 
-The public-ratings blend, FPI-only, ratings-only, and market-only candidates remain in the append-only ledger as shadow benchmarks.
+The site displays the production model alongside Claude's `market_public_ensemble` challenger. The challenger refreshes from the same daily snapshot and can show research signals that clear the execution gates, but it remains a shadow benchmark and cannot trigger paper bets. FPI-only, ratings-only, and market-only candidates remain in the append-only ledger.
 
 ## Cloud workflow
 
-`.github/workflows/daily-board.yml` is the independent production runner. Its preferred feed uses one repository secret:
+`.github/workflows/daily-board.yml` is the independent production runner. It starts at **6:30 AM Eastern every day**; 6:45 and 7:00 AM are guarded fallbacks if the first attempt does not publish. Its preferred feed uses one repository secret:
 
 - `ODDS_API_KEY`
 

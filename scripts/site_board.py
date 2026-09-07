@@ -17,7 +17,25 @@ ROOT = Path(__file__).resolve().parents[1]
 MODEL_ROOT = ROOT / "model"
 EASTERN = ZoneInfo("America/New_York")
 PRIMARY = "market_fpi_residual"
+CHALLENGER = "market_public_ensemble"
 HORIZON_ORDER = ["D8+", "D7", "D6", "D5", "D4", "D3", "D2", "D1", "D0"]
+
+MODEL_METADATA = {
+    PRIMARY: {
+        "key": "primary",
+        "name": "Primary model",
+        "short_name": "Market + FPI residual",
+        "description": "The production, paper-bet-eligible market/FPI residual model.",
+        "research_only": False,
+    },
+    CHALLENGER: {
+        "key": "challenger",
+        "name": "Claude challenger",
+        "short_name": "Market + public ratings ensemble",
+        "description": "A shadow research model. Its signals are tracked daily but never place paper bets.",
+        "research_only": True,
+    },
+}
 
 
 def _as_bool(value: object) -> bool:
@@ -113,12 +131,12 @@ def _timing_payload() -> tuple[str, list[dict]]:
     return reason, output
 
 
-def _price_history(current: pd.DataFrame) -> list[dict]:
+def _price_history(current: pd.DataFrame, candidate: str = PRIMARY) -> list[dict]:
     path = MODEL_ROOT / "ledger" / "predictions.csv"
     if not path.exists() or current.empty:
         return []
     ledger = pd.read_csv(path)
-    ledger = ledger.loc[ledger["candidate"].eq(PRIMARY)].copy()
+    ledger = ledger.loc[ledger["candidate"].eq(candidate)].copy()
     keys = set(zip(current["event_id"].astype(str), current["side"].astype(str)))
     history = []
     for (event_id, side), group in ledger.groupby([ledger["event_id"].astype(str), ledger["side"].astype(str)]):
@@ -143,6 +161,41 @@ def _price_history(current: pd.DataFrame) -> list[dict]:
     return history
 
 
+def _model_board(rows: pd.DataFrame, candidate: str) -> dict:
+    """Build one display board from a single candidate in the shared snapshot.
+
+    The primary model's `paper_bet` field is the production eligibility
+    decision. Challengers cannot set that field, so their displayed signals
+    use the same precommitted execution gates while remaining research-only.
+    """
+    model = rows.loc[rows["candidate"].eq(candidate)].copy()
+    if model.empty:
+        raise RuntimeError(f"the latest snapshot has no {candidate} rows")
+    model["commence_dt"] = pd.to_datetime(model["commence_time"], utc=True)
+    model["snapshot_dt"] = pd.to_datetime(model["snapshot_time"], utc=True)
+    model = model.loc[model["commence_dt"].gt(model["snapshot_dt"])].copy()
+    model["paper_bet"] = model["paper_bet"].map(_as_bool)
+    model["clears_research_gate"] = model["quality_flags"].fillna("").eq("")
+
+    is_primary = candidate == PRIMARY
+    qualifying_mask = model["paper_bet"] if is_primary else model["clears_research_gate"]
+    qualified = model.loc[qualifying_mask].sort_values(
+        ["expected_value", "probability_edge"], ascending=False
+    )
+    watch = model.loc[~qualifying_mask].sort_values(
+        ["probability_edge", "expected_value"], ascending=False
+    ).head(20)
+    metadata = MODEL_METADATA[candidate]
+    return {
+        **metadata,
+        "candidate": candidate,
+        "qualifying_count": int(len(qualified)),
+        "qualified_bets": [_bet(row, rank, True) for rank, (_, row) in enumerate(qualified.iterrows(), 1)],
+        "watchlist": [_bet(row, rank, False) for rank, (_, row) in enumerate(watch.iterrows(), 1)],
+        "price_history": _price_history(qualified, candidate),
+    }
+
+
 def build_payload(snapshot_path: Path | None = None, now: datetime | None = None) -> dict:
     snapshot_path = snapshot_path or _latest_snapshot()
     rows = pd.DataFrame(json.loads(snapshot_path.read_text(encoding="utf-8")))
@@ -152,9 +205,11 @@ def build_payload(snapshot_path: Path | None = None, now: datetime | None = None
     primary["commence_dt"] = pd.to_datetime(primary["commence_time"], utc=True)
     primary["snapshot_dt"] = pd.to_datetime(primary["snapshot_time"], utc=True)
     primary = primary.loc[primary["commence_dt"].gt(primary["snapshot_dt"])].copy()
-    primary["paper_bet"] = primary["paper_bet"].map(_as_bool)
-    qualified = primary.loc[primary["paper_bet"]].sort_values(["expected_value", "probability_edge"], ascending=False)
-    watch = primary.loc[~primary["paper_bet"]].sort_values(["probability_edge", "expected_value"], ascending=False).head(20)
+    models = {
+        "primary": _model_board(rows, PRIMARY),
+        "challenger": _model_board(rows, CHALLENGER),
+    }
+    primary_board = models["primary"]
     generated = str(rows.iloc[0]["snapshot_time"])
     generated_dt = pd.to_datetime(generated, utc=True).tz_convert(EASTERN)
     kickoff_dates = primary["commence_dt"].dt.tz_convert(EASTERN)
@@ -167,7 +222,7 @@ def build_payload(snapshot_path: Path | None = None, now: datetime | None = None
     timing_status, timing_buckets = _timing_payload()
     schedule_matches = primary.loc[primary["espn_game_id"].notna(), "event_id"].nunique()
     return {
-        "schema_version": 1,
+        "schema_version": 2,
         "generated_at": generated,
         "slate_date": slate_date,
         "run_label": generated_dt.strftime("%b %-d · %-I:%M %p ET"),
@@ -175,13 +230,14 @@ def build_payload(snapshot_path: Path | None = None, now: datetime | None = None
         "week": week,
         "scanned_games": int(primary["event_id"].nunique()),
         "schedule_matches": int(schedule_matches),
-        "qualifying_count": int(len(qualified)),
+        "qualifying_count": primary_board["qualifying_count"],
         "alpha_label": f"75% residual · {effective_alpha:.0%} effective FPI",
-        "qualified_bets": [_bet(row, rank, True) for rank, (_, row) in enumerate(qualified.iterrows(), 1)],
-        "watchlist": [_bet(row, rank, False) for rank, (_, row) in enumerate(watch.iterrows(), 1)],
+        "qualified_bets": primary_board["qualified_bets"],
+        "watchlist": primary_board["watchlist"],
         "timing_status": timing_status,
         "timing_buckets": timing_buckets,
-        "price_history": _price_history(qualified),
+        "price_history": primary_board["price_history"],
+        "models": models,
         "research_disclaimer": "Forward paper research only; prices can move after capture.",
     }
 

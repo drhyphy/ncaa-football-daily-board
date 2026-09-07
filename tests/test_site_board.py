@@ -20,6 +20,16 @@ def test_payload_uses_leading_model_and_strict_qualified_gate():
     assert all(row["probability_edge"] >= 0.015 for row in payload["qualified_bets"])
 
 
+def test_payload_contains_a_daily_shadow_challenger_board():
+    payload = MODULE.build_payload()
+    challenger = payload["models"]["challenger"]
+    assert challenger["candidate"] == "market_public_ensemble"
+    assert challenger["name"] == "Claude challenger"
+    assert challenger["research_only"] is True
+    assert challenger["qualifying_count"] == len(challenger["qualified_bets"])
+    assert all(row["qualifies"] for row in challenger["qualified_bets"])
+
+
 def test_payload_is_json_safe_and_covers_fbs_fcs_board():
     import json
 

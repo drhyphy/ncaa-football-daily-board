@@ -48,6 +48,15 @@ main { min-height: 100vh; }
 .run-tabs button.active { background: var(--ink); color: white; border-color: var(--ink); }
 .run-tabs strong { font-size: 11px; }
 .run-tabs span { font: 9px var(--font-mono), monospace; text-transform: uppercase; opacity: .65; }
+.model-switcher { max-width: 1440px; margin: 0 auto; padding: 18px clamp(20px, 4vw, 58px); display: flex; justify-content: space-between; align-items: center; gap: 24px; border: 1px solid var(--line); border-top: 0; background: var(--card); }
+.model-switcher > div:first-child { display: grid; gap: 5px; }
+.model-switcher > div:first-child strong { font-size: 16px; letter-spacing: -.025em; }
+.model-toggle { display: flex; border: 1px solid var(--line); }
+.model-toggle button { min-width: 152px; padding: 10px 14px; border: 0; border-right: 1px solid var(--line); background: transparent; text-align: left; cursor: pointer; display: grid; gap: 3px; }
+.model-toggle button:last-child { border-right: 0; }
+.model-toggle button.active { background: var(--field); color: white; }
+.model-toggle button span { font-size: 11px; font-weight: 700; }
+.model-toggle button small { font: 8px var(--font-mono), monospace; text-transform: uppercase; opacity: .7; }
 
 .board-section { background: var(--ink); color: white; padding: 42px clamp(20px, 5vw, 72px) 64px; }
 .board-section > * { max-width: 1320px; margin-left: auto; margin-right: auto; }
@@ -120,6 +129,7 @@ footer { max-width: 1320px; margin: 0 auto; padding: 26px clamp(20px, 3vw, 42px)
   .control-strip { grid-template-columns: 1fr 1fr; }
   .strip-stat:nth-child(3), .strip-stat:nth-child(4) { border-top: 1px solid var(--line); }
   .bet-grid { grid-template-columns: repeat(2, 1fr); }
+  .model-switcher { padding-left: 24px; padding-right: 24px; }
   .timing-section { grid-template-columns: 1fr; }
   .method-strip { grid-template-columns: 1fr 1fr; }
   .method-strip a { grid-column: 2; }
@@ -133,6 +143,9 @@ footer { max-width: 1320px; margin: 0 auto; padding: 26px clamp(20px, 3vw, 42px)
   .week-lockup { grid-column: 1 / -1; padding: 27px 20px; border-bottom: 1px solid var(--line); }
   .strip-stat { padding: 18px 20px; }
   .strip-stat.update-stat { grid-column: 1 / -1; border-top: 1px solid var(--line); }
+  .model-switcher { padding: 16px 20px; align-items: flex-start; flex-direction: column; }
+  .model-toggle { width: 100%; }
+  .model-toggle button { min-width: 0; flex: 1; }
   .board-section { padding: 35px 12px 42px; }
   .section-heading { align-items: flex-start; }
   .section-note { display: none; }

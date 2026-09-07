@@ -34,6 +34,18 @@ type TimingBucket = {
   roi: number | null;
 };
 
+type ModelBoard = {
+  key: "primary" | "challenger";
+  name: string;
+  short_name: string;
+  description: string;
+  candidate: string;
+  research_only: boolean;
+  qualifying_count: number;
+  qualified_bets: Bet[];
+  watchlist: Bet[];
+};
+
 type Board = {
   generated_at: string;
   slate_date: string;
@@ -48,6 +60,7 @@ type Board = {
   watchlist: Bet[];
   timing_status: string;
   timing_buckets: TimingBucket[];
+  models?: Partial<Record<"primary" | "challenger", ModelBoard>>;
 };
 
 const sample: Board = {
@@ -152,6 +165,7 @@ function BetCard({ bet }: { bet: Bet }) {
 export default function Home() {
   const [boards, setBoards] = useState<Board[]>([sample]);
   const [active, setActive] = useState(0);
+  const [activeModel, setActiveModel] = useState<"primary" | "challenger">("primary");
   const [live, setLive] = useState(false);
 
   useEffect(() => {
@@ -176,8 +190,22 @@ export default function Home() {
   }, []);
 
   const board = boards[active] ?? boards[0];
-  const visibleBets = board.qualified_bets.slice(0, 8);
-  const slateLabel = useMemo(() => `Week ${board.week} · ${board.qualifying_count} qualified`, [board]);
+  const primaryFallback: ModelBoard = {
+    key: "primary", name: "Primary model", short_name: "Market + FPI residual",
+    description: "The production, paper-bet-eligible market/FPI residual model.", candidate: "market_fpi_residual",
+    research_only: false, qualifying_count: board.qualifying_count, qualified_bets: board.qualified_bets, watchlist: board.watchlist,
+  };
+  const challengerFallback: ModelBoard = {
+    key: "challenger", name: "Claude challenger", short_name: "Market + public ratings ensemble",
+    description: "The challenger payload will populate on the next scheduled cloud run.", candidate: "market_public_ensemble",
+    research_only: true, qualifying_count: 0, qualified_bets: [], watchlist: [],
+  };
+  const model = board.models?.[activeModel] ?? (activeModel === "challenger" ? challengerFallback : primaryFallback);
+  const visibleBets = model.qualified_bets.slice(0, 8);
+  const slateLabel = useMemo(
+    () => `Week ${board.week} · ${model.qualifying_count} ${model.research_only ? "research signals" : "qualified"}`,
+    [board.week, model.qualifying_count, model.research_only],
+  );
 
   return (
     <main id="top">
@@ -192,7 +220,7 @@ export default function Home() {
 
       <section className="control-strip">
         <div className="week-lockup"><span className="eyebrow">NCAA · FBS + FCS</span><h1>{slateLabel}</h1></div>
-        <div className="strip-stat"><span>Model</span><strong>75% regression</strong><small>Market + FPI residual</small></div>
+        <div className="strip-stat"><span>Viewing</span><strong>{model.name}</strong><small>{model.short_name}</small></div>
         <div className="strip-stat"><span>Coverage</span><strong>{board.scanned_games} games</strong><small>{board.schedule_matches} schedule matched</small></div>
         <div className="strip-stat update-stat"><span>Latest cloud run</span><strong>{formatUpdated(board.generated_at)}</strong><small>Runs daily, independent of local Mac</small></div>
       </section>
@@ -207,28 +235,40 @@ export default function Home() {
         </nav>
       )}
 
+      <section className="model-switcher" aria-label="Model comparison">
+        <div><span className="eyebrow">Daily model comparison</span><strong>{model.short_name}</strong></div>
+        <div className="model-toggle" role="group" aria-label="Select model board">
+          {([primaryFallback, challengerFallback] as const).map((fallback) => {
+            const item = board.models?.[fallback.key] ?? fallback;
+            return <button className={item.key === activeModel ? "active" : ""} key={item.key} onClick={() => setActiveModel(item.key)}>
+              <span>{item.name}</span><small>{item.research_only ? "Shadow research" : "Paper eligible"}</small>
+            </button>;
+          })}
+        </div>
+      </section>
+
       <section className="board-section" id="board">
         <div className="section-heading">
-          <div><span className="eyebrow light">Today&apos;s qualified moneylines</span><h2>{visibleBets.length ? "The board" : "No bets cleared every gate"}</h2></div>
-          <div className="section-note"><Activity size={17} /><span>Minimum +1.5% probability edge<br />and +4.0% modeled EV</span></div>
+          <div><span className="eyebrow light">{model.research_only ? "Claude challenger · shadow signals" : "Today’s qualified moneylines"}</span><h2>{visibleBets.length ? "The board" : model.research_only ? "No research signals cleared every gate" : "No bets cleared every gate"}</h2></div>
+          <div className="section-note"><Activity size={17} /><span>{model.research_only ? "Shadow-only signals\nNo paper bets" : "Minimum +1.5% probability edge\nand +4.0% modeled EV"}</span></div>
         </div>
         {visibleBets.length ? (
           <div className="bet-grid">{visibleBets.map((bet) => <BetCard bet={bet} key={`${bet.event_id}-${bet.side}`} />)}</div>
         ) : (
-          <div className="empty-board"><span>00</span><div><h3>Discipline is part of the model.</h3><p>Every listed game was scanned, but none offers enough price-adjusted edge at this snapshot.</p></div></div>
+          <div className="empty-board"><span>00</span><div><h3>{model.research_only ? "The challenger has no signal today." : "Discipline is part of the model."}</h3><p>{model.research_only ? "Every listed game was scored, but none cleared the challenger’s research gates at this snapshot." : "Every listed game was scanned, but none offers enough price-adjusted edge at this snapshot."}</p></div></div>
         )}
       </section>
 
       <section className="market-section" id="market-scan">
         <div className="section-heading paper-heading">
-          <div><span className="eyebrow">Full-slate audit</span><h2>Closest calls</h2></div>
-          <p>The strongest model disagreements that did not clear every execution gate.</p>
+          <div><span className="eyebrow">Full-slate audit · {model.name}</span><h2>Closest calls</h2></div>
+          <p>{model.research_only ? "The challenger’s largest disagreements that did not clear every research gate." : "The strongest model disagreements that did not clear every execution gate."}</p>
         </div>
-        {board.watchlist.length ? (
+        {model.watchlist.length ? (
           <div className="market-table-wrap">
             <table className="market-table">
               <thead><tr><th>Matchup / selection</th><th>Price</th><th>Model</th><th>Market</th><th>Edge</th><th>EV</th><th>Why it missed</th></tr></thead>
-              <tbody>{board.watchlist.slice(0, 12).map((bet) => (
+              <tbody>{model.watchlist.slice(0, 12).map((bet) => (
                 <tr key={`${bet.event_id}-${bet.side}`}>
                   <td><strong>{bet.selection}</strong><span>{bet.game}</span></td>
                   <td><strong>{formatOdds(bet.american_odds)}</strong><span>{formatBook(bet.sportsbook)}</span></td>
@@ -265,8 +305,8 @@ export default function Home() {
       </section>
 
       <section className="method-strip">
-        <div><span className="eyebrow">Model contract</span><h2>Market first. FPI second. Price decides.</h2></div>
-        <p>The leading build begins with the de-vigged multi-book moneyline, then retains 75% of the historically fitted FPI residual. It scans FBS–FBS, FBS–FCS, and FCS–FCS games, and only issues a paper recommendation when schedule, liquidity, dispersion, probability-edge, and EV gates all pass.</p>
+        <div><span className="eyebrow">Model contract</span><h2>{model.research_only ? "A daily challenger, held to the same gates." : "Market first. FPI second. Price decides."}</h2></div>
+        <p>{model.research_only ? "Claude’s market-and-public-ratings ensemble is scored alongside the production model every morning. It uses the same schedule, liquidity, dispersion, probability-edge, and EV gates for comparison, but it remains shadow research: it never generates a paper recommendation." : "The leading build begins with the de-vigged multi-book moneyline, then retains 75% of the historically fitted FPI residual. It scans FBS–FBS, FBS–FCS, and FCS–FCS games, and only issues a paper recommendation when schedule, liquidity, dispersion, probability-edge, and EV gates all pass."}</p>
         <a href="#top">Back to board <ChevronRight size={15} /></a>
       </section>
 
