@@ -57,6 +57,7 @@ main { min-height: 100vh; }
 .model-toggle button.active { background: var(--field); color: white; }
 .model-toggle button span { font-size: 11px; font-weight: 700; }
 .model-toggle button small { font: 8px var(--font-mono), monospace; text-transform: uppercase; opacity: .7; }
+.refresh-alert { max-width: 1440px; margin: 0 auto; padding: 13px clamp(20px, 4vw, 58px); border-left: 1px solid var(--line); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #fff6db; color: #6b4f12; font: 10px/1.45 var(--font-mono), monospace; text-transform: uppercase; }
 
 .board-section { background: var(--ink); color: white; padding: 42px clamp(20px, 5vw, 72px) 64px; }
 .board-section > * { max-width: 1320px; margin-left: auto; margin-right: auto; }

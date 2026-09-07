@@ -5,7 +5,7 @@ import argparse
 import json
 import math
 import os
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -196,7 +196,13 @@ def _model_board(rows: pd.DataFrame, candidate: str) -> dict:
     }
 
 
-def build_payload(snapshot_path: Path | None = None, now: datetime | None = None) -> dict:
+def build_payload(
+    snapshot_path: Path | None = None,
+    now: datetime | None = None,
+    market_status: str = "live",
+) -> dict:
+    if market_status not in {"live", "unavailable"}:
+        raise ValueError("market_status must be 'live' or 'unavailable'")
     snapshot_path = snapshot_path or _latest_snapshot()
     rows = pd.DataFrame(json.loads(snapshot_path.read_text(encoding="utf-8")))
     primary = rows.loc[rows["candidate"].eq(PRIMARY)].copy()
@@ -209,8 +215,18 @@ def build_payload(snapshot_path: Path | None = None, now: datetime | None = None
         "primary": _model_board(rows, PRIMARY),
         "challenger": _model_board(rows, CHALLENGER),
     }
+    if market_status == "unavailable":
+        # A stale quote must never appear as a current selection. Keep the
+        # model identities visible, but publish a dated, no-signal board.
+        for model in models.values():
+            model["qualifying_count"] = 0
+            model["qualified_bets"] = []
+            model["watchlist"] = []
+            model["price_history"] = []
     primary_board = models["primary"]
     generated = str(rows.iloc[0]["snapshot_time"])
+    if market_status == "unavailable":
+        generated = (now or datetime.now(timezone.utc)).astimezone(timezone.utc).isoformat().replace("+00:00", "Z")
     generated_dt = pd.to_datetime(generated, utc=True).tz_convert(EASTERN)
     kickoff_dates = primary["commence_dt"].dt.tz_convert(EASTERN)
     slate_date = kickoff_dates.min().date().isoformat() if not kickoff_dates.empty else generated_dt.date().isoformat()
@@ -238,6 +254,11 @@ def build_payload(snapshot_path: Path | None = None, now: datetime | None = None
         "timing_buckets": timing_buckets,
         "price_history": primary_board["price_history"],
         "models": models,
+        "market_status": market_status,
+        "market_status_message": (
+            "Live market refresh unavailable. No selections are displayed; the next scheduled run will retry."
+            if market_status == "unavailable" else "Live market refresh completed."
+        ),
         "research_disclaimer": "Forward paper research only; prices can move after capture.",
     }
 
@@ -275,8 +296,9 @@ def main() -> int:
     parser.add_argument("--output", type=Path, default=MODEL_ROOT / "reports" / "site_board.json")
     parser.add_argument("--archive", type=Path, default=ROOT / "site-data" / "boards.json")
     parser.add_argument("--publish", action="store_true")
+    parser.add_argument("--market-status", choices=("live", "unavailable"), default="live")
     args = parser.parse_args()
-    payload = build_payload(args.snapshot)
+    payload = build_payload(args.snapshot, market_status=args.market_status)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(payload, indent=2, allow_nan=False) + "\n", encoding="utf-8")
     archive_board(payload, args.archive)

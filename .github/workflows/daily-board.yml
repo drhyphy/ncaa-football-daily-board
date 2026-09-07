@@ -66,20 +66,26 @@ jobs:
         run: python -m pip install -e model pytest
 
       - name: Refresh every NCAA moneyline and score the board
+        id: refresh
         if: steps.gate.outputs.should_run == 'true'
+        continue-on-error: true
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
         working-directory: model
         run: python -m ncaaf_model.cli run-daily
 
       - name: Validate and publish the daily board
-        if: steps.gate.outputs.should_run == 'true'
+        if: always() && steps.gate.outputs.should_run == 'true'
         run: |
           python -m pytest -q model/tests tests
-          python scripts/site_board.py
+          if [ "${{ steps.refresh.outcome }}" = "success" ]; then
+            python scripts/site_board.py
+          else
+            python scripts/site_board.py --market-status unavailable
+          fi
 
       - name: Persist the append-only timing ledger
-        if: steps.gate.outputs.should_run == 'true'
+        if: always() && steps.gate.outputs.should_run == 'true'
         shell: bash
         run: |
           git config user.name "github-actions[bot]"

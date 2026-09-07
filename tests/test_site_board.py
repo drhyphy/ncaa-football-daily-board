@@ -30,6 +30,19 @@ def test_payload_contains_a_daily_shadow_challenger_board():
     assert all(row["qualifies"] for row in challenger["qualified_bets"])
 
 
+def test_unavailable_market_publishes_a_dated_no_signal_board():
+    from datetime import datetime, timezone
+
+    payload = MODULE.build_payload(
+        now=datetime(2026, 9, 7, 11, 30, tzinfo=timezone.utc), market_status="unavailable"
+    )
+    assert payload["generated_at"] == "2026-09-07T11:30:00Z"
+    assert payload["market_status"] == "unavailable"
+    assert payload["qualified_bets"] == []
+    assert payload["watchlist"] == []
+    assert all(model["qualified_bets"] == [] for model in payload["models"].values())
+
+
 def test_payload_is_json_safe_and_covers_fbs_fcs_board():
     import json
 

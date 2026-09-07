@@ -61,6 +61,8 @@ type Board = {
   timing_status: string;
   timing_buckets: TimingBucket[];
   models?: Partial<Record<"primary" | "challenger", ModelBoard>>;
+  market_status?: "live" | "unavailable";
+  market_status_message?: string;
 };
 
 const sample: Board = {
@@ -224,6 +226,10 @@ export default function Home() {
         <div className="strip-stat"><span>Coverage</span><strong>{board.scanned_games} games</strong><small>{board.schedule_matches} schedule matched</small></div>
         <div className="strip-stat update-stat"><span>Latest cloud run</span><strong>{formatUpdated(board.generated_at)}</strong><small>Runs daily, independent of local Mac</small></div>
       </section>
+
+      {board.market_status === "unavailable" && (
+        <p className="refresh-alert" role="status">{board.market_status_message}</p>
+      )}
 
       {boards.length > 1 && (
         <nav className="run-tabs" aria-label="Recent daily boards">
