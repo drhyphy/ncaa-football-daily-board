@@ -2,6 +2,125 @@
   "boards": [
     {
       "schema_version": 2,
+      "generated_at": "2026-09-08T11:08:43.305795Z",
+      "slate_date": "2026-09-03",
+      "run_label": "Sep 8 \u00b7 7:08 AM ET",
+      "model_version": "ncaaf-market-residual-v2-alpha75",
+      "week": 1,
+      "scanned_games": 77,
+      "schedule_matches": 77,
+      "qualifying_count": 0,
+      "alpha_label": "75% residual \u00b7 21% effective FPI",
+      "qualified_bets": [],
+      "watchlist": [],
+      "timing_status": "No timing bucket has 50 graded signals yet.",
+      "timing_buckets": [
+        {
+          "label": "D8+",
+          "window": "192+ hours",
+          "signals": 0,
+          "graded": 0,
+          "price_clv": null,
+          "roi": null
+        },
+        {
+          "label": "D7",
+          "window": "168\u2013192 hours",
+          "signals": 0,
+          "graded": 0,
+          "price_clv": null,
+          "roi": null
+        },
+        {
+          "label": "D6",
+          "window": "144\u2013168 hours",
+          "signals": 1,
+          "graded": 1,
+          "price_clv": 0.0666666666666666,
+          "roi": -1.0
+        },
+        {
+          "label": "D5",
+          "window": "120\u2013144 hours",
+          "signals": 8,
+          "graded": 3,
+          "price_clv": 0.02206119162640906,
+          "roi": -1.0
+        },
+        {
+          "label": "D4",
+          "window": "96\u2013120 hours",
+          "signals": 3,
+          "graded": 3,
+          "price_clv": -0.017228195937873333,
+          "roi": 0.016666666666666607
+        },
+        {
+          "label": "D3",
+          "window": "72\u201396 hours",
+          "signals": 3,
+          "graded": 3,
+          "price_clv": -0.0203584229390681,
+          "roi": 0.06666666666666672
+        },
+        {
+          "label": "D2",
+          "window": "48\u201372 hours",
+          "signals": 2,
+          "graded": 2,
+          "price_clv": -0.05333333333333325,
+          "roi": -1.0
+        },
+        {
+          "label": "D1",
+          "window": "24\u201348 hours",
+          "signals": 4,
+          "graded": 4,
+          "price_clv": 0.0009573226639993746,
+          "roi": -0.21250000000000002
+        },
+        {
+          "label": "D0",
+          "window": "0\u201324 hours",
+          "signals": 3,
+          "graded": 3,
+          "price_clv": 0.0,
+          "roi": 0.03333333333333336
+        }
+      ],
+      "price_history": [],
+      "models": {
+        "primary": {
+          "key": "primary",
+          "name": "Primary model",
+          "short_name": "Market + FPI residual",
+          "description": "The production, paper-bet-eligible market/FPI residual model.",
+          "research_only": false,
+          "candidate": "market_fpi_residual",
+          "qualifying_count": 0,
+          "qualified_bets": [],
+          "watchlist": [],
+          "price_history": []
+        },
+        "challenger": {
+          "key": "challenger",
+          "name": "Claude challenger",
+          "short_name": "Market + public ratings ensemble",
+          "description": "A shadow research model. Its signals are tracked daily but never place paper bets.",
+          "research_only": true,
+          "candidate": "market_public_ensemble",
+          "qualifying_count": 0,
+          "qualified_bets": [],
+          "watchlist": [],
+          "price_history": []
+        }
+      },
+      "market_status": "unavailable",
+      "market_status_message": "Live market refresh unavailable. No selections are displayed; the next scheduled run will retry.",
+      "research_disclaimer": "Forward paper research only; prices can move after capture."
+    },
+    {
+      "schema_version": 2,
       "generated_at": "2026-09-07T11:58:41Z",
       "slate_date": "2026-09-07",
       "run_label": "Sep 7 \u00b7 7:58 AM ET",
