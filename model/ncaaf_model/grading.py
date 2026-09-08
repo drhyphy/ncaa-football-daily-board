@@ -35,8 +35,14 @@ def grade_ledger(settings: Settings) -> dict[str, Any]:
     grades_path = settings.ledger_dir / "grades.csv"
     if grades_path.exists():
         existing_ids = set(pd.read_csv(grades_path)["prediction_id"].astype(str))
-    predictions["snapshot_dt"] = pd.to_datetime(predictions["snapshot_time"], utc=True)
-    predictions["kickoff_dt"] = pd.to_datetime(predictions["commence_time"], utc=True)
+    # Public odds sources emit both second- and millisecond-precision ISO
+    # timestamps. Pandas 3 no longer infers those mixed formats reliably.
+    predictions["snapshot_dt"] = pd.to_datetime(
+        predictions["snapshot_time"], utc=True, format="ISO8601"
+    )
+    predictions["kickoff_dt"] = pd.to_datetime(
+        predictions["commence_time"], utc=True, format="ISO8601"
+    )
     rows: list[dict[str, Any]] = []
     for _, prediction in predictions.iterrows():
         prediction_id = str(prediction["prediction_id"])

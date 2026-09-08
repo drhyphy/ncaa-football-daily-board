@@ -43,8 +43,12 @@ def _as_bool(series: pd.Series) -> pd.Series:
 
 def add_timing_columns(frame: pd.DataFrame) -> pd.DataFrame:
     output = frame.copy()
-    output["snapshot_dt"] = pd.to_datetime(output["snapshot_time"], utc=True)
-    output["kickoff_dt"] = pd.to_datetime(output["commence_time"], utc=True)
+    output["snapshot_dt"] = pd.to_datetime(
+        output["snapshot_time"], utc=True, format="ISO8601"
+    )
+    output["kickoff_dt"] = pd.to_datetime(
+        output["commence_time"], utc=True, format="ISO8601"
+    )
     derived_hours = (output["kickoff_dt"] - output["snapshot_dt"]).dt.total_seconds() / 3600.0
     output["hours_to_kickoff"] = derived_hours
     output["timing_bucket"] = derived_hours.map(timing_bucket)
