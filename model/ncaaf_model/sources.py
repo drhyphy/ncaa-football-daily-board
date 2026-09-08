@@ -12,6 +12,7 @@ import pandas as pd
 import requests
 
 from .config import Settings
+from .actionnetwork_odds import fetch_actionnetwork_odds
 from .covers_odds import COVERS_ODDS_URL, parse_covers_odds
 from .storage import atomic_write_bytes, atomic_write_json, sha256_bytes, utc_now
 from .teams import normalize_team
@@ -379,7 +380,30 @@ class DataClient:
             if not isinstance(primary_payload, list):
                 raise ValueError("The Odds API response was not an event list")
         except (requests.RequestException, RuntimeError, ValueError) as error:
-            return self._covers_current_odds(timestamp, error)
+            try:
+                actionnetwork_payload, actionnetwork_meta = fetch_actionnetwork_odds(
+                    self.session,
+                    self.settings.allowed_books,
+                    self.timeout,
+                )
+            except (requests.RequestException, RuntimeError, ValueError) as actionnetwork_error:
+                return self._covers_current_odds(timestamp, error, actionnetwork_error)
+            content = json.dumps(actionnetwork_payload, indent=2, sort_keys=True).encode("utf-8")
+            atomic_write_bytes(path, content)
+            atomic_write_json(
+                path.with_suffix(".meta.json"),
+                {
+                    "source": "actionnetwork_public",
+                    "retrieved_at": utc_now(),
+                    "sha256": sha256_bytes(content),
+                    "event_count": len(actionnetwork_payload),
+                    "primary_failure": {
+                        "error_type": type(error).__name__,
+                        "http_status": getattr(getattr(error, "response", None), "status_code", None),
+                    },
+                },
+            )
+            return path, actionnetwork_meta
         content = response.content
         atomic_write_bytes(path, content)
         quota = {key.lower(): value for key, value in response.headers.items() if key.lower().startswith("x-requests-")}
@@ -395,7 +419,12 @@ class DataClient:
         )
         return path, quota
 
-    def _covers_current_odds(self, timestamp: str, primary_error: Exception) -> tuple[Path, dict[str, str]]:
+    def _covers_current_odds(
+        self,
+        timestamp: str,
+        primary_error: Exception,
+        actionnetwork_error: Exception | None = None,
+    ) -> tuple[Path, dict[str, str]]:
         """Collect the public Covers comparison board when the paid feed is unavailable."""
         local_today = datetime.now(EASTERN).date()
         schedule_path = self.settings.raw_dir / "sportsdataverse" / f"cfb_schedule_{self.settings.season}.parquet"
@@ -407,15 +436,23 @@ class DataClient:
             if not schedule_path.exists():
                 raise
             schedule_refresh = {"error_type": type(schedule_error).__name__, "used_existing_schedule": True}
-        response = self.session.get(
-            COVERS_ODDS_URL,
-            headers={
-                "User-Agent": "Mozilla/5.0 (compatible; ncaaf-moneyline-research/0.2)",
-                "Accept": "text/html,application/xhtml+xml",
-                "Accept-Language": "en-US,en;q=0.9",
-            },
-            timeout=self.timeout,
-        )
+        try:
+            response = self.session.get(
+                COVERS_ODDS_URL,
+                headers={
+                    "User-Agent": "Mozilla/5.0 (compatible; ncaaf-moneyline-research/0.2)",
+                    "Accept": "text/html,application/xhtml+xml",
+                    "Accept-Language": "en-US,en;q=0.9",
+                },
+                timeout=self.timeout,
+            )
+        except requests.RequestException as covers_error:
+            raise RuntimeError(
+                "All odds sources failed: "
+                f"The Odds API={type(primary_error).__name__}; "
+                f"Action Network={type(actionnetwork_error).__name__ if actionnetwork_error else 'not attempted'}; "
+                f"Covers={type(covers_error).__name__}"
+            ) from covers_error
         response.raise_for_status()
         document = response.text
         if 'id="moneyline-table"' not in document:
@@ -438,7 +475,11 @@ class DataClient:
             for event in payload
         )
         if not payload or eligible_events == 0:
-            raise RuntimeError("Covers fallback did not provide a valid three-book NCAA moneyline consensus")
+            raise RuntimeError(
+                "All odds sources failed: The Odds API quota/error; "
+                f"Action Network={type(actionnetwork_error).__name__ if actionnetwork_error else 'not attempted'}; "
+                "Covers did not provide a valid three-book NCAA moneyline consensus"
+            )
 
         path = fallback_dir / f"ncaaf_{timestamp}.json"
         content = json.dumps(payload, indent=2, sort_keys=True).encode("utf-8")
@@ -456,6 +497,9 @@ class DataClient:
                 "raw_html_path": str(raw_path),
                 "eligible_three_book_events": eligible_events,
                 "primary_failure": failure,
+                "secondary_failure": {
+                    "error_type": type(actionnetwork_error).__name__ if actionnetwork_error else None,
+                },
                 "schedule_refresh": schedule_refresh,
             }
         )

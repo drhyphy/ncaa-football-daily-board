@@ -97,3 +97,9 @@ jobs:
             git commit -m "Daily NCAA football board $(date -u +'%Y-%m-%dT%H:%MZ')"
             git push
           fi
+
+      - name: Fail the run when all live odds sources were unavailable
+        if: always() && steps.gate.outputs.should_run == 'true' && steps.refresh.outcome != 'success'
+        run: |
+          echo "The board was published with market-status=unavailable, but live odds ingestion failed." >&2
+          exit 1
