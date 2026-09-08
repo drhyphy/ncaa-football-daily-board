@@ -1,6 +1,6 @@
 # NCAA football moneyline research card
 
-Snapshot: 2026-09-08T14:17:45Z
+Snapshot: 2026-09-08T14:21:44Z
 
 Status: forward paper research only. Historical moneyline ROI has not been validated.
 
