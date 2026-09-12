@@ -1,6 +1,6 @@
 # NCAA football moneyline timing report
 
-Generated: 2026-09-11T11:07:20Z
+Generated: 2026-09-12T11:07:22Z
 
 Each bucket represents a separate hypothetical entry strategy. Duplicate same-game snapshots inside a bucket are reduced to the latest snapshot. Price CLV is the primary timing metric; ROI and hit rate are secondary.
 
@@ -8,15 +8,15 @@ Status: **collecting** — No timing bucket has 50 graded signals yet.
 
 | Horizon | Window | Games captured | Signals | Graded signals | Brier | ROI | Price CLV | Prob. CLV |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| D8+ | 192+ hours | 83 | 0 | 0 | 0.1913 | — | — | — |
-| D7 | 168–192 hours | 41 | 0 | 0 | 0.1795 | — | — | — |
-| D6 | 144–168 hours | 91 | 1 | 1 | 0.0853 | -100.0% | 6.7% | 1.1% |
-| D5 | 120–144 hours | 121 | 8 | 3 | 0.0856 | -100.0% | 2.2% | 0.5% |
-| D4 | 96–120 hours | 128 | 8 | 3 | 0.0964 | 1.7% | -1.7% | -0.3% |
-| D3 | 72–96 hours | 129 | 8 | 3 | 0.0971 | 6.7% | -2.0% | -0.6% |
-| D2 | 48–72 hours | 132 | 8 | 2 | 0.0949 | -100.0% | -5.3% | -1.1% |
-| D1 | 24–48 hours | 131 | 9 | 4 | 0.0835 | -21.3% | 0.1% | -0.3% |
-| D0 | 0–24 hours | 70 | 3 | 3 | 0.0936 | 3.3% | 0.0% | 0.0% |
+| D8+ | 192+ hours | 83 | 0 | 0 | 0.1446 | — | — | — |
+| D7 | 168–192 hours | 41 | 0 | 0 | 0.0972 | — | — | — |
+| D6 | 144–168 hours | 91 | 1 | 1 | 0.0830 | -100.0% | 6.7% | 1.1% |
+| D5 | 120–144 hours | 121 | 8 | 3 | 0.0839 | -100.0% | 2.2% | 0.5% |
+| D4 | 96–120 hours | 128 | 8 | 3 | 0.0947 | 1.7% | -1.7% | -0.3% |
+| D3 | 72–96 hours | 129 | 8 | 3 | 0.0955 | 6.7% | -2.0% | -0.6% |
+| D2 | 48–72 hours | 132 | 8 | 2 | 0.0936 | -100.0% | -5.3% | -1.1% |
+| D1 | 24–48 hours | 131 | 9 | 4 | 0.0827 | -21.3% | 0.1% | -0.3% |
+| D0 | 0–24 hours | 134 | 8 | 3 | 0.0924 | 3.3% | 0.0% | 0.0% |
 
 ## Persistent-signal price drift
 
@@ -31,7 +31,7 @@ This matched comparison uses only games where the same side remained qualified i
 | D4 | D3 | 7 | 2.1% | 85.7% | -0.7% |
 | D3 | D2 | 7 | 1.3% | 28.6% | -0.3% |
 | D2 | D1 | 7 | 1.5% | 42.9% | -1.2% |
-| D1 | D0 | 3 | -0.6% | 33.3% | 0.0% |
+| D1 | D0 | 8 | 0.2% | 50.0% | 0.3% |
 
 Interpretation rules:
 
