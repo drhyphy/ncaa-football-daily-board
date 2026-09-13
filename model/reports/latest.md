@@ -1,6 +1,6 @@
 # NCAA football moneyline research card
 
-Snapshot: 2026-09-13T11:07:14Z
+Snapshot: 2026-09-13T14:29:47Z
 
 Status: forward paper research only. Historical moneyline ROI has not been validated.
 
@@ -14,26 +14,26 @@ No recommended-model selections cleared every precommitted gate.
 
 | Game | Side | Model | Market | Edge | EV | Eligible | Flags |
 |---|---:|---:|---:|---:|---:|---:|---|
-| North Texas Mean Green at Texas State Bobcats | North Texas Mean Green | 50.3% | 44.7% | 5.6% | 7.7% | no | too_few_books |
-| Florida International Panthers at Florida Atlantic Owls | Florida International Panthers | 30.5% | 26.2% | 4.2% | 11.2% | no | too_few_books |
-| North Carolina Tar Heels at Clemson Tigers | North Carolina Tar Heels | 33.2% | 30.0% | 3.3% | 31.3% | no | too_few_books|market_dispersion_high |
-| Stanford Cardinal at Duke Blue Devils | Duke Blue Devils | 77.3% | 74.5% | 2.8% | -0.6% | no | too_few_books|ev_below_threshold |
+| North Texas Mean Green at Texas State Bobcats | North Texas Mean Green | 47.0% | 40.6% | 6.4% | 10.9% | no | too_few_books |
+| Florida International Panthers at Florida Atlantic Owls | Florida International Panthers | 33.6% | 29.9% | 3.7% | 7.4% | no | too_few_books |
 | Miami (OH) RedHawks at Cincinnati Bearcats | Cincinnati Bearcats | 86.5% | 84.0% | 2.5% | -1.4% | no | too_few_books|ev_below_threshold |
-| West Virginia Mountaineers at Virginia Cavaliers | Virginia Cavaliers | 76.8% | 74.5% | 2.3% | -1.0% | no | too_few_books|ev_below_threshold |
-| Arizona State Sun Devils at Kansas Jayhawks | Kansas Jayhawks | 37.6% | 35.4% | 2.2% | 2.3% | no | too_few_books|ev_below_threshold |
-| Temple Owls at Toledo Rockets | Toledo Rockets | 61.7% | 59.4% | 2.2% | -0.7% | no | too_few_books|ev_below_threshold |
-| Kentucky Wildcats at Texas A&M Aggies | Texas A&M Aggies | 87.8% | 85.6% | 2.1% | -0.5% | no | ev_below_threshold |
-| LSU Tigers at Ole Miss Rebels | LSU Tigers | 57.7% | 55.6% | 2.0% | 2.0% | no | ev_below_threshold |
-| Georgia Bulldogs at Arkansas Razorbacks | Georgia Bulldogs | 91.2% | 89.2% | 2.0% | 1.3% | no | too_few_books|market_dispersion_high|ev_below_threshold |
-| North Carolina State Wolfpack at Vanderbilt Commodores | Vanderbilt Commodores | 62.1% | 60.2% | 2.0% | -1.3% | no | too_few_books|ev_below_threshold |
-| Syracuse Orange at Pittsburgh Panthers | Pittsburgh Panthers | 76.6% | 74.9% | 1.8% | -0.5% | no | too_few_books|ev_below_threshold |
+| North Carolina Tar Heels at Clemson Tigers | North Carolina Tar Heels | 37.0% | 34.6% | 2.4% | 46.3% | no | market_dispersion_high |
+| Arizona State Sun Devils at Kansas Jayhawks | Kansas Jayhawks | 37.0% | 34.7% | 2.4% | 2.3% | no | ev_below_threshold |
+| Temple Owls at Toledo Rockets | Toledo Rockets | 61.4% | 59.1% | 2.3% | -0.7% | no | too_few_books|ev_below_threshold |
+| Stanford Cardinal at Duke Blue Devils | Duke Blue Devils | 78.9% | 76.6% | 2.2% | -1.4% | no | too_few_books|ev_below_threshold |
+| West Virginia Mountaineers at Virginia Cavaliers | Virginia Cavaliers | 77.0% | 74.8% | 2.2% | -0.7% | no | ev_below_threshold |
+| Kentucky Wildcats at Texas A&M Aggies | Texas A&M Aggies | 87.6% | 85.5% | 2.2% | -0.7% | no | ev_below_threshold |
+| LSU Tigers at Ole Miss Rebels | LSU Tigers | 57.3% | 55.2% | 2.1% | 0.8% | no | ev_below_threshold |
 | Colorado Buffaloes at Northwestern Wildcats | Colorado Buffaloes | 44.0% | 42.4% | 1.6% | 0.3% | no | too_few_books|ev_below_threshold |
-| UAB Blazers at Louisiana Ragin' Cajuns | Louisiana Ragin' Cajuns | 75.4% | 74.2% | 1.3% | -2.7% | no | too_few_books|edge_below_threshold|ev_below_threshold |
-| Fresno State Bulldogs at San Jose State Spartans | Fresno State Bulldogs | 68.8% | 67.6% | 1.3% | -2.5% | no | too_few_books|edge_below_threshold|ev_below_threshold |
-| Florida Gators at Auburn Tigers | Auburn Tigers | 45.7% | 44.6% | 1.2% | -1.2% | no | too_few_books|edge_below_threshold|ev_below_threshold |
-| Virginia Tech Hokies at Maryland Terrapins | Virginia Tech Hokies | 54.4% | 53.3% | 1.1% | -1.1% | no | too_few_books|edge_below_threshold|ev_below_threshold |
-| USC Trojans at Rutgers Scarlet Knights | USC Trojans | 93.6% | 92.6% | 1.0% | -3.3% | no | too_few_books|edge_below_threshold|ev_below_threshold |
-| UTSA Roadrunners at Texas Longhorns | Texas Longhorns | 96.7% | 95.8% | 1.0% | -1.8% | no | too_few_books|edge_below_threshold|ev_below_threshold |
+| Syracuse Orange at Pittsburgh Panthers | Pittsburgh Panthers | 77.5% | 76.0% | 1.5% | 0.6% | no | edge_below_threshold|ev_below_threshold |
+| North Carolina State Wolfpack at Vanderbilt Commodores | Vanderbilt Commodores | 64.3% | 63.0% | 1.3% | -2.6% | no | too_few_books|edge_below_threshold|ev_below_threshold |
+| Florida Gators at Auburn Tigers | Auburn Tigers | 45.5% | 44.3% | 1.2% | -1.6% | no | edge_below_threshold|ev_below_threshold |
+| Ball State Cardinals at Liberty Flames | Ball State Cardinals | 15.5% | 14.3% | 1.2% | 3.9% | no | too_few_books|edge_below_threshold|ev_below_threshold |
+| UAB Blazers at Louisiana Ragin' Cajuns | Louisiana Ragin' Cajuns | 75.7% | 74.5% | 1.2% | -2.7% | no | too_few_books|edge_below_threshold|ev_below_threshold |
+| UTSA Roadrunners at Texas Longhorns | Texas Longhorns | 96.6% | 95.6% | 1.0% | -1.9% | no | too_few_books|edge_below_threshold|ev_below_threshold |
+| Tulane Green Wave at Kansas State Wildcats | Tulane Green Wave | 9.9% | 8.9% | 1.0% | 7.0% | no | too_few_books|edge_below_threshold |
+| Georgia Bulldogs at Arkansas Razorbacks | Georgia Bulldogs | 93.4% | 92.4% | 1.0% | 3.7% | no | market_dispersion_high|edge_below_threshold|ev_below_threshold |
+| Akron Zips at Minnesota Golden Gophers | Akron Zips | 5.2% | 4.2% | 1.0% | 19.1% | no | too_few_books|edge_below_threshold |
 
 Challengers (`market_public_ensemble`, `fpi_only`, `ratings_only`, `market_only`) are stored in the ledger but cannot trigger paper bets.
 
