@@ -1,6 +1,6 @@
 # NCAA football moneyline research card
 
-Snapshot: 2026-09-13T14:43:13Z
+Snapshot: 2026-09-13T14:52:01Z
 
 Status: forward paper research only. Historical moneyline ROI has not been validated.
 
@@ -30,7 +30,7 @@ No recommended-model selections cleared every precommitted gate.
 | Florida Gators at Auburn Tigers | Auburn Tigers | 45.5% | 44.3% | 1.2% | -1.6% | no | edge_below_threshold|ev_below_threshold |
 | Ball State Cardinals at Liberty Flames | Ball State Cardinals | 15.5% | 14.3% | 1.2% | 3.9% | no | too_few_books|edge_below_threshold|ev_below_threshold |
 | UAB Blazers at Louisiana Ragin' Cajuns | Louisiana Ragin' Cajuns | 75.7% | 74.5% | 1.2% | -2.7% | no | too_few_books|edge_below_threshold|ev_below_threshold |
-| UTSA Roadrunners at Texas Longhorns | Texas Longhorns | 96.6% | 95.6% | 1.0% | -1.9% | no | too_few_books|edge_below_threshold|ev_below_threshold |
+| UTSA Roadrunners at Texas Longhorns | Texas Longhorns | 96.5% | 95.4% | 1.1% | -2.0% | no | edge_below_threshold|ev_below_threshold |
 | Tulane Green Wave at Kansas State Wildcats | Tulane Green Wave | 9.9% | 8.9% | 1.0% | 7.0% | no | too_few_books|edge_below_threshold |
 | Akron Zips at Minnesota Golden Gophers | Akron Zips | 5.2% | 4.2% | 1.0% | 19.1% | no | too_few_books|edge_below_threshold |
 | Wyoming Cowboys at Central Michigan Chippewas | Central Michigan Chippewas | 51.8% | 51.0% | 0.8% | -2.8% | no | too_few_books|edge_below_threshold|ev_below_threshold |
