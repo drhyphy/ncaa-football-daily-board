@@ -21,6 +21,10 @@ def latest_board_date(board_file: str | Path | None) -> date | None:
     payload = json.loads(path.read_text())
     board_dates: list[date] = []
     for board in payload.get("boards", []):
+        # A dated outage notice is not a successful market publication and
+        # must not suppress the remaining recovery attempts that morning.
+        if board.get("market_status", "live") != "live":
+            continue
         value = str(board.get("generated_at", "")).replace("Z", "+00:00")
         try:
             board_dates.append(datetime.fromisoformat(value).astimezone(EASTERN).date())

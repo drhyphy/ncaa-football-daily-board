@@ -40,3 +40,13 @@ def test_prior_day_board_does_not_block_a_scheduled_retry(tmp_path):
     )
     now = datetime(2026, 9, 3, 10, 44, tzinfo=timezone.utc)
     assert should_run("schedule", "45 10 * * *", now, board_file)
+
+
+def test_today_outage_notice_does_not_block_recovery(tmp_path):
+    board_file = tmp_path / "boards.json"
+    board_file.write_text(json.dumps({"boards": [
+        {"generated_at": "2026-09-14T10:35:00Z", "market_status": "unavailable"},
+        {"generated_at": "2026-09-12T11:07:17Z", "market_status": "live"},
+    ]}))
+    now = datetime(2026, 9, 14, 10, 45, tzinfo=timezone.utc)
+    assert should_run("schedule", "45 10 * * *", now, board_file)

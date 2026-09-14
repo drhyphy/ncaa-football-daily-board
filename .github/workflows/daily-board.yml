@@ -65,6 +65,11 @@ jobs:
         if: steps.gate.outputs.should_run == 'true'
         run: python -m pip install -e model pytest
 
+      - name: Validate model and publication code
+        id: validate
+        if: steps.gate.outputs.should_run == 'true'
+        run: python -m pytest -q model/tests tests
+
       - name: Refresh every NCAA moneyline and score the board
         id: refresh
         if: steps.gate.outputs.should_run == 'true'
@@ -74,18 +79,17 @@ jobs:
         working-directory: model
         run: python -m ncaaf_model.cli run-daily
 
-      - name: Validate and publish the daily board
-        if: always() && steps.gate.outputs.should_run == 'true'
+      - name: Publish today's board
+        if: always() && steps.validate.outcome == 'success'
         run: |
-          python -m pytest -q model/tests tests
           if [ "${{ steps.refresh.outcome }}" = "success" ]; then
-            python scripts/site_board.py
+            python scripts/site_board.py --require-today
           else
-            python scripts/site_board.py --market-status unavailable
+            python scripts/site_board.py --market-status unavailable --require-today
           fi
 
       - name: Persist the append-only timing ledger
-        if: always() && steps.gate.outputs.should_run == 'true'
+        if: always() && steps.validate.outcome == 'success'
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
@@ -99,7 +103,7 @@ jobs:
           fi
 
       - name: Fail the run when all live odds sources were unavailable
-        if: always() && steps.gate.outputs.should_run == 'true' && steps.refresh.outcome != 'success'
+        if: always() && steps.validate.outcome == 'success' && steps.refresh.outcome != 'success'
         run: |
           echo "The board was published with market-status=unavailable, but live odds ingestion failed." >&2
           exit 1

@@ -60,3 +60,14 @@ def test_watchlist_explains_every_failed_gate_in_plain_language():
         assert all("_" not in reason for reason in row["gate_reasons"])
     ev_miss = next(row for row in payload["watchlist"] if "ev_below_threshold" in row["flags"])
     assert any("needs +4.0%" in reason for reason in ev_miss["gate_reasons"])
+
+
+def test_publication_rejects_stale_snapshot_and_uses_eastern_date():
+    from datetime import datetime, timezone
+    import pytest
+
+    now = datetime(2026, 9, 14, 11, tzinfo=timezone.utc)
+    for stamp in ("2026-09-12T11:07:17Z", "2026-09-14T02:00:00Z", "2026-09-14T11:00:00"):
+        with pytest.raises(RuntimeError, match="not generated today"):
+            MODULE.require_today({"generated_at": stamp}, now)
+    MODULE.require_today({"generated_at": "2026-09-14T10:35:00Z"}, now)

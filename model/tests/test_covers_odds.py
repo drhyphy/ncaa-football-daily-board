@@ -10,6 +10,7 @@ import requests
 from ncaaf_model.config import load_settings
 from ncaaf_model.covers_odds import COVERS_ODDS_URL, parse_covers_odds
 from ncaaf_model.sources import DataClient
+from ncaaf_model import sources
 
 
 def _book_cell(book: str, game_id: str, away: str, home: str) -> str:
@@ -95,6 +96,18 @@ def test_parse_covers_normalizes_three_markets_and_resolves_abbreviation_alias()
 
 
 def test_current_odds_uses_public_fallback_and_redacts_primary_failure(tmp_path, monkeypatch) -> None:
+    class FixtureClock(datetime):
+        @classmethod
+        def now(cls, tz=None):
+            instant = cls(2026, 9, 6, 12, tzinfo=timezone.utc)
+            return instant.astimezone(tz) if tz else instant.replace(tzinfo=None)
+
+    monkeypatch.setattr(sources, "datetime", FixtureClock)
+
+    def unavailable_actionnetwork(*args, **kwargs):
+        raise requests.ConnectionError("public backup temporarily unavailable")
+
+    monkeypatch.setattr(sources, "fetch_actionnetwork_odds", unavailable_actionnetwork)
     settings = replace(load_settings(), root=tmp_path)
     schedule_path = settings.raw_dir / "sportsdataverse" / "cfb_schedule_2026.parquet"
     schedule_path.parent.mkdir(parents=True)
@@ -118,7 +131,10 @@ def test_current_odds_uses_public_fallback_and_redacts_primary_failure(tmp_path,
     fallback.encoding = "utf-8"
 
     def fake_get(url, **kwargs):
-        return fallback if url == COVERS_ODDS_URL else primary
+        if url == COVERS_ODDS_URL:
+            return fallback
+        assert url.startswith(sources.ODDS_BASE_URL)
+        return primary
 
     monkeypatch.setattr(client.session, "get", fake_get)
     path, source = client.current_odds(refresh=True)

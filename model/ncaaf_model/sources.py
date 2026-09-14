@@ -426,7 +426,8 @@ class DataClient:
         actionnetwork_error: Exception | None = None,
     ) -> tuple[Path, dict[str, str]]:
         """Collect the public Covers comparison board when the paid feed is unavailable."""
-        local_today = datetime.now(EASTERN).date()
+        now = datetime.now(timezone.utc)
+        local_today = now.astimezone(EASTERN).date()
         schedule_path = self.settings.raw_dir / "sportsdataverse" / f"cfb_schedule_{self.settings.season}.parquet"
         try:
             schedule_refresh: dict[str, Any] = self.refresh_espn_schedule_window(
@@ -462,7 +463,7 @@ class DataClient:
         raw_path = fallback_dir / f"ncaaf_{timestamp}.html"
         atomic_write_bytes(raw_path, response.content)
         schedule = pd.read_parquet(schedule_path)
-        payload, diagnostics = parse_covers_odds(document, schedule)
+        payload, diagnostics = parse_covers_odds(document, schedule, now=now)
         allowed = set(self.settings.allowed_books)
         eligible_events = sum(
             sum(
