@@ -1,16 +1,584 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-16T11:08:09.194895Z",
-  "slate_date": "2026-09-03",
-  "run_label": "Sep 16 \u00b7 7:08 AM ET",
+  "generated_at": "2026-09-16T11:15:55Z",
+  "slate_date": "2026-09-17",
+  "run_label": "Sep 16 \u00b7 7:15 AM ET",
   "model_version": "ncaaf-market-residual-v2-alpha75",
-  "week": 1,
-  "scanned_games": 77,
-  "schedule_matches": 77,
-  "qualifying_count": 0,
+  "week": 3,
+  "scanned_games": 20,
+  "schedule_matches": 20,
+  "qualifying_count": 2,
   "alpha_label": "75% residual \u00b7 21% effective FPI",
-  "qualified_bets": [],
-  "watchlist": [],
+  "qualified_bets": [
+    {
+      "rank": 1,
+      "event_id": "actionnetwork-289061",
+      "game": "North Texas Mean Green at Texas State Bobcats",
+      "selection": "North Texas Mean Green",
+      "opponent": "Texas State Bobcats",
+      "side": "away",
+      "kickoff": "2026-09-19T16:00:00.000Z",
+      "sportsbook": "caesars",
+      "american_odds": 126,
+      "model_probability": 0.488012,
+      "market_probability": 0.42794,
+      "probability_edge": 0.060072,
+      "expected_value": 0.102907,
+      "stake_fraction": 0.005,
+      "timing_bucket": "D3",
+      "book_count": 5,
+      "qualifies": true,
+      "flags": [],
+      "gate_reasons": []
+    },
+    {
+      "rank": 2,
+      "event_id": "actionnetwork-289057",
+      "game": "Arizona State Sun Devils at Kansas Jayhawks",
+      "selection": "Kansas Jayhawks",
+      "opponent": "Arizona State Sun Devils",
+      "side": "home",
+      "kickoff": "2026-09-19T16:00:00.000Z",
+      "sportsbook": "betmgm",
+      "american_odds": 180,
+      "model_probability": 0.377423,
+      "market_probability": 0.355271,
+      "probability_edge": 0.022152,
+      "expected_value": 0.056784,
+      "stake_fraction": 0.003155,
+      "timing_bucket": "D3",
+      "book_count": 5,
+      "qualifies": true,
+      "flags": [],
+      "gate_reasons": []
+    }
+  ],
+  "watchlist": [
+    {
+      "rank": 1,
+      "event_id": "actionnetwork-289085",
+      "game": "Miami (OH) RedHawks at Cincinnati Bearcats",
+      "selection": "Cincinnati Bearcats",
+      "opponent": "Miami (OH) RedHawks",
+      "side": "home",
+      "kickoff": "2026-09-19T19:30:00.000Z",
+      "sportsbook": "betmgm",
+      "american_odds": -650,
+      "model_probability": 0.867855,
+      "market_probability": 0.844156,
+      "probability_edge": 0.023699,
+      "expected_value": 0.001371,
+      "stake_fraction": 0.0,
+      "timing_bucket": "D3",
+      "book_count": 5,
+      "qualifies": false,
+      "flags": [
+        "ev_below_threshold"
+      ],
+      "gate_reasons": [
+        "Model EV +0.1%; needs +4.0%"
+      ]
+    },
+    {
+      "rank": 2,
+      "event_id": "actionnetwork-289093",
+      "game": "Kentucky Wildcats at Texas A&M Aggies",
+      "selection": "Texas A&M Aggies",
+      "opponent": "Kentucky Wildcats",
+      "side": "home",
+      "kickoff": "2026-09-19T19:30:00.000Z",
+      "sportsbook": "betmgm",
+      "american_odds": -800,
+      "model_probability": 0.878747,
+      "market_probability": 0.857845,
+      "probability_edge": 0.020902,
+      "expected_value": -0.01141,
+      "stake_fraction": 0.0,
+      "timing_bucket": "D3",
+      "book_count": 4,
+      "qualifies": false,
+      "flags": [
+        "ev_below_threshold"
+      ],
+      "gate_reasons": [
+        "Model EV -1.1%; needs +4.0%"
+      ]
+    },
+    {
+      "rank": 3,
+      "event_id": "actionnetwork-289091",
+      "game": "North Carolina State Wolfpack at Vanderbilt Commodores",
+      "selection": "Vanderbilt Commodores",
+      "opponent": "North Carolina State Wolfpack",
+      "side": "home",
+      "kickoff": "2026-09-19T16:45:00.000Z",
+      "sportsbook": "betrivers",
+      "american_odds": -167,
+      "model_probability": 0.623639,
+      "market_probability": 0.604789,
+      "probability_edge": 0.01885,
+      "expected_value": -0.002925,
+      "stake_fraction": 0.0,
+      "timing_bucket": "D3",
+      "book_count": 5,
+      "qualifies": false,
+      "flags": [
+        "ev_below_threshold"
+      ],
+      "gate_reasons": [
+        "Model EV -0.3%; needs +4.0%"
+      ]
+    },
+    {
+      "rank": 4,
+      "event_id": "actionnetwork-289050",
+      "game": "North Carolina Tar Heels at Clemson Tigers",
+      "selection": "North Carolina Tar Heels",
+      "opponent": "Clemson Tigers",
+      "side": "away",
+      "kickoff": "2026-09-19T16:00:00.000Z",
+      "sportsbook": "fanduel",
+      "american_odds": 146,
+      "model_probability": 0.407303,
+      "market_probability": 0.391735,
+      "probability_edge": 0.015568,
+      "expected_value": 0.001965,
+      "stake_fraction": 0.0,
+      "timing_bucket": "D3",
+      "book_count": 5,
+      "qualifies": false,
+      "flags": [
+        "ev_below_threshold"
+      ],
+      "gate_reasons": [
+        "Model EV +0.2%; needs +4.0%"
+      ]
+    },
+    {
+      "rank": 5,
+      "event_id": "actionnetwork-289020",
+      "game": "Syracuse Orange at Pittsburgh Panthers",
+      "selection": "Pittsburgh Panthers",
+      "opponent": "Syracuse Orange",
+      "side": "home",
+      "kickoff": "2026-09-17T23:30:00.000Z",
+      "sportsbook": "fanduel",
+      "american_odds": -410,
+      "model_probability": 0.784129,
+      "market_probability": 0.772329,
+      "probability_edge": 0.0118,
+      "expected_value": -0.02462,
+      "stake_fraction": 0.0,
+      "timing_bucket": "D1",
+      "book_count": 5,
+      "qualifies": false,
+      "flags": [
+        "edge_below_threshold",
+        "ev_below_threshold"
+      ],
+      "gate_reasons": [
+        "Probability edge +1.2%; needs +1.5%",
+        "Model EV -2.5%; needs +4.0%"
+      ]
+    },
+    {
+      "rank": 6,
+      "event_id": "actionnetwork-289101",
+      "game": "Tulane Green Wave at Kansas State Wildcats",
+      "selection": "Tulane Green Wave",
+      "opponent": "Kansas State Wildcats",
+      "side": "away",
+      "kickoff": "2026-09-19T16:00:00.000Z",
+      "sportsbook": "draftkings",
+      "american_odds": 1000,
+      "model_probability": 0.100048,
+      "market_probability": 0.090121,
+      "probability_edge": 0.009927,
+      "expected_value": 0.10053,
+      "stake_fraction": 0.0,
+      "timing_bucket": "D3",
+      "book_count": 5,
+      "qualifies": false,
+      "flags": [
+        "edge_below_threshold"
+      ],
+      "gate_reasons": [
+        "Probability edge +1.0%; needs +1.5%"
+      ]
+    },
+    {
+      "rank": 7,
+      "event_id": "actionnetwork-289021",
+      "game": "Houston Cougars at Texas Tech Red Raiders",
+      "selection": "Texas Tech Red Raiders",
+      "opponent": "Houston Cougars",
+      "side": "home",
+      "kickoff": "2026-09-19T00:00:00.000Z",
+      "sportsbook": "caesars",
+      "american_odds": -290,
+      "model_probability": 0.726097,
+      "market_probability": 0.717454,
+      "probability_edge": 0.008644,
+      "expected_value": -0.023524,
+      "stake_fraction": 0.0,
+      "timing_bucket": "D2",
+      "book_count": 5,
+      "qualifies": false,
+      "flags": [
+        "edge_below_threshold",
+        "ev_below_threshold"
+      ],
+      "gate_reasons": [
+        "Probability edge +0.9%; needs +1.5%",
+        "Model EV -2.4%; needs +4.0%"
+      ]
+    },
+    {
+      "rank": 8,
+      "event_id": "actionnetwork-289078",
+      "game": "Temple Owls at Toledo Rockets",
+      "selection": "Toledo Rockets",
+      "opponent": "Temple Owls",
+      "side": "home",
+      "kickoff": "2026-09-19T19:00:00.000Z",
+      "sportsbook": "fanduel",
+      "american_odds": -210,
+      "model_probability": 0.66611,
+      "market_probability": 0.65812,
+      "probability_edge": 0.007991,
+      "expected_value": -0.016694,
+      "stake_fraction": 0.0,
+      "timing_bucket": "D3",
+      "book_count": 5,
+      "qualifies": false,
+      "flags": [
+        "edge_below_threshold",
+        "ev_below_threshold"
+      ],
+      "gate_reasons": [
+        "Probability edge +0.8%; needs +1.5%",
+        "Model EV -1.7%; needs +4.0%"
+      ]
+    },
+    {
+      "rank": 9,
+      "event_id": "actionnetwork-289087",
+      "game": "Akron Zips at Minnesota Golden Gophers",
+      "selection": "Akron Zips",
+      "opponent": "Minnesota Golden Gophers",
+      "side": "away",
+      "kickoff": "2026-09-19T16:00:00.000Z",
+      "sportsbook": "betmgm",
+      "american_odds": 1500,
+      "model_probability": 0.07173,
+      "market_probability": 0.063963,
+      "probability_edge": 0.007767,
+      "expected_value": 0.14768,
+      "stake_fraction": 0.0,
+      "timing_bucket": "D3",
+      "book_count": 5,
+      "qualifies": false,
+      "flags": [
+        "edge_below_threshold"
+      ],
+      "gate_reasons": [
+        "Probability edge +0.8%; needs +1.5%"
+      ]
+    },
+    {
+      "rank": 10,
+      "event_id": "actionnetwork-289032",
+      "game": "USC Trojans at Rutgers Scarlet Knights",
+      "selection": "USC Trojans",
+      "opponent": "Rutgers Scarlet Knights",
+      "side": "away",
+      "kickoff": "2026-09-19T19:30:00.000Z",
+      "sportsbook": "draftkings",
+      "american_odds": -2100,
+      "model_probability": 0.937494,
+      "market_probability": 0.930636,
+      "probability_edge": 0.006858,
+      "expected_value": -0.017864,
+      "stake_fraction": 0.0,
+      "timing_bucket": "D3",
+      "book_count": 5,
+      "qualifies": false,
+      "flags": [
+        "edge_below_threshold",
+        "ev_below_threshold"
+      ],
+      "gate_reasons": [
+        "Probability edge +0.7%; needs +1.5%",
+        "Model EV -1.8%; needs +4.0%"
+      ]
+    },
+    {
+      "rank": 11,
+      "event_id": "actionnetwork-289037",
+      "game": "Wyoming Cowboys at Central Michigan Chippewas",
+      "selection": "Central Michigan Chippewas",
+      "opponent": "Wyoming Cowboys",
+      "side": "home",
+      "kickoff": "2026-09-19T17:00:00.000Z",
+      "sportsbook": "fanduel",
+      "american_odds": -118,
+      "model_probability": 0.525948,
+      "market_probability": 0.519824,
+      "probability_edge": 0.006124,
+      "expected_value": -0.028334,
+      "stake_fraction": 0.0,
+      "timing_bucket": "D3",
+      "book_count": 5,
+      "qualifies": false,
+      "flags": [
+        "edge_below_threshold",
+        "ev_below_threshold"
+      ],
+      "gate_reasons": [
+        "Probability edge +0.6%; needs +1.5%",
+        "Model EV -2.8%; needs +4.0%"
+      ]
+    },
+    {
+      "rank": 12,
+      "event_id": "actionnetwork-289103",
+      "game": "Georgia Bulldogs at Arkansas Razorbacks",
+      "selection": "Georgia Bulldogs",
+      "opponent": "Arkansas Razorbacks",
+      "side": "away",
+      "kickoff": "2026-09-19T16:00:00.000Z",
+      "sportsbook": "betmgm",
+      "american_odds": -3000,
+      "model_probability": 0.942764,
+      "market_probability": 0.936914,
+      "probability_edge": 0.00585,
+      "expected_value": -0.02581,
+      "stake_fraction": 0.0,
+      "timing_bucket": "D3",
+      "book_count": 5,
+      "qualifies": false,
+      "flags": [
+        "edge_below_threshold",
+        "ev_below_threshold"
+      ],
+      "gate_reasons": [
+        "Probability edge +0.6%; needs +1.5%",
+        "Model EV -2.6%; needs +4.0%"
+      ]
+    },
+    {
+      "rank": 13,
+      "event_id": "actionnetwork-289043",
+      "game": "Eastern Michigan Eagles at Wisconsin Badgers",
+      "selection": "Wisconsin Badgers",
+      "opponent": "Eastern Michigan Eagles",
+      "side": "home",
+      "kickoff": "2026-09-19T16:30:00.000Z",
+      "sportsbook": "draftkings",
+      "american_odds": -2400,
+      "model_probability": 0.934102,
+      "market_probability": 0.931559,
+      "probability_edge": 0.002543,
+      "expected_value": -0.026977,
+      "stake_fraction": 0.0,
+      "timing_bucket": "D3",
+      "book_count": 5,
+      "qualifies": false,
+      "flags": [
+        "edge_below_threshold",
+        "ev_below_threshold"
+      ],
+      "gate_reasons": [
+        "Probability edge +0.3%; needs +1.5%",
+        "Model EV -2.7%; needs +4.0%"
+      ]
+    },
+    {
+      "rank": 14,
+      "event_id": "actionnetwork-289109",
+      "game": "Bowling Green Falcons at Iowa State Cyclones",
+      "selection": "Iowa State Cyclones",
+      "opponent": "Bowling Green Falcons",
+      "side": "home",
+      "kickoff": "2026-09-19T16:00:00.000Z",
+      "sportsbook": "betmgm",
+      "american_odds": -2500,
+      "model_probability": 0.934772,
+      "market_probability": 0.933076,
+      "probability_edge": 0.001696,
+      "expected_value": -0.027837,
+      "stake_fraction": 0.0,
+      "timing_bucket": "D3",
+      "book_count": 5,
+      "qualifies": false,
+      "flags": [
+        "edge_below_threshold",
+        "ev_below_threshold"
+      ],
+      "gate_reasons": [
+        "Probability edge +0.2%; needs +1.5%",
+        "Model EV -2.8%; needs +4.0%"
+      ]
+    },
+    {
+      "rank": 15,
+      "event_id": "actionnetwork-289113",
+      "game": "Florida State Seminoles at Alabama Crimson Tide",
+      "selection": "Florida State Seminoles",
+      "opponent": "Alabama Crimson Tide",
+      "side": "away",
+      "kickoff": "2026-09-19T19:30:00.000Z",
+      "sportsbook": "betmgm",
+      "american_odds": 900,
+      "model_probability": 0.106508,
+      "market_probability": 0.105367,
+      "probability_edge": 0.001141,
+      "expected_value": 0.065081,
+      "stake_fraction": 0.0,
+      "timing_bucket": "D3",
+      "book_count": 5,
+      "qualifies": false,
+      "flags": [
+        "edge_below_threshold"
+      ],
+      "gate_reasons": [
+        "Probability edge +0.1%; needs +1.5%"
+      ]
+    },
+    {
+      "rank": 16,
+      "event_id": "actionnetwork-289022",
+      "game": "Miami (FL) Hurricanes at Wake Forest Demon Deacons",
+      "selection": "Miami (FL) Hurricanes",
+      "opponent": "Wake Forest Demon Deacons",
+      "side": "away",
+      "kickoff": "2026-09-18T23:30:00.000Z",
+      "sportsbook": "draftkings",
+      "american_odds": -1450,
+      "model_probability": 0.912532,
+      "market_probability": 0.911392,
+      "probability_edge": 0.001139,
+      "expected_value": -0.024535,
+      "stake_fraction": 0.0,
+      "timing_bucket": "D2",
+      "book_count": 5,
+      "qualifies": false,
+      "flags": [
+        "edge_below_threshold",
+        "ev_below_threshold"
+      ],
+      "gate_reasons": [
+        "Probability edge +0.1%; needs +1.5%",
+        "Model EV -2.5%; needs +4.0%"
+      ]
+    },
+    {
+      "rank": 17,
+      "event_id": "actionnetwork-289121",
+      "game": "SMU Mustangs at Louisville Cardinals",
+      "selection": "Louisville Cardinals",
+      "opponent": "SMU Mustangs",
+      "side": "home",
+      "kickoff": "2026-09-19T19:30:00.000Z",
+      "sportsbook": "betmgm",
+      "american_odds": -120,
+      "model_probability": 0.525015,
+      "market_probability": 0.524221,
+      "probability_edge": 0.000794,
+      "expected_value": -0.037472,
+      "stake_fraction": 0.0,
+      "timing_bucket": "D3",
+      "book_count": 5,
+      "qualifies": false,
+      "flags": [
+        "edge_below_threshold",
+        "ev_below_threshold"
+      ],
+      "gate_reasons": [
+        "Probability edge +0.1%; needs +1.5%",
+        "Model EV -3.7%; needs +4.0%"
+      ]
+    },
+    {
+      "rank": 18,
+      "event_id": "actionnetwork-289047",
+      "game": "Utah State Aggies at Utah Utes",
+      "selection": "Utah State Aggies",
+      "opponent": "Utah Utes",
+      "side": "away",
+      "kickoff": "2026-09-19T19:30:00.000Z",
+      "sportsbook": "betmgm",
+      "american_odds": 2200,
+      "model_probability": 0.048652,
+      "market_probability": 0.048274,
+      "probability_edge": 0.000378,
+      "expected_value": 0.119006,
+      "stake_fraction": 0.0,
+      "timing_bucket": "D3",
+      "book_count": 4,
+      "qualifies": false,
+      "flags": [
+        "edge_below_threshold"
+      ],
+      "gate_reasons": [
+        "Probability edge +0.0%; needs +1.5%"
+      ]
+    },
+    {
+      "rank": 19,
+      "event_id": "actionnetwork-289047",
+      "game": "Utah State Aggies at Utah Utes",
+      "selection": "Utah Utes",
+      "opponent": "Utah State Aggies",
+      "side": "home",
+      "kickoff": "2026-09-19T19:30:00.000Z",
+      "sportsbook": "betmgm",
+      "american_odds": -5000,
+      "model_probability": 0.951348,
+      "market_probability": 0.951726,
+      "probability_edge": -0.000378,
+      "expected_value": -0.029625,
+      "stake_fraction": 0.0,
+      "timing_bucket": "D3",
+      "book_count": 4,
+      "qualifies": false,
+      "flags": [
+        "edge_below_threshold",
+        "ev_below_threshold"
+      ],
+      "gate_reasons": [
+        "Probability edge -0.0%; needs +1.5%",
+        "Model EV -3.0%; needs +4.0%"
+      ]
+    },
+    {
+      "rank": 20,
+      "event_id": "actionnetwork-289121",
+      "game": "SMU Mustangs at Louisville Cardinals",
+      "selection": "SMU Mustangs",
+      "opponent": "Louisville Cardinals",
+      "side": "away",
+      "kickoff": "2026-09-19T19:30:00.000Z",
+      "sportsbook": "fanduel",
+      "american_odds": 106,
+      "model_probability": 0.474985,
+      "market_probability": 0.475779,
+      "probability_edge": -0.000794,
+      "expected_value": -0.021531,
+      "stake_fraction": 0.0,
+      "timing_bucket": "D3",
+      "book_count": 5,
+      "qualifies": false,
+      "flags": [
+        "edge_below_threshold",
+        "ev_below_threshold"
+      ],
+      "gate_reasons": [
+        "Probability edge -0.1%; needs +1.5%",
+        "Model EV -2.2%; needs +4.0%"
+      ]
+    }
+  ],
   "timing_status": "No timing bucket has 50 graded signals yet.",
   "timing_buckets": [
     {
@@ -56,7 +624,7 @@
     {
       "label": "D3",
       "window": "72\u201396 hours",
-      "signals": 8,
+      "signals": 10,
       "graded": 4,
       "price_clv": 0.009731182795698927,
       "roi": -0.19999999999999996
@@ -86,7 +654,120 @@
       "roi": -0.38
     }
   ],
-  "price_history": [],
+  "price_history": [
+    {
+      "event_id": "actionnetwork-289057",
+      "side": "home",
+      "selection": "Kansas Jayhawks",
+      "snapshots": [
+        {
+          "captured_at": "2026-09-13T11:07:14Z",
+          "timing_bucket": "D6",
+          "american_odds": 172,
+          "expected_value": 0.022701,
+          "qualifies": false
+        },
+        {
+          "captured_at": "2026-09-13T14:29:47Z",
+          "timing_bucket": "D6",
+          "american_odds": 176,
+          "expected_value": 0.022569,
+          "qualifies": false
+        },
+        {
+          "captured_at": "2026-09-13T14:43:13Z",
+          "timing_bucket": "D6",
+          "american_odds": 176,
+          "expected_value": 0.022569,
+          "qualifies": false
+        },
+        {
+          "captured_at": "2026-09-13T14:52:01Z",
+          "timing_bucket": "D6",
+          "american_odds": 176,
+          "expected_value": 0.022569,
+          "qualifies": false
+        },
+        {
+          "captured_at": "2026-09-14T11:05:27Z",
+          "timing_bucket": "D5",
+          "american_odds": 185,
+          "expected_value": 0.073584,
+          "qualifies": true
+        },
+        {
+          "captured_at": "2026-09-15T11:07:34Z",
+          "timing_bucket": "D4",
+          "american_odds": 185,
+          "expected_value": 0.044637,
+          "qualifies": true
+        },
+        {
+          "captured_at": "2026-09-16T11:15:55Z",
+          "timing_bucket": "D3",
+          "american_odds": 180,
+          "expected_value": 0.056784,
+          "qualifies": true
+        }
+      ]
+    },
+    {
+      "event_id": "actionnetwork-289061",
+      "side": "away",
+      "selection": "North Texas Mean Green",
+      "snapshots": [
+        {
+          "captured_at": "2026-09-13T11:07:14Z",
+          "timing_bucket": "D6",
+          "american_odds": 114,
+          "expected_value": 0.077433,
+          "qualifies": false
+        },
+        {
+          "captured_at": "2026-09-13T14:29:47Z",
+          "timing_bucket": "D6",
+          "american_odds": 136,
+          "expected_value": 0.109115,
+          "qualifies": false
+        },
+        {
+          "captured_at": "2026-09-13T14:43:13Z",
+          "timing_bucket": "D6",
+          "american_odds": 136,
+          "expected_value": 0.109115,
+          "qualifies": false
+        },
+        {
+          "captured_at": "2026-09-13T14:52:01Z",
+          "timing_bucket": "D6",
+          "american_odds": 136,
+          "expected_value": 0.109115,
+          "qualifies": false
+        },
+        {
+          "captured_at": "2026-09-14T11:05:27Z",
+          "timing_bucket": "D5",
+          "american_odds": 140,
+          "expected_value": 0.164465,
+          "qualifies": true
+        },
+        {
+          "captured_at": "2026-09-15T11:07:34Z",
+          "timing_bucket": "D4",
+          "american_odds": 130,
+          "expected_value": 0.124177,
+          "qualifies": true
+        },
+        {
+          "captured_at": "2026-09-16T11:15:55Z",
+          "timing_bucket": "D3",
+          "american_odds": 126,
+          "expected_value": 0.102907,
+          "qualifies": true
+        }
+      ]
+    }
+  ],
   "models": {
     "primary": {
       "key": "primary",
@@ -95,10 +776,691 @@
       "description": "The production, paper-bet-eligible market/FPI residual model.",
       "research_only": false,
       "candidate": "market_fpi_residual",
-      "qualifying_count": 0,
-      "qualified_bets": [],
-      "watchlist": [],
-      "price_history": []
+      "qualifying_count": 2,
+      "qualified_bets": [
+        {
+          "rank": 1,
+          "event_id": "actionnetwork-289061",
+          "game": "North Texas Mean Green at Texas State Bobcats",
+          "selection": "North Texas Mean Green",
+          "opponent": "Texas State Bobcats",
+          "side": "away",
+          "kickoff": "2026-09-19T16:00:00.000Z",
+          "sportsbook": "caesars",
+          "american_odds": 126,
+          "model_probability": 0.488012,
+          "market_probability": 0.42794,
+          "probability_edge": 0.060072,
+          "expected_value": 0.102907,
+          "stake_fraction": 0.005,
+          "timing_bucket": "D3",
+          "book_count": 5,
+          "qualifies": true,
+          "flags": [],
+          "gate_reasons": []
+        },
+        {
+          "rank": 2,
+          "event_id": "actionnetwork-289057",
+          "game": "Arizona State Sun Devils at Kansas Jayhawks",
+          "selection": "Kansas Jayhawks",
+          "opponent": "Arizona State Sun Devils",
+          "side": "home",
+          "kickoff": "2026-09-19T16:00:00.000Z",
+          "sportsbook": "betmgm",
+          "american_odds": 180,
+          "model_probability": 0.377423,
+          "market_probability": 0.355271,
+          "probability_edge": 0.022152,
+          "expected_value": 0.056784,
+          "stake_fraction": 0.003155,
+          "timing_bucket": "D3",
+          "book_count": 5,
+          "qualifies": true,
+          "flags": [],
+          "gate_reasons": []
+        }
+      ],
+      "watchlist": [
+        {
+          "rank": 1,
+          "event_id": "actionnetwork-289085",
+          "game": "Miami (OH) RedHawks at Cincinnati Bearcats",
+          "selection": "Cincinnati Bearcats",
+          "opponent": "Miami (OH) RedHawks",
+          "side": "home",
+          "kickoff": "2026-09-19T19:30:00.000Z",
+          "sportsbook": "betmgm",
+          "american_odds": -650,
+          "model_probability": 0.867855,
+          "market_probability": 0.844156,
+          "probability_edge": 0.023699,
+          "expected_value": 0.001371,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D3",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Model EV +0.1%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 2,
+          "event_id": "actionnetwork-289093",
+          "game": "Kentucky Wildcats at Texas A&M Aggies",
+          "selection": "Texas A&M Aggies",
+          "opponent": "Kentucky Wildcats",
+          "side": "home",
+          "kickoff": "2026-09-19T19:30:00.000Z",
+          "sportsbook": "betmgm",
+          "american_odds": -800,
+          "model_probability": 0.878747,
+          "market_probability": 0.857845,
+          "probability_edge": 0.020902,
+          "expected_value": -0.01141,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D3",
+          "book_count": 4,
+          "qualifies": false,
+          "flags": [
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Model EV -1.1%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 3,
+          "event_id": "actionnetwork-289091",
+          "game": "North Carolina State Wolfpack at Vanderbilt Commodores",
+          "selection": "Vanderbilt Commodores",
+          "opponent": "North Carolina State Wolfpack",
+          "side": "home",
+          "kickoff": "2026-09-19T16:45:00.000Z",
+          "sportsbook": "betrivers",
+          "american_odds": -167,
+          "model_probability": 0.623639,
+          "market_probability": 0.604789,
+          "probability_edge": 0.01885,
+          "expected_value": -0.002925,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D3",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Model EV -0.3%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 4,
+          "event_id": "actionnetwork-289050",
+          "game": "North Carolina Tar Heels at Clemson Tigers",
+          "selection": "North Carolina Tar Heels",
+          "opponent": "Clemson Tigers",
+          "side": "away",
+          "kickoff": "2026-09-19T16:00:00.000Z",
+          "sportsbook": "fanduel",
+          "american_odds": 146,
+          "model_probability": 0.407303,
+          "market_probability": 0.391735,
+          "probability_edge": 0.015568,
+          "expected_value": 0.001965,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D3",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Model EV +0.2%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 5,
+          "event_id": "actionnetwork-289020",
+          "game": "Syracuse Orange at Pittsburgh Panthers",
+          "selection": "Pittsburgh Panthers",
+          "opponent": "Syracuse Orange",
+          "side": "home",
+          "kickoff": "2026-09-17T23:30:00.000Z",
+          "sportsbook": "fanduel",
+          "american_odds": -410,
+          "model_probability": 0.784129,
+          "market_probability": 0.772329,
+          "probability_edge": 0.0118,
+          "expected_value": -0.02462,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D1",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "edge_below_threshold",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Probability edge +1.2%; needs +1.5%",
+            "Model EV -2.5%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 6,
+          "event_id": "actionnetwork-289101",
+          "game": "Tulane Green Wave at Kansas State Wildcats",
+          "selection": "Tulane Green Wave",
+          "opponent": "Kansas State Wildcats",
+          "side": "away",
+          "kickoff": "2026-09-19T16:00:00.000Z",
+          "sportsbook": "draftkings",
+          "american_odds": 1000,
+          "model_probability": 0.100048,
+          "market_probability": 0.090121,
+          "probability_edge": 0.009927,
+          "expected_value": 0.10053,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D3",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "edge_below_threshold"
+          ],
+          "gate_reasons": [
+            "Probability edge +1.0%; needs +1.5%"
+          ]
+        },
+        {
+          "rank": 7,
+          "event_id": "actionnetwork-289021",
+          "game": "Houston Cougars at Texas Tech Red Raiders",
+          "selection": "Texas Tech Red Raiders",
+          "opponent": "Houston Cougars",
+          "side": "home",
+          "kickoff": "2026-09-19T00:00:00.000Z",
+          "sportsbook": "caesars",
+          "american_odds": -290,
+          "model_probability": 0.726097,
+          "market_probability": 0.717454,
+          "probability_edge": 0.008644,
+          "expected_value": -0.023524,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D2",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "edge_below_threshold",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Probability edge +0.9%; needs +1.5%",
+            "Model EV -2.4%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 8,
+          "event_id": "actionnetwork-289078",
+          "game": "Temple Owls at Toledo Rockets",
+          "selection": "Toledo Rockets",
+          "opponent": "Temple Owls",
+          "side": "home",
+          "kickoff": "2026-09-19T19:00:00.000Z",
+          "sportsbook": "fanduel",
+          "american_odds": -210,
+          "model_probability": 0.66611,
+          "market_probability": 0.65812,
+          "probability_edge": 0.007991,
+          "expected_value": -0.016694,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D3",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "edge_below_threshold",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Probability edge +0.8%; needs +1.5%",
+            "Model EV -1.7%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 9,
+          "event_id": "actionnetwork-289087",
+          "game": "Akron Zips at Minnesota Golden Gophers",
+          "selection": "Akron Zips",
+          "opponent": "Minnesota Golden Gophers",
+          "side": "away",
+          "kickoff": "2026-09-19T16:00:00.000Z",
+          "sportsbook": "betmgm",
+          "american_odds": 1500,
+          "model_probability": 0.07173,
+          "market_probability": 0.063963,
+          "probability_edge": 0.007767,
+          "expected_value": 0.14768,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D3",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "edge_below_threshold"
+          ],
+          "gate_reasons": [
+            "Probability edge +0.8%; needs +1.5%"
+          ]
+        },
+        {
+          "rank": 10,
+          "event_id": "actionnetwork-289032",
+          "game": "USC Trojans at Rutgers Scarlet Knights",
+          "selection": "USC Trojans",
+          "opponent": "Rutgers Scarlet Knights",
+          "side": "away",
+          "kickoff": "2026-09-19T19:30:00.000Z",
+          "sportsbook": "draftkings",
+          "american_odds": -2100,
+          "model_probability": 0.937494,
+          "market_probability": 0.930636,
+          "probability_edge": 0.006858,
+          "expected_value": -0.017864,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D3",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "edge_below_threshold",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Probability edge +0.7%; needs +1.5%",
+            "Model EV -1.8%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 11,
+          "event_id": "actionnetwork-289037",
+          "game": "Wyoming Cowboys at Central Michigan Chippewas",
+          "selection": "Central Michigan Chippewas",
+          "opponent": "Wyoming Cowboys",
+          "side": "home",
+          "kickoff": "2026-09-19T17:00:00.000Z",
+          "sportsbook": "fanduel",
+          "american_odds": -118,
+          "model_probability": 0.525948,
+          "market_probability": 0.519824,
+          "probability_edge": 0.006124,
+          "expected_value": -0.028334,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D3",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "edge_below_threshold",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Probability edge +0.6%; needs +1.5%",
+            "Model EV -2.8%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 12,
+          "event_id": "actionnetwork-289103",
+          "game": "Georgia Bulldogs at Arkansas Razorbacks",
+          "selection": "Georgia Bulldogs",
+          "opponent": "Arkansas Razorbacks",
+          "side": "away",
+          "kickoff": "2026-09-19T16:00:00.000Z",
+          "sportsbook": "betmgm",
+          "american_odds": -3000,
+          "model_probability": 0.942764,
+          "market_probability": 0.936914,
+          "probability_edge": 0.00585,
+          "expected_value": -0.02581,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D3",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "edge_below_threshold",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Probability edge +0.6%; needs +1.5%",
+            "Model EV -2.6%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 13,
+          "event_id": "actionnetwork-289043",
+          "game": "Eastern Michigan Eagles at Wisconsin Badgers",
+          "selection": "Wisconsin Badgers",
+          "opponent": "Eastern Michigan Eagles",
+          "side": "home",
+          "kickoff": "2026-09-19T16:30:00.000Z",
+          "sportsbook": "draftkings",
+          "american_odds": -2400,
+          "model_probability": 0.934102,
+          "market_probability": 0.931559,
+          "probability_edge": 0.002543,
+          "expected_value": -0.026977,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D3",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "edge_below_threshold",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Probability edge +0.3%; needs +1.5%",
+            "Model EV -2.7%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 14,
+          "event_id": "actionnetwork-289109",
+          "game": "Bowling Green Falcons at Iowa State Cyclones",
+          "selection": "Iowa State Cyclones",
+          "opponent": "Bowling Green Falcons",
+          "side": "home",
+          "kickoff": "2026-09-19T16:00:00.000Z",
+          "sportsbook": "betmgm",
+          "american_odds": -2500,
+          "model_probability": 0.934772,
+          "market_probability": 0.933076,
+          "probability_edge": 0.001696,
+          "expected_value": -0.027837,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D3",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "edge_below_threshold",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Probability edge +0.2%; needs +1.5%",
+            "Model EV -2.8%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 15,
+          "event_id": "actionnetwork-289113",
+          "game": "Florida State Seminoles at Alabama Crimson Tide",
+          "selection": "Florida State Seminoles",
+          "opponent": "Alabama Crimson Tide",
+          "side": "away",
+          "kickoff": "2026-09-19T19:30:00.000Z",
+          "sportsbook": "betmgm",
+          "american_odds": 900,
+          "model_probability": 0.106508,
+          "market_probability": 0.105367,
+          "probability_edge": 0.001141,
+          "expected_value": 0.065081,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D3",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "edge_below_threshold"
+          ],
+          "gate_reasons": [
+            "Probability edge +0.1%; needs +1.5%"
+          ]
+        },
+        {
+          "rank": 16,
+          "event_id": "actionnetwork-289022",
+          "game": "Miami (FL) Hurricanes at Wake Forest Demon Deacons",
+          "selection": "Miami (FL) Hurricanes",
+          "opponent": "Wake Forest Demon Deacons",
+          "side": "away",
+          "kickoff": "2026-09-18T23:30:00.000Z",
+          "sportsbook": "draftkings",
+          "american_odds": -1450,
+          "model_probability": 0.912532,
+          "market_probability": 0.911392,
+          "probability_edge": 0.001139,
+          "expected_value": -0.024535,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D2",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "edge_below_threshold",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Probability edge +0.1%; needs +1.5%",
+            "Model EV -2.5%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 17,
+          "event_id": "actionnetwork-289121",
+          "game": "SMU Mustangs at Louisville Cardinals",
+          "selection": "Louisville Cardinals",
+          "opponent": "SMU Mustangs",
+          "side": "home",
+          "kickoff": "2026-09-19T19:30:00.000Z",
+          "sportsbook": "betmgm",
+          "american_odds": -120,
+          "model_probability": 0.525015,
+          "market_probability": 0.524221,
+          "probability_edge": 0.000794,
+          "expected_value": -0.037472,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D3",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "edge_below_threshold",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Probability edge +0.1%; needs +1.5%",
+            "Model EV -3.7%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 18,
+          "event_id": "actionnetwork-289047",
+          "game": "Utah State Aggies at Utah Utes",
+          "selection": "Utah State Aggies",
+          "opponent": "Utah Utes",
+          "side": "away",
+          "kickoff": "2026-09-19T19:30:00.000Z",
+          "sportsbook": "betmgm",
+          "american_odds": 2200,
+          "model_probability": 0.048652,
+          "market_probability": 0.048274,
+          "probability_edge": 0.000378,
+          "expected_value": 0.119006,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D3",
+          "book_count": 4,
+          "qualifies": false,
+          "flags": [
+            "edge_below_threshold"
+          ],
+          "gate_reasons": [
+            "Probability edge +0.0%; needs +1.5%"
+          ]
+        },
+        {
+          "rank": 19,
+          "event_id": "actionnetwork-289047",
+          "game": "Utah State Aggies at Utah Utes",
+          "selection": "Utah Utes",
+          "opponent": "Utah State Aggies",
+          "side": "home",
+          "kickoff": "2026-09-19T19:30:00.000Z",
+          "sportsbook": "betmgm",
+          "american_odds": -5000,
+          "model_probability": 0.951348,
+          "market_probability": 0.951726,
+          "probability_edge": -0.000378,
+          "expected_value": -0.029625,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D3",
+          "book_count": 4,
+          "qualifies": false,
+          "flags": [
+            "edge_below_threshold",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Probability edge -0.0%; needs +1.5%",
+            "Model EV -3.0%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 20,
+          "event_id": "actionnetwork-289121",
+          "game": "SMU Mustangs at Louisville Cardinals",
+          "selection": "SMU Mustangs",
+          "opponent": "Louisville Cardinals",
+          "side": "away",
+          "kickoff": "2026-09-19T19:30:00.000Z",
+          "sportsbook": "fanduel",
+          "american_odds": 106,
+          "model_probability": 0.474985,
+          "market_probability": 0.475779,
+          "probability_edge": -0.000794,
+          "expected_value": -0.021531,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D3",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "edge_below_threshold",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Probability edge -0.1%; needs +1.5%",
+            "Model EV -2.2%; needs +4.0%"
+          ]
+        }
+      ],
+      "price_history": [
+        {
+          "event_id": "actionnetwork-289057",
+          "side": "home",
+          "selection": "Kansas Jayhawks",
+          "snapshots": [
+            {
+              "captured_at": "2026-09-13T11:07:14Z",
+              "timing_bucket": "D6",
+              "american_odds": 172,
+              "expected_value": 0.022701,
+              "qualifies": false
+            },
+            {
+              "captured_at": "2026-09-13T14:29:47Z",
+              "timing_bucket": "D6",
+              "american_odds": 176,
+              "expected_value": 0.022569,
+              "qualifies": false
+            },
+            {
+              "captured_at": "2026-09-13T14:43:13Z",
+              "timing_bucket": "D6",
+              "american_odds": 176,
+              "expected_value": 0.022569,
+              "qualifies": false
+            },
+            {
+              "captured_at": "2026-09-13T14:52:01Z",
+              "timing_bucket": "D6",
+              "american_odds": 176,
+              "expected_value": 0.022569,
+              "qualifies": false
+            },
+            {
+              "captured_at": "2026-09-14T11:05:27Z",
+              "timing_bucket": "D5",
+              "american_odds": 185,
+              "expected_value": 0.073584,
+              "qualifies": true
+            },
+            {
+              "captured_at": "2026-09-15T11:07:34Z",
+              "timing_bucket": "D4",
+              "american_odds": 185,
+              "expected_value": 0.044637,
+              "qualifies": true
+            },
+            {
+              "captured_at": "2026-09-16T11:15:55Z",
+              "timing_bucket": "D3",
+              "american_odds": 180,
+              "expected_value": 0.056784,
+              "qualifies": true
+            }
+          ]
+        },
+        {
+          "event_id": "actionnetwork-289061",
+          "side": "away",
+          "selection": "North Texas Mean Green",
+          "snapshots": [
+            {
+              "captured_at": "2026-09-13T11:07:14Z",
+              "timing_bucket": "D6",
+              "american_odds": 114,
+              "expected_value": 0.077433,
+              "qualifies": false
+            },
+            {
+              "captured_at": "2026-09-13T14:29:47Z",
+              "timing_bucket": "D6",
+              "american_odds": 136,
+              "expected_value": 0.109115,
+              "qualifies": false
+            },
+            {
+              "captured_at": "2026-09-13T14:43:13Z",
+              "timing_bucket": "D6",
+              "american_odds": 136,
+              "expected_value": 0.109115,
+              "qualifies": false
+            },
+            {
+              "captured_at": "2026-09-13T14:52:01Z",
+              "timing_bucket": "D6",
+              "american_odds": 136,
+              "expected_value": 0.109115,
+              "qualifies": false
+            },
+            {
+              "captured_at": "2026-09-14T11:05:27Z",
+              "timing_bucket": "D5",
+              "american_odds": 140,
+              "expected_value": 0.164465,
+              "qualifies": true
+            },
+            {
+              "captured_at": "2026-09-15T11:07:34Z",
+              "timing_bucket": "D4",
+              "american_odds": 130,
+              "expected_value": 0.124177,
+              "qualifies": true
+            },
+            {
+              "captured_at": "2026-09-16T11:15:55Z",
+              "timing_bucket": "D3",
+              "american_odds": 126,
+              "expected_value": 0.102907,
+              "qualifies": true
+            }
+          ]
+        }
+      ]
     },
     "challenger": {
       "key": "challenger",
@@ -107,13 +1469,702 @@
       "description": "A shadow research model. Its signals are tracked daily but never place paper bets.",
       "research_only": true,
       "candidate": "market_public_ensemble",
-      "qualifying_count": 0,
-      "qualified_bets": [],
-      "watchlist": [],
-      "price_history": []
+      "qualifying_count": 2,
+      "qualified_bets": [
+        {
+          "rank": 1,
+          "event_id": "actionnetwork-289057",
+          "game": "Arizona State Sun Devils at Kansas Jayhawks",
+          "selection": "Kansas Jayhawks",
+          "opponent": "Arizona State Sun Devils",
+          "side": "home",
+          "kickoff": "2026-09-19T16:00:00.000Z",
+          "sportsbook": "betmgm",
+          "american_odds": 180,
+          "model_probability": 0.377762,
+          "market_probability": 0.355271,
+          "probability_edge": 0.022491,
+          "expected_value": 0.057734,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D3",
+          "book_count": 5,
+          "qualifies": true,
+          "flags": [],
+          "gate_reasons": []
+        },
+        {
+          "rank": 2,
+          "event_id": "actionnetwork-289061",
+          "game": "North Texas Mean Green at Texas State Bobcats",
+          "selection": "North Texas Mean Green",
+          "opponent": "Texas State Bobcats",
+          "side": "away",
+          "kickoff": "2026-09-19T16:00:00.000Z",
+          "sportsbook": "caesars",
+          "american_odds": 126,
+          "model_probability": 0.46096,
+          "market_probability": 0.42794,
+          "probability_edge": 0.03302,
+          "expected_value": 0.04177,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D3",
+          "book_count": 5,
+          "qualifies": true,
+          "flags": [],
+          "gate_reasons": []
+        }
+      ],
+      "watchlist": [
+        {
+          "rank": 1,
+          "event_id": "actionnetwork-289026",
+          "game": "Mississippi State Bulldogs at South Carolina Gamecocks",
+          "selection": "South Carolina Gamecocks",
+          "opponent": "Mississippi State Bulldogs",
+          "side": "home",
+          "kickoff": "2026-09-19T20:15:00.000Z",
+          "sportsbook": "draftkings",
+          "american_odds": -170,
+          "model_probability": 0.647715,
+          "market_probability": 0.609236,
+          "probability_edge": 0.038478,
+          "expected_value": 0.028723,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D3",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "schedule_unmatched",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "No verified schedule match",
+            "Model EV +2.9%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 2,
+          "event_id": "actionnetwork-289048",
+          "game": "Ohio Bobcats at South Alabama Jaguars",
+          "selection": "Ohio Bobcats",
+          "opponent": "South Alabama Jaguars",
+          "side": "away",
+          "kickoff": "2026-09-19T23:00:00.000Z",
+          "sportsbook": "betmgm",
+          "american_odds": 220,
+          "model_probability": 0.340357,
+          "market_probability": 0.30423,
+          "probability_edge": 0.036127,
+          "expected_value": 0.089142,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D3",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "schedule_unmatched"
+          ],
+          "gate_reasons": [
+            "No verified schedule match"
+          ]
+        },
+        {
+          "rank": 3,
+          "event_id": "actionnetwork-289100",
+          "game": "UConn Huskies at Southern Miss Golden Eagles",
+          "selection": "Southern Miss Golden Eagles",
+          "opponent": "UConn Huskies",
+          "side": "home",
+          "kickoff": "2026-09-19T23:00:00.000Z",
+          "sportsbook": "betrivers",
+          "american_odds": 138,
+          "model_probability": 0.435263,
+          "market_probability": 0.408805,
+          "probability_edge": 0.026458,
+          "expected_value": 0.035926,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D3",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "schedule_unmatched",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "No verified schedule match",
+            "Model EV +3.6%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 4,
+          "event_id": "actionnetwork-289120",
+          "game": "Purdue Boilermakers at UCLA Bruins",
+          "selection": "Purdue Boilermakers",
+          "opponent": "UCLA Bruins",
+          "side": "away",
+          "kickoff": "2026-09-20T03:00:00.000Z",
+          "sportsbook": "betmgm",
+          "american_odds": 475,
+          "model_probability": 0.193453,
+          "market_probability": 0.167873,
+          "probability_edge": 0.025581,
+          "expected_value": 0.112357,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D3",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "schedule_unmatched"
+          ],
+          "gate_reasons": [
+            "No verified schedule match"
+          ]
+        },
+        {
+          "rank": 5,
+          "event_id": "actionnetwork-289102",
+          "game": "North Dakota State Bison at Sacramento State Hornets",
+          "selection": "Sacramento State Hornets",
+          "opponent": "North Dakota State Bison",
+          "side": "home",
+          "kickoff": "2026-09-20T02:30:00.000Z",
+          "sportsbook": "betmgm",
+          "american_odds": 2200,
+          "model_probability": 0.069606,
+          "market_probability": 0.046074,
+          "probability_edge": 0.023532,
+          "expected_value": 0.600927,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D3",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "schedule_unmatched"
+          ],
+          "gate_reasons": [
+            "No verified schedule match"
+          ]
+        },
+        {
+          "rank": 6,
+          "event_id": "actionnetwork-289040",
+          "game": "Marshall Thundering Herd at Missouri State Bears",
+          "selection": "Missouri State Bears",
+          "opponent": "Marshall Thundering Herd",
+          "side": "home",
+          "kickoff": "2026-09-19T22:30:00.000Z",
+          "sportsbook": "betrivers",
+          "american_odds": 150,
+          "model_probability": 0.411487,
+          "market_probability": 0.389303,
+          "probability_edge": 0.022184,
+          "expected_value": 0.028717,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D3",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "schedule_unmatched",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "No verified schedule match",
+            "Model EV +2.9%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 7,
+          "event_id": "actionnetwork-289129",
+          "game": "East Carolina Pirates at Old Dominion Monarchs",
+          "selection": "East Carolina Pirates",
+          "opponent": "Old Dominion Monarchs",
+          "side": "away",
+          "kickoff": "2026-09-19T22:00:00.000Z",
+          "sportsbook": "betrivers",
+          "american_odds": 125,
+          "model_probability": 0.449224,
+          "market_probability": 0.42794,
+          "probability_edge": 0.021284,
+          "expected_value": 0.010754,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D3",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "schedule_unmatched",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "No verified schedule match",
+            "Model EV +1.1%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 8,
+          "event_id": "actionnetwork-289021",
+          "game": "Houston Cougars at Texas Tech Red Raiders",
+          "selection": "Texas Tech Red Raiders",
+          "opponent": "Houston Cougars",
+          "side": "home",
+          "kickoff": "2026-09-19T00:00:00.000Z",
+          "sportsbook": "caesars",
+          "american_odds": -290,
+          "model_probability": 0.737769,
+          "market_probability": 0.717454,
+          "probability_edge": 0.020316,
+          "expected_value": -0.007827,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D2",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Model EV -0.8%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 9,
+          "event_id": "actionnetwork-289091",
+          "game": "North Carolina State Wolfpack at Vanderbilt Commodores",
+          "selection": "Vanderbilt Commodores",
+          "opponent": "North Carolina State Wolfpack",
+          "side": "home",
+          "kickoff": "2026-09-19T16:45:00.000Z",
+          "sportsbook": "betrivers",
+          "american_odds": -167,
+          "model_probability": 0.624513,
+          "market_probability": 0.604789,
+          "probability_edge": 0.019724,
+          "expected_value": -0.001527,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D3",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Model EV -0.2%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 10,
+          "event_id": "actionnetwork-289097",
+          "game": "James Madison Dukes at San Diego State Aztecs",
+          "selection": "San Diego State Aztecs",
+          "opponent": "James Madison Dukes",
+          "side": "home",
+          "kickoff": "2026-09-20T02:00:00.000Z",
+          "sportsbook": "fanduel",
+          "american_odds": -128,
+          "model_probability": 0.562095,
+          "market_probability": 0.542744,
+          "probability_edge": 0.019352,
+          "expected_value": 0.001232,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D3",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "schedule_unmatched",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "No verified schedule match",
+            "Model EV +0.1%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 11,
+          "event_id": "actionnetwork-289069",
+          "game": "Coastal Carolina Chanticleers at Delaware Fightin Blue Hens",
+          "selection": "Coastal Carolina Chanticleers",
+          "opponent": "Delaware Fightin Blue Hens",
+          "side": "away",
+          "kickoff": "2026-09-19T15:30:00.000Z",
+          "sportsbook": "draftkings",
+          "american_odds": 180,
+          "model_probability": 0.365091,
+          "market_probability": 0.346619,
+          "probability_edge": 0.018472,
+          "expected_value": 0.022254,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D3",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "schedule_unmatched",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "No verified schedule match",
+            "Model EV +2.2%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 12,
+          "event_id": "actionnetwork-289093",
+          "game": "Kentucky Wildcats at Texas A&M Aggies",
+          "selection": "Texas A&M Aggies",
+          "opponent": "Kentucky Wildcats",
+          "side": "home",
+          "kickoff": "2026-09-19T19:30:00.000Z",
+          "sportsbook": "betmgm",
+          "american_odds": -800,
+          "model_probability": 0.874631,
+          "market_probability": 0.857845,
+          "probability_edge": 0.016786,
+          "expected_value": -0.01604,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D3",
+          "book_count": 4,
+          "qualifies": false,
+          "flags": [
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Model EV -1.6%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 13,
+          "event_id": "actionnetwork-289071",
+          "game": "Florida Gators at Auburn Tigers",
+          "selection": "Auburn Tigers",
+          "opponent": "Florida Gators",
+          "side": "home",
+          "kickoff": "2026-09-19T23:00:00.000Z",
+          "sportsbook": "betrivers",
+          "american_odds": 116,
+          "model_probability": 0.4627,
+          "market_probability": 0.447018,
+          "probability_edge": 0.015682,
+          "expected_value": -0.000569,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D3",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "schedule_unmatched",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "No verified schedule match",
+            "Model EV -0.1%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 14,
+          "event_id": "actionnetwork-289086",
+          "game": "BYU Cougars at Colorado State Rams",
+          "selection": "BYU Cougars",
+          "opponent": "Colorado State Rams",
+          "side": "away",
+          "kickoff": "2026-09-19T23:30:00.000Z",
+          "sportsbook": "betmgm",
+          "american_odds": -1000,
+          "model_probability": 0.894422,
+          "market_probability": 0.879121,
+          "probability_edge": 0.015301,
+          "expected_value": -0.016136,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D3",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "schedule_unmatched",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "No verified schedule match",
+            "Model EV -1.6%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 15,
+          "event_id": "actionnetwork-289124",
+          "game": "Fresno State Bulldogs at San Jose State Spartans",
+          "selection": "Fresno State Bulldogs",
+          "opponent": "San Jose State Spartans",
+          "side": "away",
+          "kickoff": "2026-09-20T03:00:00.000Z",
+          "sportsbook": "betmgm",
+          "american_odds": -250,
+          "model_probability": 0.704158,
+          "market_probability": 0.688889,
+          "probability_edge": 0.015269,
+          "expected_value": -0.014179,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D3",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "schedule_unmatched",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "No verified schedule match",
+            "Model EV -1.4%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 16,
+          "event_id": "actionnetwork-289085",
+          "game": "Miami (OH) RedHawks at Cincinnati Bearcats",
+          "selection": "Cincinnati Bearcats",
+          "opponent": "Miami (OH) RedHawks",
+          "side": "home",
+          "kickoff": "2026-09-19T19:30:00.000Z",
+          "sportsbook": "betmgm",
+          "american_odds": -650,
+          "model_probability": 0.859123,
+          "market_probability": 0.844156,
+          "probability_edge": 0.014967,
+          "expected_value": -0.008704,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D3",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "edge_below_threshold",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Probability edge +1.5%; needs +1.5%",
+            "Model EV -0.9%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 17,
+          "event_id": "actionnetwork-289045",
+          "game": "Nevada Wolf Pack at Middle Tennessee Blue Raiders",
+          "selection": "Middle Tennessee Blue Raiders",
+          "opponent": "Nevada Wolf Pack",
+          "side": "home",
+          "kickoff": "2026-09-19T23:00:00.000Z",
+          "sportsbook": "betrivers",
+          "american_odds": 155,
+          "model_probability": 0.402548,
+          "market_probability": 0.388339,
+          "probability_edge": 0.01421,
+          "expected_value": 0.026498,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D3",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "schedule_unmatched",
+            "edge_below_threshold",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "No verified schedule match",
+            "Probability edge +1.4%; needs +1.5%",
+            "Model EV +2.6%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 18,
+          "event_id": "actionnetwork-289101",
+          "game": "Tulane Green Wave at Kansas State Wildcats",
+          "selection": "Tulane Green Wave",
+          "opponent": "Kansas State Wildcats",
+          "side": "away",
+          "kickoff": "2026-09-19T16:00:00.000Z",
+          "sportsbook": "draftkings",
+          "american_odds": 1000,
+          "model_probability": 0.10383,
+          "market_probability": 0.090121,
+          "probability_edge": 0.013709,
+          "expected_value": 0.14213,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D3",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "edge_below_threshold"
+          ],
+          "gate_reasons": [
+            "Probability edge +1.4%; needs +1.5%"
+          ]
+        },
+        {
+          "rank": 19,
+          "event_id": "actionnetwork-289068",
+          "game": "LSU Tigers at Ole Miss Rebels",
+          "selection": "Ole Miss Rebels",
+          "opponent": "LSU Tigers",
+          "side": "home",
+          "kickoff": "2026-09-19T23:30:00.000Z",
+          "sportsbook": "draftkings",
+          "american_odds": 136,
+          "model_probability": 0.426485,
+          "market_probability": 0.412858,
+          "probability_edge": 0.013627,
+          "expected_value": 0.006506,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D3",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "schedule_unmatched",
+            "edge_below_threshold",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "No verified schedule match",
+            "Probability edge +1.4%; needs +1.5%",
+            "Model EV +0.7%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 20,
+          "event_id": "actionnetwork-289089",
+          "game": "Arkansas State Red Wolves at TCU Horned Frogs",
+          "selection": "TCU Horned Frogs",
+          "opponent": "Arkansas State Red Wolves",
+          "side": "home",
+          "kickoff": "2026-09-20T00:00:00.000Z",
+          "sportsbook": "betmgm",
+          "american_odds": -1200,
+          "model_probability": 0.908561,
+          "market_probability": 0.895161,
+          "probability_edge": 0.0134,
+          "expected_value": -0.015726,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D3",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "schedule_unmatched",
+            "edge_below_threshold",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "No verified schedule match",
+            "Probability edge +1.3%; needs +1.5%",
+            "Model EV -1.6%; needs +4.0%"
+          ]
+        }
+      ],
+      "price_history": [
+        {
+          "event_id": "actionnetwork-289057",
+          "side": "home",
+          "selection": "Kansas Jayhawks",
+          "snapshots": [
+            {
+              "captured_at": "2026-09-13T11:07:14Z",
+              "timing_bucket": "D6",
+              "american_odds": 172,
+              "expected_value": 0.023604,
+              "qualifies": false
+            },
+            {
+              "captured_at": "2026-09-13T14:29:47Z",
+              "timing_bucket": "D6",
+              "american_odds": 176,
+              "expected_value": 0.023479,
+              "qualifies": false
+            },
+            {
+              "captured_at": "2026-09-13T14:43:13Z",
+              "timing_bucket": "D6",
+              "american_odds": 176,
+              "expected_value": 0.023479,
+              "qualifies": false
+            },
+            {
+              "captured_at": "2026-09-13T14:52:01Z",
+              "timing_bucket": "D6",
+              "american_odds": 176,
+              "expected_value": 0.023479,
+              "qualifies": false
+            },
+            {
+              "captured_at": "2026-09-14T11:05:27Z",
+              "timing_bucket": "D5",
+              "american_odds": 185,
+              "expected_value": 0.074534,
+              "qualifies": false
+            },
+            {
+              "captured_at": "2026-09-15T11:07:34Z",
+              "timing_bucket": "D4",
+              "american_odds": 185,
+              "expected_value": 0.045584,
+              "qualifies": false
+            },
+            {
+              "captured_at": "2026-09-16T11:15:55Z",
+              "timing_bucket": "D3",
+              "american_odds": 180,
+              "expected_value": 0.057734,
+              "qualifies": false
+            }
+          ]
+        },
+        {
+          "event_id": "actionnetwork-289061",
+          "side": "away",
+          "selection": "North Texas Mean Green",
+          "snapshots": [
+            {
+              "captured_at": "2026-09-13T11:07:14Z",
+              "timing_bucket": "D6",
+              "american_odds": 114,
+              "expected_value": 0.019302,
+              "qualifies": false
+            },
+            {
+              "captured_at": "2026-09-13T14:29:47Z",
+              "timing_bucket": "D6",
+              "american_odds": 136,
+              "expected_value": 0.045482,
+              "qualifies": false
+            },
+            {
+              "captured_at": "2026-09-13T14:43:13Z",
+              "timing_bucket": "D6",
+              "american_odds": 136,
+              "expected_value": 0.045482,
+              "qualifies": false
+            },
+            {
+              "captured_at": "2026-09-13T14:52:01Z",
+              "timing_bucket": "D6",
+              "american_odds": 136,
+              "expected_value": 0.045482,
+              "qualifies": false
+            },
+            {
+              "captured_at": "2026-09-14T11:05:27Z",
+              "timing_bucket": "D5",
+              "american_odds": 140,
+              "expected_value": 0.09958,
+              "qualifies": false
+            },
+            {
+              "captured_at": "2026-09-15T11:07:34Z",
+              "timing_bucket": "D4",
+              "american_odds": 130,
+              "expected_value": 0.061949,
+              "qualifies": false
+            },
+            {
+              "captured_at": "2026-09-16T11:15:55Z",
+              "timing_bucket": "D3",
+              "american_odds": 126,
+              "expected_value": 0.04177,
+              "qualifies": false
+            }
+          ]
+        }
+      ]
     }
   },
-  "market_status": "unavailable",
-  "market_status_message": "Live market refresh unavailable. No selections are displayed; the next scheduled run will retry.",
+  "market_status": "live",
+  "market_status_message": "Live market refresh completed.",
   "research_disclaimer": "Forward paper research only; prices can move after capture."
 }
