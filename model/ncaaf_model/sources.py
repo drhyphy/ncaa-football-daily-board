@@ -205,6 +205,45 @@ class DataClient:
                 atomic_write_json(metadata_path, metadata)
         return paths
 
+    def _espn_schedule_frames(self, start: date, end: date, group: int) -> list[pd.DataFrame]:
+        """Fall back to bounded daily queries when ESPN rejects a date range."""
+        if end < start:
+            raise ValueError("ESPN schedule window ends before it starts")
+        archive_dir = self.settings.raw_dir / "espn_scoreboard"
+        stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+
+        def fetch(first: date, last: date) -> requests.Response:
+            dates = f"{first:%Y%m%d}" if first == last else f"{first:%Y%m%d}-{last:%Y%m%d}"
+            return self.session.get(
+                ESPN_SCOREBOARD_URL,
+                params={"dates": dates, "limit": 1000, "groups": group},
+                headers={"User-Agent": "curl/8.7.1", "Accept": "application/json,text/plain,*/*"},
+                timeout=self.timeout,
+            )
+
+        def archive(response: requests.Response, first: date, last: date) -> pd.DataFrame:
+            response.raise_for_status()
+            content = response.content
+            raw_path = archive_dir / f"scoreboard_g{group}_{first:%Y%m%d}_{last:%Y%m%d}_{stamp}.json"
+            atomic_write_bytes(raw_path, content)
+            atomic_write_json(raw_path.with_suffix(".meta.json"), {
+                "source_url": response.url,
+                "retrieved_at": utc_now(),
+                "sha256": sha256_bytes(content),
+                "group": group,
+            })
+            return parse_espn_scoreboard(response.json())
+
+        response = fetch(start, end)
+        if response.status_code == 400 and start < end:
+            frames = []
+            for offset in range((end - start).days + 1):
+                day = start + timedelta(days=offset)
+                frames.append(archive(fetch(day, day), day, day))
+        else:
+            frames = [archive(response, start, end)]
+        return [frame for frame in frames if not frame.empty]
+
     def ensure_schedule_for_odds(self, odds_path: Path) -> dict[str, int]:
         """Supplement partial release assets with ESPN rows for unmatched odds weeks."""
         payload = load_json(odds_path)
@@ -217,42 +256,9 @@ class DataClient:
             if pd.notna(kickoff):
                 windows.add(_week_window(kickoff.date()))
         incoming_frames: list[pd.DataFrame] = []
-        archive_dir = self.settings.raw_dir / "espn_scoreboard"
-        archive_dir.mkdir(parents=True, exist_ok=True)
-        stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
         for start, end in sorted(windows):
             for group in (80, 81):
-                response = self.session.get(
-                    ESPN_SCOREBOARD_URL,
-                    params={
-                        "dates": f"{start:%Y%m%d}-{end:%Y%m%d}",
-                        "limit": 1000,
-                        "groups": group,
-                    },
-                    headers={
-                        # ESPN's edge currently rejects the project-level UA while
-                        # serving the same public JSON to standard HTTP clients.
-                        "User-Agent": "curl/8.7.1",
-                        "Accept": "application/json,text/plain,*/*",
-                    },
-                    timeout=self.timeout,
-                )
-                response.raise_for_status()
-                content = response.content
-                raw_path = archive_dir / f"scoreboard_g{group}_{start:%Y%m%d}_{end:%Y%m%d}_{stamp}.json"
-                atomic_write_bytes(raw_path, content)
-                atomic_write_json(
-                    raw_path.with_suffix(".meta.json"),
-                    {
-                        "source_url": response.url,
-                        "retrieved_at": utc_now(),
-                        "sha256": sha256_bytes(content),
-                        "group": group,
-                    },
-                )
-                frame = parse_espn_scoreboard(response.json())
-                if not frame.empty:
-                    incoming_frames.append(frame)
+                incoming_frames.extend(self._espn_schedule_frames(start, end, group))
         if incoming_frames:
             incoming = pd.concat(incoming_frames, ignore_index=True).drop_duplicates("game_id", keep="last")
             schedule = merge_schedule_frames(schedule, incoming)
@@ -271,32 +277,8 @@ class DataClient:
         schedule_path = self.settings.raw_dir / "sportsdataverse" / f"cfb_schedule_{self.settings.season}.parquet"
         schedule = pd.read_parquet(schedule_path) if schedule_path.exists() else pd.DataFrame()
         incoming_frames: list[pd.DataFrame] = []
-        archive_dir = self.settings.raw_dir / "espn_scoreboard"
-        archive_dir.mkdir(parents=True, exist_ok=True)
-        stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
         for group in (80, 81):
-            response = self.session.get(
-                ESPN_SCOREBOARD_URL,
-                params={"dates": f"{start:%Y%m%d}-{end:%Y%m%d}", "limit": 1000, "groups": group},
-                headers={"User-Agent": "curl/8.7.1", "Accept": "application/json,text/plain,*/*"},
-                timeout=self.timeout,
-            )
-            response.raise_for_status()
-            content = response.content
-            raw_path = archive_dir / f"scoreboard_g{group}_{start:%Y%m%d}_{end:%Y%m%d}_{stamp}.json"
-            atomic_write_bytes(raw_path, content)
-            atomic_write_json(
-                raw_path.with_suffix(".meta.json"),
-                {
-                    "source_url": response.url,
-                    "retrieved_at": utc_now(),
-                    "sha256": sha256_bytes(content),
-                    "group": group,
-                },
-            )
-            frame = parse_espn_scoreboard(response.json())
-            if not frame.empty:
-                incoming_frames.append(frame)
+            incoming_frames.extend(self._espn_schedule_frames(start, end, group))
         incoming_rows = 0
         if incoming_frames:
             incoming = pd.concat(incoming_frames, ignore_index=True).drop_duplicates("game_id", keep="last")

@@ -102,8 +102,8 @@ jobs:
             git push
           fi
 
-      - name: Fail the run when all live odds sources were unavailable
+      - name: Fail the run when the model refresh failed
         if: always() && steps.validate.outcome == 'success' && steps.refresh.outcome != 'success'
         run: |
-          echo "The board was published with market-status=unavailable, but live odds ingestion failed." >&2
+          echo "The model refresh failed; the board is marked unavailable. Inspect the refresh step for the cause." >&2
           exit 1
