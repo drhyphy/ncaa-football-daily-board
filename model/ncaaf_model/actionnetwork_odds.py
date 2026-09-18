@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from datetime import datetime, timezone
+from time import sleep
 from typing import Any
 
 import requests
@@ -15,6 +16,24 @@ ACTION_NETWORK_BOOK_ALIASES = {
     "caesars": {"caesars", "williamhill", "willhill"},
     "fanatics": {"fanatics"},
 }
+
+
+def _get_with_retry(session: requests.Session, url: str, **kwargs: Any) -> requests.Response:
+    """Retry transient public-feed failures, with at most three GET attempts."""
+    for attempt in range(3):
+        try:
+            response = session.get(url, **kwargs)
+            response.raise_for_status()
+            return response
+        except requests.HTTPError as error:
+            status = getattr(error.response, "status_code", None)
+            if status not in {500, 502, 503, 504} or attempt == 2:
+                raise
+        except (requests.Timeout, requests.ConnectionError):
+            if attempt == 2:
+                raise
+        sleep(2 ** (attempt + 1))
+    raise RuntimeError("Action Network retry budget exhausted")  # Defensive; failures raise above.
 
 
 def _token(value: Any) -> str:
@@ -179,18 +198,17 @@ def fetch_actionnetwork_odds(
         "Accept": "application/json,text/plain,*/*",
     }
     root = base_url.rstrip("/")
-    books_response = session.get(f"{root}/v1/books", headers=headers, timeout=timeout)
-    books_response.raise_for_status()
+    books_response = _get_with_retry(session, f"{root}/v1/books", headers=headers, timeout=timeout)
     books = _bookmakers(books_response.json(), allowed_books, state)
     if not books:
         raise RuntimeError("Action Network returned no allowed in-state sportsbooks")
-    scoreboard = session.get(
+    scoreboard = _get_with_retry(
+        session,
         f"{root}/v2/scoreboard/ncaaf",
         params={"bookIds": ",".join(str(book_id) for book_id in sorted(books))},
         headers=headers,
         timeout=timeout,
     )
-    scoreboard.raise_for_status()
     events = parse_scoreboard(scoreboard.json(), books)
     if not events:
         raise RuntimeError("Action Network returned no usable pregame NCAAF odds")
