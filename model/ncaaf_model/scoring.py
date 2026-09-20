@@ -3,7 +3,7 @@ from __future__ import annotations
 import hashlib
 import json
 import math
-from datetime import datetime, timezone
+from datetime import date, datetime, time, timedelta, timezone
 from pathlib import Path
 from statistics import median
 from typing import Any
@@ -381,10 +381,31 @@ def render_latest(scored: pd.DataFrame, snapshot_time: str, artifact: dict[str, 
     return "\n".join(lines)
 
 
-def run_snapshot(settings: Settings, odds_path: Path) -> dict[str, Any]:
+def evening_bounds(evening_date: str) -> tuple[pd.Timestamp, pd.Timestamp]:
+    """Use local dates, not UTC dates, for the inclusive 8 PM evening cutoff."""
+    day = date.fromisoformat(evening_date)
+    return (
+        pd.Timestamp(datetime.combine(day, time(20), tzinfo=EASTERN)),
+        pd.Timestamp(datetime.combine(day + timedelta(days=1), time(), tzinfo=EASTERN)),
+    )
+
+
+def filter_evening_odds(odds: pd.DataFrame, evening_date: str) -> pd.DataFrame:
+    start, end = evening_bounds(evening_date)
+    if odds.empty:
+        return odds.copy()
+    kickoffs = pd.to_datetime(odds["commence_time"], utc=True, format="ISO8601", errors="coerce")
+    return odds.loc[kickoffs.ge(start) & kickoffs.lt(end)].copy()
+
+
+def run_snapshot(settings: Settings, odds_path: Path, evening_date: str | None = None) -> dict[str, Any]:
     artifact = json.loads((settings.models_dir / "market_residual_latest.json").read_text(encoding="utf-8"))
     payload = json.loads(odds_path.read_text(encoding="utf-8"))
     odds = normalize_current_odds(payload, settings.allowed_books)
+    if evening_date:
+        odds = filter_evening_odds(odds, evening_date)
+        if odds.empty:
+            raise RuntimeError("No current moneyline quotes in the requested Eastern evening window")
     schedule = pd.read_parquet(settings.raw_dir / "sportsdataverse" / f"cfb_schedule_{settings.season}.parquet")
     power = pd.read_parquet(settings.raw_dir / "sportsdataverse" / f"power_index_{settings.season}.parquet")
     ratings = pd.read_csv(settings.raw_dir / "cfbtxt" / f"ratings_preseason_{settings.season}.csv")
@@ -392,12 +413,16 @@ def run_snapshot(settings: Settings, odds_path: Path) -> dict[str, Any]:
     games = attach_ratings(games, ratings, settings.home_field_points, artifact["market_win_model"])
     snapshot_time = utc_now()
     scored = score_candidates(games, artifact, settings, snapshot_time)
+    if evening_date:
+        scored["evening_date"] = evening_date
     stamp = snapshot_time.replace(":", "").replace("-", "")
     settings.snapshots_dir.mkdir(parents=True, exist_ok=True)
     scored.to_parquet(settings.snapshots_dir / f"predictions_{stamp}.parquet", index=False)
     atomic_write_json(settings.snapshots_dir / f"predictions_{stamp}.json", scored.to_dict(orient="records"))
     append_csv(settings.ledger_dir / "predictions.csv", scored, dedupe_key="prediction_id")
     report = render_latest(scored, snapshot_time, artifact)
+    if evening_date:
+        report += f"\n\nScope: {evening_date}, 8:00 PM to midnight America/New_York; pregame selections only.\n"
     atomic_write_bytes(settings.reports_dir / "latest.md", (report + "\n").encode())
     return {
         "snapshot_time": snapshot_time,

@@ -11,6 +11,7 @@ from zoneinfo import ZoneInfo
 
 import pandas as pd
 import requests
+from ncaaf_model.scoring import evening_bounds
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -205,6 +206,14 @@ def build_payload(
         raise ValueError("market_status must be 'live' or 'unavailable'")
     snapshot_path = snapshot_path or _latest_snapshot()
     rows = pd.DataFrame(json.loads(snapshot_path.read_text(encoding="utf-8")))
+    evening_date = rows.iloc[0].get("evening_date") if not rows.empty else None
+    kickoff_window = None
+    if isinstance(evening_date, str) and evening_date:
+        start, end = evening_bounds(evening_date)
+        kickoffs = pd.to_datetime(rows["commence_time"], utc=True, format="ISO8601")
+        if not (kickoffs.ge(start) & kickoffs.lt(end)).all():
+            raise RuntimeError("Publication rejected: snapshot contains games outside the requested evening window")
+        kickoff_window = {"start_inclusive": start.isoformat(), "end_exclusive": end.isoformat()}
     primary = rows.loc[rows["candidate"].eq(PRIMARY)].copy()
     if primary.empty:
         raise RuntimeError("the latest snapshot has no leading-model rows")
@@ -241,7 +250,8 @@ def build_payload(
         "schema_version": 2,
         "generated_at": generated,
         "slate_date": slate_date,
-        "run_label": generated_dt.strftime("%b %-d · %-I:%M %p ET"),
+        "run_label": generated_dt.strftime("%b %-d · %-I:%M %p ET") + (" · 8 PM+ games" if kickoff_window else ""),
+        "kickoff_window": kickoff_window,
         "model_version": str(primary.iloc[0].get("model_artifact_version", artifact.get("artifact_version"))),
         "week": week,
         "scanned_games": int(primary["event_id"].nunique()),

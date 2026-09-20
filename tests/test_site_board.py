@@ -71,3 +71,30 @@ def test_publication_rejects_stale_snapshot_and_uses_eastern_date():
         with pytest.raises(RuntimeError, match="not generated today"):
             MODULE.require_today({"generated_at": stamp}, now)
     MODULE.require_today({"generated_at": "2026-09-14T10:35:00Z"}, now)
+
+
+def test_evening_snapshot_is_labeled_and_out_of_window_games_are_rejected(tmp_path):
+    import json
+    import pytest
+
+    rows = json.loads(MODULE._latest_snapshot().read_text())
+    for row in rows:
+        row["evening_date"] = "2026-09-19"
+        row["snapshot_time"] = "2026-09-19T23:30:00Z"
+        row["commence_time"] = "2026-09-20T02:00:00Z"
+    snapshot = tmp_path / "evening.json"
+    snapshot.write_text(json.dumps(rows))
+    payload = MODULE.build_payload(snapshot)
+    assert payload["run_label"].endswith("8 PM+ games")
+    assert payload["slate_date"] == "2026-09-19"
+    assert payload["kickoff_window"] == {
+        "start_inclusive": "2026-09-19T20:00:00-04:00",
+        "end_exclusive": "2026-09-20T00:00:00-04:00",
+    }
+    for model in payload["models"].values():
+        assert all(bet["kickoff"] == "2026-09-20T02:00:00Z"
+                   for bet in model["qualified_bets"] + model["watchlist"])
+    rows[0]["commence_time"] = "2026-09-20T04:00:00Z"
+    snapshot.write_text(json.dumps(rows))
+    with pytest.raises(RuntimeError, match="outside the requested evening window"):
+        MODULE.build_payload(snapshot)

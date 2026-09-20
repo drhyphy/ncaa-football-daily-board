@@ -60,6 +60,7 @@ def main() -> None:
     sub.add_parser("timing-report", help="Compare calibration, CLV, and ROI by daily entry horizon")
     daily_parser = sub.add_parser("run-daily", help="Refresh current public data, score odds, then grade")
     daily_parser.add_argument("--refit", action="store_true", help="Re-download history and refit the model artifact")
+    daily_parser.add_argument("--evening-date", help="Only score kickoffs on this Eastern date at 8 PM or later (YYYY-MM-DD)")
     totals_bootstrap_parser = sub.add_parser("totals-bootstrap", help="Download score, drive, and closing-total history")
     totals_bootstrap_parser.add_argument("--refresh", action="store_true")
     sub.add_parser("totals-backtest", help="Run walk-forward totals backtest and fit the live ensemble")
@@ -126,7 +127,7 @@ def main() -> None:
             client.ratings(settings.season, refresh=True)
         odds_path, quota = client.current_odds(refresh=True)
         schedule_refresh = client.ensure_schedule_for_odds(odds_path)
-        result = run_snapshot(settings, odds_path)
+        result = run_snapshot(settings, odds_path, evening_date=args.evening_date)
         result["grade"] = grade_ledger(settings)
         result["timing"] = run_timing_report(settings)
         result["schedule_refresh"] = schedule_refresh

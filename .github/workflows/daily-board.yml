@@ -17,6 +17,10 @@ on:
         description: Optional board label
         required: false
         default: manual
+      evening_date:
+        description: "Optional Eastern date (YYYY-MM-DD): only kickoffs from 8 PM through midnight"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -76,8 +80,15 @@ jobs:
         continue-on-error: true
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          EVENING_DATE: ${{ inputs.evening_date }}
         working-directory: model
-        run: python -m ncaaf_model.cli run-daily
+        shell: bash
+        run: |
+          args=()
+          if [ -n "$EVENING_DATE" ]; then
+            args+=(--evening-date "$EVENING_DATE")
+          fi
+          python -m ncaaf_model.cli run-daily "${args[@]}"
 
       - name: Publish today's board
         if: always() && steps.validate.outcome == 'success'

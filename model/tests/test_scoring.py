@@ -1,7 +1,7 @@
 import pandas as pd
 
 from ncaaf_model.config import load_settings
-from ncaaf_model.scoring import score_candidates
+from ncaaf_model.scoring import evening_bounds, filter_evening_odds, score_candidates
 
 
 def test_only_recommended_candidate_can_be_paper_eligible() -> None:
@@ -35,3 +35,18 @@ def test_only_recommended_candidate_can_be_paper_eligible() -> None:
     assert scored.loc[scored["paper_bet"], "candidate"].unique().tolist() == ["market_fpi_residual"]
     assert not scored.loc[scored["candidate"].eq("market_public_ensemble"), "paper_bet"].any()
 
+
+def test_evening_filter_includes_8pm_excludes_midnight_and_future_dates():
+    odds = pd.DataFrame({"event_id": ["early", "8pm", "late", "midnight", "nextweek", "bad"],
+                         "commence_time": ["2026-09-19T23:59:59Z", "2026-09-20T00:00:00Z",
+                                           "2026-09-20T03:59:59Z", "2026-09-20T04:00:00Z",
+                                           "2026-09-27T00:00:00Z", "invalid"]})
+    result = filter_evening_odds(odds, "2026-09-19")
+    assert result["event_id"].tolist() == ["8pm", "late"]
+    assert len(odds) == 6
+
+
+def test_evening_window_uses_eastern_standard_time_in_winter():
+    start, end = evening_bounds("2026-11-07")
+    assert start.tz_convert("UTC").isoformat() == "2026-11-08T01:00:00+00:00"
+    assert end.tz_convert("UTC").isoformat() == "2026-11-08T05:00:00+00:00"
