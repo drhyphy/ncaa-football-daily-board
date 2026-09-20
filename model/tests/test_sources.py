@@ -98,6 +98,7 @@ def test_espn_range_rejection_falls_back_for_both_divisions(tmp_path, monkeypatc
     }
 
     def get(url, *, params, **kwargs):
+        assert params["limit"] == 250  # 1000 silently truncates ESPN's response.
         calls.append((params["groups"], params["dates"]))
         if "-" in params["dates"]:
             return _response(400, params)

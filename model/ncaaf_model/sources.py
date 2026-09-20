@@ -216,7 +216,9 @@ class DataClient:
             dates = f"{first:%Y%m%d}" if first == last else f"{first:%Y%m%d}-{last:%Y%m%d}"
             return self.session.get(
                 ESPN_SCOREBOARD_URL,
-                params={"dates": dates, "limit": 1000, "groups": group},
+                # Oversized limits can silently fall back to ESPN's 25-game
+                # page, truncating late kickoffs. 250 covers the daily slate.
+                params={"dates": dates, "limit": 250, "groups": group},
                 headers={"User-Agent": "curl/8.7.1", "Accept": "application/json,text/plain,*/*"},
                 timeout=self.timeout,
             )
