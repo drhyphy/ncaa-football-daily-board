@@ -1,50 +1,49 @@
 # NCAA football moneyline research card
 
-Snapshot: 2026-09-30T10:37:11Z
+Snapshot: 2026-10-01T10:36:45Z
 
 Status: forward paper research only. Historical moneyline ROI has not been validated.
 
 Leading specification: 75% of fitted FPI residual (alpha 21.0% in weeks 0–4; 29.2% in weeks 5+).
 
-Qualified paper bets: 10
+Qualified paper bets: 9
 
 | Game | Selection | Best price | Model | Market | EV | Stake |
 |---|---:|---:|---:|---:|---:|---:|
-| Cincinnati Bearcats at Arizona Wildcats | Cincinnati Bearcats | +235 (caesars) | 32.8% | 28.7% | 9.9% | 0.42% |
-| Baylor Bears at Arizona State Sun Devils | Baylor Bears | +160 (betrivers) | 42.0% | 37.9% | 9.3% | 0.50% |
-| Pittsburgh Panthers at Virginia Tech Hokies | Pittsburgh Panthers | +140 (fanduel) | 45.0% | 39.8% | 8.0% | 0.50% |
-| Michigan State Spartans at Wisconsin Badgers | Michigan State Spartans | +320 (betmgm) | 25.6% | 22.9% | 7.4% | 0.23% |
-| Fresno State Bulldogs at Washington State Cougars | Fresno State Bulldogs | +109 (caesars) | 51.2% | 46.8% | 7.0% | 0.50% |
-| UCF Knights at Houston Cougars | UCF Knights | +360 (betmgm) | 23.1% | 21.3% | 6.2% | 0.17% |
-| Ohio Bobcats at Kent State Golden Flashes | Ohio Bobcats | -157 (betrivers) | 64.8% | 59.1% | 6.1% | 0.50% |
-| Texas State Bobcats at San Diego State Aztecs | San Diego State Aztecs | +160 (draftkings) | 40.4% | 37.4% | 5.1% | 0.32% |
-| Oregon State Beavers at Colorado State Rams | Colorado State Rams | +205 (fanduel) | 34.3% | 32.5% | 4.6% | 0.23% |
-| Eastern Michigan Eagles at UMass Minutemen | UMass Minutemen | -230 (caesars) | 72.6% | 67.4% | 4.2% | 0.50% |
+| Texas State Bobcats at San Diego State Aztecs | San Diego State Aztecs | +235 (betrivers) | 34.6% | 29.7% | 16.1% | 0.50% |
+| Cincinnati Bearcats at Arizona Wildcats | Cincinnati Bearcats | +220 (betrivers) | 34.6% | 31.1% | 10.8% | 0.49% |
+| UCF Knights at Houston Cougars | UCF Knights | +385 (fanduel) | 22.8% | 21.0% | 10.8% | 0.28% |
+| Pittsburgh Panthers at Virginia Tech Hokies | Pittsburgh Panthers | +143 (betonlineag) | 45.6% | 40.6% | 10.7% | 0.50% |
+| Michigan State Spartans at Wisconsin Badgers | Michigan State Spartans | +320 (draftkings) | 26.1% | 23.7% | 9.8% | 0.31% |
+| Fresno State Bulldogs at Washington State Cougars | Fresno State Bulldogs | +108 (betrivers) | 52.0% | 47.8% | 8.1% | 0.50% |
+| Baylor Bears at Arizona State Sun Devils | Baylor Bears | +157 (betonlineag) | 41.9% | 37.8% | 7.7% | 0.49% |
+| Ohio Bobcats at Kent State Golden Flashes | Ohio Bobcats | -160 (lowvig) | 65.2% | 59.6% | 5.9% | 0.50% |
+| Liberty Flames at Delaware Blue Hens | Delaware Blue Hens | +250 (bovada) | 29.8% | 27.9% | 4.3% | 0.17% |
 
 ## Highest model-vs-market disagreements
 
 | Game | Side | Model | Market | Edge | EV | Eligible | Flags |
 |---|---:|---:|---:|---:|---:|---:|---|
-| Ohio Bobcats at Kent State Golden Flashes | Ohio Bobcats | 64.8% | 59.1% | 5.7% | 6.1% | yes | — |
-| Eastern Michigan Eagles at UMass Minutemen | UMass Minutemen | 72.6% | 67.4% | 5.2% | 4.2% | yes | — |
-| Pittsburgh Panthers at Virginia Tech Hokies | Pittsburgh Panthers | 45.0% | 39.8% | 5.2% | 8.0% | yes | — |
-| Fresno State Bulldogs at Washington State Cougars | Fresno State Bulldogs | 51.2% | 46.8% | 4.4% | 7.0% | yes | — |
-| Baylor Bears at Arizona State Sun Devils | Baylor Bears | 42.0% | 37.9% | 4.1% | 9.3% | yes | — |
-| Cincinnati Bearcats at Arizona Wildcats | Cincinnati Bearcats | 32.8% | 28.7% | 4.1% | 9.9% | yes | — |
-| Old Dominion Monarchs at Georgia State Panthers | Georgia State Panthers | 56.7% | 53.1% | 3.5% | 3.5% | no | ev_below_threshold |
-| Maryland Terrapins at Nebraska Cornhuskers | Nebraska Cornhuskers | 86.9% | 83.5% | 3.4% | 0.3% | no | ev_below_threshold |
-| North Texas Mean Green at Tulsa Golden Hurricane | North Texas Mean Green | 51.7% | 48.6% | 3.1% | 3.4% | no | ev_below_threshold |
-| Michigan Wolverines at Minnesota Golden Gophers | Michigan Wolverines | 68.9% | 65.8% | 3.1% | 0.9% | no | ev_below_threshold |
-| Texas State Bobcats at San Diego State Aztecs | San Diego State Aztecs | 40.4% | 37.4% | 3.0% | 5.1% | yes | — |
-| San Jose State Spartans at Hawai'i Warriors | Hawai'i Warriors | 59.4% | 56.5% | 2.9% | 1.3% | no | ev_below_threshold |
-| Michigan State Spartans at Wisconsin Badgers | Michigan State Spartans | 25.6% | 22.9% | 2.6% | 7.4% | yes | — |
-| Washington Huskies at USC Trojans | USC Trojans | 78.3% | 75.7% | 2.6% | 0.1% | no | ev_below_threshold |
-| UL-Monroe Warhawks at South Alabama Jaguars | South Alabama Jaguars | 85.1% | 82.6% | 2.6% | -0.7% | no | ev_below_threshold |
-| Alabama Crimson Tide at Mississippi State Bulldogs | Alabama Crimson Tide | 68.8% | 66.4% | 2.4% | -0.7% | no | ev_below_threshold |
-| Stanford Cardinal at Wake Forest Demon Deacons | Wake Forest Demon Deacons | 83.2% | 80.8% | 2.4% | -0.8% | no | ev_below_threshold |
-| Arkansas State Red Wolves at Louisiana Ragin' Cajuns | Louisiana Ragin' Cajuns | 70.7% | 68.5% | 2.1% | 0.1% | no | ev_below_threshold |
-| Texas Tech Red Raiders at Colorado Buffaloes | Texas Tech Red Raiders | 82.8% | 80.8% | 2.0% | -0.2% | no | ev_below_threshold |
-| Bowling Green Falcons at Miami (OH) RedHawks | Miami (OH) RedHawks | 83.5% | 81.6% | 1.9% | -1.3% | no | ev_below_threshold |
+| Ohio Bobcats at Kent State Golden Flashes | Ohio Bobcats | 65.2% | 59.6% | 5.5% | 5.9% | yes | — |
+| Eastern Michigan Eagles at UMass Minutemen | UMass Minutemen | 72.6% | 67.4% | 5.2% | 3.5% | no | ev_below_threshold |
+| Pittsburgh Panthers at Virginia Tech Hokies | Pittsburgh Panthers | 45.6% | 40.6% | 5.0% | 10.7% | yes | — |
+| Texas State Bobcats at San Diego State Aztecs | San Diego State Aztecs | 34.6% | 29.7% | 4.9% | 16.1% | yes | — |
+| Iowa Hawkeyes at Washington Huskies | Iowa Hawkeyes | 53.2% | 48.3% | 4.9% | 5.3% | no | too_few_books |
+| USC Trojans at Penn State Nittany Lions | Penn State Nittany Lions | 55.4% | 51.1% | 4.3% | 3.5% | no | too_few_books|ev_below_threshold |
+| Baylor Bears at Arizona State Sun Devils | Baylor Bears | 41.9% | 37.8% | 4.2% | 7.7% | yes | — |
+| Fresno State Bulldogs at Washington State Cougars | Fresno State Bulldogs | 52.0% | 47.8% | 4.1% | 8.1% | yes | — |
+| Cincinnati Bearcats at Arizona Wildcats | Cincinnati Bearcats | 34.6% | 31.1% | 3.5% | 10.8% | yes | — |
+| Maryland Terrapins at Nebraska Cornhuskers | Nebraska Cornhuskers | 87.0% | 83.7% | 3.3% | 0.4% | no | ev_below_threshold |
+| Texas A&M Aggies at Missouri Tigers | Texas A&M Aggies | 51.5% | 48.3% | 3.2% | 2.0% | no | too_few_books|ev_below_threshold |
+| Michigan Wolverines at Minnesota Golden Gophers | Michigan Wolverines | 68.7% | 65.6% | 3.1% | 1.2% | no | ev_below_threshold |
+| Old Dominion Monarchs at Georgia State Panthers | Georgia State Panthers | 58.1% | 55.1% | 2.9% | 3.4% | no | ev_below_threshold |
+| San Jose State Spartans at Hawaii Rainbow Warriors | Hawaii Rainbow Warriors | 59.6% | 56.8% | 2.8% | 1.6% | no | ev_below_threshold |
+| Southern Mississippi Golden Eagles at Troy Trojans | Southern Mississippi Golden Eagles | 27.3% | 24.6% | 2.7% | 12.0% | no | too_few_books |
+| North Texas Mean Green at Tulsa Golden Hurricane | North Texas Mean Green | 53.0% | 50.4% | 2.6% | 1.6% | no | ev_below_threshold |
+| UL Monroe Warhawks at South Alabama Jaguars | South Alabama Jaguars | 85.1% | 82.6% | 2.6% | -0.4% | no | ev_below_threshold |
+| Washington Huskies at USC Trojans | USC Trojans | 78.5% | 75.9% | 2.6% | -0.6% | no | ev_below_threshold |
+| Texas Tech Red Raiders at Colorado Buffaloes | Texas Tech Red Raiders | 81.9% | 79.4% | 2.5% | -0.9% | no | ev_below_threshold |
+| Michigan State Spartans at Wisconsin Badgers | Michigan State Spartans | 26.1% | 23.7% | 2.5% | 9.8% | yes | — |
 
 Challengers (`market_public_ensemble`, `fpi_only`, `ratings_only`, `market_only`) are stored in the ledger but cannot trigger paper bets.
 
