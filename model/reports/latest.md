@@ -1,46 +1,44 @@
 # NCAA football moneyline research card
 
-Snapshot: 2026-10-10T10:36:32Z
+Snapshot: 2026-10-11T10:38:22Z
 
 Status: forward paper research only. Historical moneyline ROI has not been validated.
 
 Leading specification: 75% of fitted FPI residual (alpha 21.0% in weeks 0–4; 29.2% in weeks 5+).
 
-Qualified paper bets: 6
+Qualified paper bets: 4
 
 | Game | Selection | Best price | Model | Market | EV | Stake |
 |---|---:|---:|---:|---:|---:|---:|
-| UCF Knights at Oklahoma State Cowboys | UCF Knights | +350 (draftkings) | 26.2% | 22.2% | 17.9% | 0.50% |
-| San Diego State Aztecs at Oregon State Beavers | San Diego State Aztecs | +580 (fanduel) | 16.6% | 14.8% | 12.6% | 0.22% |
-| Coastal Carolina Chanticleers at Marshall Thundering Herd | Coastal Carolina Chanticleers | +170 (betrivers) | 41.4% | 37.8% | 11.8% | 0.50% |
-| North Dakota State Bison at UNLV Rebels | UNLV Rebels | +135 (betmgm) | 46.8% | 44.4% | 9.9% | 0.50% |
-| South Carolina Gamecocks at Florida Gators | South Carolina Gamecocks | +370 (caesars) | 22.5% | 20.8% | 5.8% | 0.16% |
-| Texas A&M Aggies at Missouri Tigers | Texas A&M Aggies | +150 (draftkings) | 41.7% | 39.4% | 4.2% | 0.28% |
+| Penn State Nittany Lions at Michigan Wolverines | Penn State Nittany Lions | +205 (fanduel) | 37.7% | 33.3% | 15.1% | 0.50% |
+| Notre Dame Fighting Irish at BYU Cougars | BYU Cougars | +410 (betrivers) | 21.1% | 19.6% | 7.5% | 0.18% |
+| Missouri Tigers at Ole Miss Rebels | Missouri Tigers | +188 (fanduel) | 36.9% | 33.3% | 6.2% | 0.33% |
+| Kansas Jayhawks at Kansas State Wildcats | Kansas Jayhawks | +260 (draftkings) | 28.9% | 27.1% | 4.0% | 0.16% |
 
 ## Highest model-vs-market disagreements
 
 | Game | Side | Model | Market | Edge | EV | Eligible | Flags |
 |---|---:|---:|---:|---:|---:|---:|---|
-| Texas Longhorns at Oklahoma Sooners | Texas Longhorns | 76.8% | 72.6% | 4.2% | 2.3% | no | ev_below_threshold |
-| North Carolina Tar Heels at Pittsburgh Panthers | Pittsburgh Panthers | 65.7% | 61.7% | 4.0% | 3.3% | no | ev_below_threshold |
-| UCF Knights at Oklahoma State Cowboys | UCF Knights | 26.2% | 22.2% | 4.0% | 17.9% | yes | — |
-| Coastal Carolina Chanticleers at Marshall Thundering Herd | Coastal Carolina Chanticleers | 41.4% | 37.8% | 3.7% | 11.8% | yes | — |
-| Miami (OH) RedHawks at UMass Minutemen | UMass Minutemen | 39.9% | 36.3% | 3.6% | 9.6% | no | market_dispersion_high |
-| UAB Blazers at Memphis Tigers | Memphis Tigers | 85.9% | 82.7% | 3.2% | 0.3% | no | ev_below_threshold |
-| Kent State Golden Flashes at Western Michigan Broncos | Western Michigan Broncos | 85.4% | 82.6% | 2.8% | -0.4% | no | ev_below_threshold |
-| Central Michigan Chippewas at Ohio Bobcats | Ohio Bobcats | 56.8% | 54.2% | 2.6% | 0.5% | no | ev_below_threshold |
-| USC Trojans at Penn State Nittany Lions | Penn State Nittany Lions | 55.8% | 53.1% | 2.6% | 2.2% | no | ev_below_threshold |
-| UCLA Bruins at Oregon Ducks | Oregon Ducks | 79.8% | 77.3% | 2.4% | -0.8% | no | ev_below_threshold |
-| North Dakota State Bison at UNLV Rebels | UNLV Rebels | 46.8% | 44.4% | 2.4% | 9.9% | yes | — |
-| Texas A&M Aggies at Missouri Tigers | Texas A&M Aggies | 41.7% | 39.4% | 2.3% | 4.2% | yes | — |
-| Nevada Wolf Pack at UTEP Miners | Nevada Wolf Pack | 78.0% | 75.7% | 2.2% | 0.2% | no | ev_below_threshold |
-| James Madison Dukes at Georgia Southern Eagles | James Madison Dukes | 74.6% | 72.4% | 2.2% | 0.8% | no | ev_below_threshold |
-| Rice Owls at East Carolina Pirates | East Carolina Pirates | 78.1% | 75.9% | 2.1% | -1.1% | no | ev_below_threshold |
-| Wake Forest Demon Deacons at North Carolina State Wolfpack | Wake Forest Demon Deacons | 62.4% | 60.4% | 2.1% | 1.0% | no | ev_below_threshold |
-| Tennessee Volunteers at Arkansas Razorbacks | Tennessee Volunteers | 82.9% | 80.9% | 1.9% | -1.4% | no | ev_below_threshold |
-| Sacramento State Hornets at Bowling Green Falcons | Bowling Green Falcons | 75.1% | 73.2% | 1.9% | 0.1% | no | ev_below_threshold |
-| San Diego State Aztecs at Oregon State Beavers | San Diego State Aztecs | 16.6% | 14.8% | 1.7% | 12.6% | yes | — |
-| South Carolina Gamecocks at Florida Gators | South Carolina Gamecocks | 22.5% | 20.8% | 1.7% | 5.8% | yes | — |
+| Pittsburgh Panthers at Boston College Eagles | Pittsburgh Panthers | 75.4% | 69.7% | 5.7% | 3.9% | no | too_few_books|ev_below_threshold |
+| Arizona State Sun Devils at Texas Tech Red Raiders | Texas Tech Red Raiders | 85.6% | 80.3% | 5.3% | 2.0% | no | too_few_books|ev_below_threshold |
+| Penn State Nittany Lions at Michigan Wolverines | Penn State Nittany Lions | 37.7% | 33.3% | 4.4% | 15.1% | yes | — |
+| Florida Gators at Texas Longhorns | Texas Longhorns | 78.8% | 74.8% | 4.0% | 1.6% | no | ev_below_threshold |
+| Oklahoma State Cowboys at Houston Cougars | Houston Cougars | 64.0% | 60.4% | 3.7% | 3.1% | no | ev_below_threshold |
+| Missouri Tigers at Ole Miss Rebels | Missouri Tigers | 36.9% | 33.3% | 3.6% | 6.2% | yes | — |
+| Appalachian State Mountaineers at Coastal Carolina Chanticleers | Appalachian State Mountaineers | 56.4% | 53.1% | 3.3% | 1.6% | no | too_few_books|ev_below_threshold |
+| Fresno State Bulldogs at San Diego State Aztecs | San Diego State Aztecs | 29.3% | 26.6% | 2.7% | 5.4% | no | too_few_books |
+| Ohio State Buckeyes at Indiana Hoosiers | Indiana Hoosiers | 39.6% | 36.9% | 2.7% | 3.0% | no | ev_below_threshold |
+| Washington Huskies at Purdue Boilermakers | Washington Huskies | 45.1% | 42.6% | 2.6% | 1.5% | no | too_few_books|ev_below_threshold |
+| Cincinnati Bearcats at West Virginia Mountaineers | Cincinnati Bearcats | 48.1% | 45.6% | 2.5% | 1.0% | no | too_few_books|ev_below_threshold |
+| Western Kentucky Hilltoppers at Sam Houston State Bearkats | Sam Houston State Bearkats | 48.9% | 46.4% | 2.4% | 3.6% | no | ev_below_threshold |
+| Georgia Southern Eagles at Old Dominion Monarchs | Georgia Southern Eagles | 58.5% | 56.1% | 2.4% | -0.2% | no | too_few_books|ev_below_threshold |
+| Northwestern Wildcats at Michigan State Spartans | Northwestern Wildcats | 75.7% | 73.4% | 2.3% | -1.4% | no | too_few_books|ev_below_threshold |
+| Nebraska Cornhuskers at Oregon Ducks | Nebraska Cornhuskers | 21.5% | 19.6% | 1.9% | 7.3% | no | market_dispersion_high |
+| Kansas Jayhawks at Kansas State Wildcats | Kansas Jayhawks | 28.9% | 27.1% | 1.8% | 4.0% | yes | — |
+| North Carolina Tar Heels at Duke Blue Devils | Duke Blue Devils | 60.0% | 58.3% | 1.7% | -1.2% | no | ev_below_threshold |
+| Virginia Cavaliers at SMU Mustangs | Virginia Cavaliers | 28.9% | 27.3% | 1.6% | 1.2% | no | too_few_books|ev_below_threshold |
+| Notre Dame Fighting Irish at BYU Cougars | BYU Cougars | 21.1% | 19.6% | 1.5% | 7.5% | yes | — |
+| Memphis Tigers at Tulane Green Wave | Tulane Green Wave | 34.4% | 33.0% | 1.4% | -0.2% | no | too_few_books|edge_below_threshold|ev_below_threshold |
 
 Challengers (`market_public_ensemble`, `fpi_only`, `ratings_only`, `market_only`) are stored in the ledger but cannot trigger paper bets.
 
