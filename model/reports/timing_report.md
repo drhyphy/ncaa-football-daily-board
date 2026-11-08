@@ -1,6 +1,6 @@
 # NCAA football moneyline timing report
 
-Generated: 2026-11-07T12:08:03Z
+Generated: 2026-11-08T12:10:53Z
 
 Each bucket represents a separate hypothetical entry strategy. Duplicate same-game snapshots inside a bucket are reduced to the latest snapshot. Price CLV is the primary timing metric; ROI and hit rate are secondary.
 
@@ -10,11 +10,11 @@ Status: **provisional** — Highest mean price CLV among sufficiently sampled bu
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
 | D8+ | 192+ hours | 91 | 1 | 1 | 0.1920 | -100.0% | 0.0% | 0.0% |
 | D7 | 168–192 hours | 43 | 0 | 0 | 0.1340 | — | — | — |
-| D6 | 144–168 hours | 359 | 11 | 10 | 0.1607 | 6.2% | 9.2% | 1.3% |
-| D5 | 120–144 hours | 526 | 52 | 48 | 0.1623 | -27.3% | 2.5% | 0.7% |
-| D4 | 96–120 hours | 565 | 60 | 56 | 0.1625 | -24.2% | 1.3% | 0.5% |
-| D3 | 72–96 hours | 519 | 53 | 50 | 0.1656 | -30.7% | 0.4% | 0.3% |
-| D2 | 48–72 hours | 554 | 58 | 52 | 0.1642 | -36.3% | -0.4% | -0.1% |
+| D6 | 144–168 hours | 391 | 11 | 10 | 0.1607 | 6.2% | 9.2% | 1.3% |
+| D5 | 120–144 hours | 529 | 52 | 48 | 0.1623 | -27.3% | 2.5% | 0.7% |
+| D4 | 96–120 hours | 567 | 60 | 56 | 0.1625 | -24.2% | 1.3% | 0.5% |
+| D3 | 72–96 hours | 522 | 53 | 50 | 0.1656 | -30.7% | 0.4% | 0.3% |
+| D2 | 48–72 hours | 557 | 58 | 52 | 0.1642 | -36.3% | -0.4% | -0.1% |
 | D1 | 24–48 hours | 554 | 66 | 59 | 0.1629 | -36.9% | 0.3% | 0.2% |
 | D0 | 0–24 hours | 565 | 57 | 50 | 0.1620 | -27.4% | 0.0% | 0.0% |
 
