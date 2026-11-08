@@ -5,9 +5,53 @@ from datetime import date
 import pandas as pd
 import pytest
 import requests
+from unittest.mock import Mock
 
 from ncaaf_model.config import load_settings
 from ncaaf_model.sources import DataClient, merge_schedule_frames, parse_espn_scoreboard
+
+
+@pytest.mark.parametrize("failure", [requests.ReadTimeout("timeout"), requests.ConnectionError("reset"), 503])
+def test_archive_download_retries_transient_failure(tmp_path, monkeypatch, failure):
+    client = DataClient(replace(load_settings(), root=tmp_path))
+    path = tmp_path / "archive.parquet"
+    path.write_bytes(b"old")
+    failed = _response(failure, {}) if isinstance(failure, int) else failure
+    success = _response(200, {})
+    success._content = b"fresh"
+    get = Mock(side_effect=[failed, success])
+    sleep = Mock()
+    monkeypatch.setattr(client.session, "get", get)
+    monkeypatch.setattr("ncaaf_model.sources.time.sleep", sleep)
+    assert client._download("https://example.test/archive", path, refresh=True) == path
+    assert get.call_count == 2
+    sleep.assert_called_once_with(2)
+    assert path.read_bytes() == b"fresh"
+    assert json.loads(path.with_suffix(".parquet.meta.json").read_text())["source_url"] == "https://example.test/archive"
+
+
+@pytest.mark.parametrize("failure, attempts", [
+    (requests.ReadTimeout("timeout"), 3),
+    (requests.exceptions.SSLError("certificate"), 1),
+    (401, 1), (403, 1), (404, 1),
+])
+def test_archive_download_failure_preserves_cache_and_fails_closed(tmp_path, monkeypatch, failure, attempts):
+    client = DataClient(replace(load_settings(), root=tmp_path))
+    path = tmp_path / "archive.parquet"
+    path.write_bytes(b"old")
+    meta = path.with_suffix(".parquet.meta.json")
+    meta.write_text('{"retrieved_at":"old"}')
+    outcome = _response(failure, {}) if isinstance(failure, int) else failure
+    get = Mock(side_effect=[outcome] * attempts)
+    sleep = Mock()
+    monkeypatch.setattr(client.session, "get", get)
+    monkeypatch.setattr("ncaaf_model.sources.time.sleep", sleep)
+    with pytest.raises(requests.RequestException):
+        client._download("https://example.test/archive", path, refresh=True)
+    assert get.call_count == attempts
+    assert sleep.call_count == attempts - 1
+    assert path.read_bytes() == b"old"
+    assert json.loads(meta.read_text()) == {"retrieved_at": "old"}
 
 
 def _row(game_id: int, status: str, score: float | None = None) -> dict:
@@ -80,6 +124,7 @@ def _response(status, params, events=()):
     response.status_code = status
     response.url = "https://example.test/scoreboard?" + requests.compat.urlencode(params)
     response._content = json.dumps({"events": list(events)}).encode()
+    response._content_consumed = True
     return response
 
 

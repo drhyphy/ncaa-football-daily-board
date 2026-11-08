@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import os
 import tempfile
+import time
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
@@ -160,9 +161,30 @@ class DataClient:
     def _download(self, url: str, path: Path, refresh: bool = False) -> Path:
         if path.exists() and not refresh:
             return path
-        response = self.session.get(url, timeout=self.timeout)
-        response.raise_for_status()
-        content = response.content
+        # A transient archive timeout must not abort an otherwise healthy daily
+        # refresh. Never fall back to cached bytes when a refresh was requested.
+        for attempt in range(3):
+            response = None
+            try:
+                response = self.session.get(url, timeout=self.timeout)
+                response.raise_for_status()
+                content = response.content
+                break
+            except requests.RequestException as exc:
+                transient = (
+                    isinstance(exc, (requests.Timeout, requests.ConnectionError))
+                    and not isinstance(exc, requests.exceptions.SSLError)
+                ) or (
+                    isinstance(exc, requests.HTTPError)
+                    and exc.response is not None
+                    and exc.response.status_code in {500, 502, 503, 504}
+                )
+                if not transient or attempt == 2:
+                    raise
+            finally:
+                if response is not None:
+                    response.close()
+            time.sleep(2 ** (attempt + 1))
         atomic_write_bytes(path, content)
         atomic_write_json(
             path.with_suffix(path.suffix + ".meta.json"),
