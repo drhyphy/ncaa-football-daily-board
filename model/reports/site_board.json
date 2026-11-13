@@ -1,14 +1,14 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-12T12:08:13Z",
-  "slate_date": "2026-11-12",
-  "run_label": "Nov 12 \u00b7 7:08 AM ET",
+  "generated_at": "2026-11-13T15:23:15Z",
+  "slate_date": "2026-11-13",
+  "run_label": "Nov 13 \u00b7 10:23 AM ET",
   "kickoff_window": null,
   "model_version": "ncaaf-market-residual-v2-alpha75",
   "week": 11,
-  "scanned_games": 60,
-  "schedule_matches": 60,
-  "qualifying_count": 4,
+  "scanned_games": 58,
+  "schedule_matches": 58,
+  "qualifying_count": 2,
   "alpha_label": "75% residual \u00b7 29% effective FPI",
   "qualified_bets": [
     {
@@ -21,12 +21,12 @@
       "kickoff": "2026-11-14T21:00:00.000Z",
       "sportsbook": "draftkings",
       "american_odds": 295,
-      "model_probability": 0.287904,
+      "model_probability": 0.270802,
       "market_probability": 0.246537,
-      "probability_edge": 0.041367,
-      "expected_value": 0.13722,
-      "stake_fraction": 0.004652,
-      "timing_bucket": "D2",
+      "probability_edge": 0.024265,
+      "expected_value": 0.069668,
+      "stake_fraction": 0.002362,
+      "timing_bucket": "D1",
       "book_count": 5,
       "qualifies": true,
       "flags": [],
@@ -34,62 +34,20 @@
     },
     {
       "rank": 2,
-      "event_id": "actionnetwork-290014",
-      "game": "Oregon State Beavers at Boise State Broncos",
-      "selection": "Oregon State Beavers",
-      "opponent": "Boise State Broncos",
-      "side": "away",
-      "kickoff": "2026-11-14T23:00:00.000Z",
-      "sportsbook": "fanduel",
-      "american_odds": 480,
-      "model_probability": 0.186174,
-      "market_probability": 0.169122,
-      "probability_edge": 0.017051,
-      "expected_value": 0.079807,
-      "stake_fraction": 0.001663,
-      "timing_bucket": "D2",
-      "book_count": 5,
-      "qualifies": true,
-      "flags": [],
-      "gate_reasons": []
-    },
-    {
-      "rank": 3,
       "event_id": "actionnetwork-290047",
       "game": "Tulane Green Wave at Rice Owls",
       "selection": "Tulane Green Wave",
       "opponent": "Rice Owls",
       "side": "away",
       "kickoff": "2026-11-14T19:00:00.000Z",
-      "sportsbook": "draftkings",
-      "american_odds": 114,
-      "model_probability": 0.493761,
-      "market_probability": 0.45323,
-      "probability_edge": 0.040531,
-      "expected_value": 0.05665,
-      "stake_fraction": 0.004969,
-      "timing_bucket": "D2",
-      "book_count": 5,
-      "qualifies": true,
-      "flags": [],
-      "gate_reasons": []
-    },
-    {
-      "rank": 4,
-      "event_id": "actionnetwork-290048",
-      "game": "UAB Blazers at Temple Owls",
-      "selection": "Temple Owls",
-      "opponent": "UAB Blazers",
-      "side": "home",
-      "kickoff": "2026-11-14T18:00:00.000Z",
-      "sportsbook": "fanduel",
-      "american_odds": -126,
-      "model_probability": 0.583961,
-      "market_probability": 0.542744,
-      "probability_edge": 0.041217,
-      "expected_value": 0.047422,
-      "stake_fraction": 0.005,
-      "timing_bucket": "D2",
+      "sportsbook": "betmgm",
+      "american_odds": 115,
+      "model_probability": 0.488645,
+      "market_probability": 0.448559,
+      "probability_edge": 0.040086,
+      "expected_value": 0.050586,
+      "stake_fraction": 0.004399,
+      "timing_bucket": "D1",
       "book_count": 5,
       "qualifies": true,
       "flags": [],
@@ -99,27 +57,27 @@
   "watchlist": [
     {
       "rank": 1,
-      "event_id": "actionnetwork-289950",
-      "game": "Louisiana Ragin' Cajuns at UL-Monroe Warhawks",
-      "selection": "Louisiana Ragin' Cajuns",
-      "opponent": "UL-Monroe Warhawks",
-      "side": "away",
-      "kickoff": "2026-11-13T02:00:00.000Z",
-      "sportsbook": "draftkings",
-      "american_odds": -395,
-      "model_probability": 0.819644,
-      "market_probability": 0.766355,
-      "probability_edge": 0.053289,
-      "expected_value": 0.027149,
+      "event_id": "actionnetwork-290048",
+      "game": "UAB Blazers at Temple Owls",
+      "selection": "Temple Owls",
+      "opponent": "UAB Blazers",
+      "side": "home",
+      "kickoff": "2026-11-14T18:00:00.000Z",
+      "sportsbook": "betrivers",
+      "american_odds": -129,
+      "model_probability": 0.585748,
+      "market_probability": 0.544383,
+      "probability_edge": 0.041365,
+      "expected_value": 0.039816,
       "stake_fraction": 0.0,
-      "timing_bucket": "D0",
+      "timing_bucket": "D1",
       "book_count": 5,
       "qualifies": false,
       "flags": [
         "ev_below_threshold"
       ],
       "gate_reasons": [
-        "Model EV +2.7%; needs +4.0%"
+        "Model EV +4.0%; needs +4.0%"
       ]
     },
     {
@@ -130,21 +88,21 @@
       "opponent": "UConn Huskies",
       "side": "away",
       "kickoff": "2026-11-14T17:00:00.000Z",
-      "sportsbook": "betrivers",
-      "american_odds": -180,
-      "model_probability": 0.666165,
-      "market_probability": 0.625565,
-      "probability_edge": 0.0406,
-      "expected_value": 0.036257,
+      "sportsbook": "fanduel",
+      "american_odds": -182,
+      "model_probability": 0.667526,
+      "market_probability": 0.627643,
+      "probability_edge": 0.039883,
+      "expected_value": 0.034298,
       "stake_fraction": 0.0,
-      "timing_bucket": "D2",
+      "timing_bucket": "D1",
       "book_count": 5,
       "qualifies": false,
       "flags": [
         "ev_below_threshold"
       ],
       "gate_reasons": [
-        "Model EV +3.6%; needs +4.0%"
+        "Model EV +3.4%; needs +4.0%"
       ]
     },
     {
@@ -155,21 +113,21 @@
       "opponent": "Florida Atlantic Owls",
       "side": "home",
       "kickoff": "2026-11-14T20:30:00.000Z",
-      "sportsbook": "fanduel",
+      "sportsbook": "betrivers",
       "american_odds": -215,
-      "model_probability": 0.691344,
-      "market_probability": 0.656489,
-      "probability_edge": 0.034855,
-      "expected_value": 0.012899,
+      "model_probability": 0.692123,
+      "market_probability": 0.65812,
+      "probability_edge": 0.034003,
+      "expected_value": 0.01404,
       "stake_fraction": 0.0,
-      "timing_bucket": "D2",
+      "timing_bucket": "D1",
       "book_count": 5,
       "qualifies": false,
       "flags": [
         "ev_below_threshold"
       ],
       "gate_reasons": [
-        "Model EV +1.3%; needs +4.0%"
+        "Model EV +1.4%; needs +4.0%"
       ]
     },
     {
@@ -180,71 +138,71 @@
       "opponent": "California Golden Bears",
       "side": "home",
       "kickoff": "2026-11-14T20:30:00.000Z",
-      "sportsbook": "fanduel",
-      "american_odds": -385,
-      "model_probability": 0.805346,
-      "market_probability": 0.772727,
-      "probability_edge": 0.032618,
-      "expected_value": 0.014526,
+      "sportsbook": "betmgm",
+      "american_odds": -400,
+      "model_probability": 0.805388,
+      "market_probability": 0.771505,
+      "probability_edge": 0.033882,
+      "expected_value": 0.006735,
       "stake_fraction": 0.0,
-      "timing_bucket": "D2",
+      "timing_bucket": "D1",
       "book_count": 5,
       "qualifies": false,
       "flags": [
         "ev_below_threshold"
       ],
       "gate_reasons": [
-        "Model EV +1.5%; needs +4.0%"
+        "Model EV +0.7%; needs +4.0%"
       ]
     },
     {
       "rank": 5,
+      "event_id": "actionnetwork-289962",
+      "game": "East Carolina Pirates at Charlotte 49ers",
+      "selection": "East Carolina Pirates",
+      "opponent": "Charlotte 49ers",
+      "side": "away",
+      "kickoff": "2026-11-14T18:00:00.000Z",
+      "sportsbook": "fanduel",
+      "american_odds": -450,
+      "model_probability": 0.817825,
+      "market_probability": 0.786744,
+      "probability_edge": 0.031082,
+      "expected_value": -0.000436,
+      "stake_fraction": 0.0,
+      "timing_bucket": "D1",
+      "book_count": 5,
+      "qualifies": false,
+      "flags": [
+        "ev_below_threshold"
+      ],
+      "gate_reasons": [
+        "Model EV -0.0%; needs +4.0%"
+      ]
+    },
+    {
+      "rank": 6,
       "event_id": "actionnetwork-290008",
       "game": "Alabama Crimson Tide at Vanderbilt Commodores",
       "selection": "Alabama Crimson Tide",
       "opponent": "Vanderbilt Commodores",
       "side": "away",
       "kickoff": "2026-11-14T17:45:00.000Z",
-      "sportsbook": "fanduel",
+      "sportsbook": "betmgm",
       "american_odds": -900,
-      "model_probability": 0.896509,
-      "market_probability": 0.864682,
-      "probability_edge": 0.031827,
-      "expected_value": -0.003879,
+      "model_probability": 0.897819,
+      "market_probability": 0.86711,
+      "probability_edge": 0.030709,
+      "expected_value": -0.002423,
       "stake_fraction": 0.0,
-      "timing_bucket": "D2",
+      "timing_bucket": "D1",
       "book_count": 5,
       "qualifies": false,
       "flags": [
         "ev_below_threshold"
       ],
       "gate_reasons": [
-        "Model EV -0.4%; needs +4.0%"
-      ]
-    },
-    {
-      "rank": 6,
-      "event_id": "actionnetwork-290046",
-      "game": "North Texas Mean Green at UTSA Roadrunners",
-      "selection": "North Texas Mean Green",
-      "opponent": "UTSA Roadrunners",
-      "side": "away",
-      "kickoff": "2026-11-15T02:00:00.000Z",
-      "sportsbook": "fanduel",
-      "american_odds": -122,
-      "model_probability": 0.562473,
-      "market_probability": 0.532468,
-      "probability_edge": 0.030006,
-      "expected_value": 0.023517,
-      "stake_fraction": 0.0,
-      "timing_bucket": "D2",
-      "book_count": 5,
-      "qualifies": false,
-      "flags": [
-        "ev_below_threshold"
-      ],
-      "gate_reasons": [
-        "Model EV +2.4%; needs +4.0%"
+        "Model EV -0.2%; needs +4.0%"
       ]
     },
     {
@@ -255,75 +213,100 @@
       "opponent": "SMU Mustangs",
       "side": "away",
       "kickoff": "2026-11-14T17:00:00.000Z",
-      "sportsbook": "draftkings",
-      "american_odds": -105,
-      "model_probability": 0.523119,
-      "market_probability": 0.493413,
-      "probability_edge": 0.029706,
-      "expected_value": 0.021327,
+      "sportsbook": "fanduel",
+      "american_odds": -104,
+      "model_probability": 0.519181,
+      "market_probability": 0.489166,
+      "probability_edge": 0.030015,
+      "expected_value": 0.018394,
       "stake_fraction": 0.0,
-      "timing_bucket": "D2",
+      "timing_bucket": "D1",
       "book_count": 5,
       "qualifies": false,
       "flags": [
         "ev_below_threshold"
       ],
       "gate_reasons": [
-        "Model EV +2.1%; needs +4.0%"
+        "Model EV +1.8%; needs +4.0%"
       ]
     },
     {
       "rank": 8,
-      "event_id": "actionnetwork-289962",
-      "game": "East Carolina Pirates at Charlotte 49ers",
-      "selection": "East Carolina Pirates",
-      "opponent": "Charlotte 49ers",
+      "event_id": "actionnetwork-290046",
+      "game": "North Texas Mean Green at UTSA Roadrunners",
+      "selection": "North Texas Mean Green",
+      "opponent": "UTSA Roadrunners",
       "side": "away",
-      "kickoff": "2026-11-14T18:00:00.000Z",
-      "sportsbook": "draftkings",
-      "american_odds": -455,
-      "model_probability": 0.821166,
-      "market_probability": 0.791667,
-      "probability_edge": 0.029499,
-      "expected_value": 0.001641,
+      "kickoff": "2026-11-15T02:00:00.000Z",
+      "sportsbook": "caesars",
+      "american_odds": -124,
+      "model_probability": 0.562133,
+      "market_probability": 0.532468,
+      "probability_edge": 0.029665,
+      "expected_value": 0.015465,
       "stake_fraction": 0.0,
-      "timing_bucket": "D2",
+      "timing_bucket": "D1",
       "book_count": 5,
       "qualifies": false,
       "flags": [
         "ev_below_threshold"
       ],
       "gate_reasons": [
-        "Model EV +0.2%; needs +4.0%"
+        "Model EV +1.5%; needs +4.0%"
       ]
     },
     {
       "rank": 9,
+      "event_id": "actionnetwork-289998",
+      "game": "Arizona State Sun Devils at UCF Knights",
+      "selection": "UCF Knights",
+      "opponent": "Arizona State Sun Devils",
+      "side": "home",
+      "kickoff": "2026-11-14T20:30:00.000Z",
+      "sportsbook": "fanduel",
+      "american_odds": -152,
+      "model_probability": 0.611285,
+      "market_probability": 0.582993,
+      "probability_edge": 0.028292,
+      "expected_value": 0.013446,
+      "stake_fraction": 0.0,
+      "timing_bucket": "D1",
+      "book_count": 5,
+      "qualifies": false,
+      "flags": [
+        "ev_below_threshold"
+      ],
+      "gate_reasons": [
+        "Model EV +1.3%; needs +4.0%"
+      ]
+    },
+    {
+      "rank": 10,
       "event_id": "actionnetwork-289978",
       "game": "Minnesota Golden Gophers at Penn State Nittany Lions",
       "selection": "Penn State Nittany Lions",
       "opponent": "Minnesota Golden Gophers",
       "side": "home",
       "kickoff": "2026-11-15T00:00:00.000Z",
-      "sportsbook": "caesars",
-      "american_odds": -335,
-      "model_probability": 0.774551,
-      "market_probability": 0.747508,
-      "probability_edge": 0.027042,
-      "expected_value": 0.00576,
+      "sportsbook": "betmgm",
+      "american_odds": -350,
+      "model_probability": 0.776388,
+      "market_probability": 0.748359,
+      "probability_edge": 0.028029,
+      "expected_value": -0.001787,
       "stake_fraction": 0.0,
-      "timing_bucket": "D2",
+      "timing_bucket": "D1",
       "book_count": 5,
       "qualifies": false,
       "flags": [
         "ev_below_threshold"
       ],
       "gate_reasons": [
-        "Model EV +0.6%; needs +4.0%"
+        "Model EV -0.2%; needs +4.0%"
       ]
     },
     {
-      "rank": 10,
+      "rank": 11,
       "event_id": "actionnetwork-290003",
       "game": "Texas Longhorns at LSU Tigers",
       "selection": "Texas Longhorns",
@@ -332,12 +315,12 @@
       "kickoff": "2026-11-15T00:30:00.000Z",
       "sportsbook": "draftkings",
       "american_odds": 154,
-      "model_probability": 0.407677,
+      "model_probability": 0.407847,
       "market_probability": 0.381271,
-      "probability_edge": 0.026406,
-      "expected_value": 0.0355,
+      "probability_edge": 0.026576,
+      "expected_value": 0.035932,
       "stake_fraction": 0.0,
-      "timing_bucket": "D2",
+      "timing_bucket": "D1",
       "book_count": 5,
       "qualifies": false,
       "flags": [
@@ -348,78 +331,53 @@
       ]
     },
     {
-      "rank": 11,
-      "event_id": "actionnetwork-290039",
-      "game": "Texas Tech Red Raiders at Oklahoma State Cowboys",
-      "selection": "Texas Tech Red Raiders",
-      "opponent": "Oklahoma State Cowboys",
-      "side": "away",
-      "kickoff": "2026-11-15T02:30:00.000Z",
-      "sportsbook": "draftkings",
-      "american_odds": 142,
-      "model_probability": 0.42629,
-      "market_probability": 0.400729,
-      "probability_edge": 0.025561,
-      "expected_value": 0.031621,
-      "stake_fraction": 0.0,
-      "timing_bucket": "D2",
-      "book_count": 5,
-      "qualifies": false,
-      "flags": [
-        "ev_below_threshold"
-      ],
-      "gate_reasons": [
-        "Model EV +3.2%; needs +4.0%"
-      ]
-    },
-    {
       "rank": 12,
-      "event_id": "actionnetwork-289998",
-      "game": "Arizona State Sun Devils at UCF Knights",
-      "selection": "UCF Knights",
-      "opponent": "Arizona State Sun Devils",
-      "side": "home",
-      "kickoff": "2026-11-14T20:30:00.000Z",
-      "sportsbook": "fanduel",
-      "american_odds": -152,
-      "model_probability": 0.618462,
-      "market_probability": 0.59337,
-      "probability_edge": 0.025093,
-      "expected_value": 0.025346,
-      "stake_fraction": 0.0,
-      "timing_bucket": "D2",
-      "book_count": 5,
-      "qualifies": false,
-      "flags": [
-        "ev_below_threshold"
-      ],
-      "gate_reasons": [
-        "Model EV +2.5%; needs +4.0%"
-      ]
-    },
-    {
-      "rank": 13,
       "event_id": "actionnetwork-290042",
       "game": "Michigan Wolverines at Oregon Ducks",
       "selection": "Oregon Ducks",
       "opponent": "Michigan Wolverines",
       "side": "home",
       "kickoff": "2026-11-14T20:30:00.000Z",
-      "sportsbook": "draftkings",
-      "american_odds": -440,
-      "model_probability": 0.8075,
-      "market_probability": 0.782609,
-      "probability_edge": 0.024891,
-      "expected_value": -0.008977,
+      "sportsbook": "fanduel",
+      "american_odds": -410,
+      "model_probability": 0.803206,
+      "market_probability": 0.776833,
+      "probability_edge": 0.026373,
+      "expected_value": -0.00089,
       "stake_fraction": 0.0,
-      "timing_bucket": "D2",
+      "timing_bucket": "D1",
       "book_count": 5,
       "qualifies": false,
       "flags": [
         "ev_below_threshold"
       ],
       "gate_reasons": [
-        "Model EV -0.9%; needs +4.0%"
+        "Model EV -0.1%; needs +4.0%"
+      ]
+    },
+    {
+      "rank": 13,
+      "event_id": "actionnetwork-289953",
+      "game": "Houston Cougars at Colorado Buffaloes",
+      "selection": "Houston Cougars",
+      "opponent": "Colorado Buffaloes",
+      "side": "away",
+      "kickoff": "2026-11-14T03:15:00.000Z",
+      "sportsbook": "fanduel",
+      "american_odds": -350,
+      "model_probability": 0.776319,
+      "market_probability": 0.750813,
+      "probability_edge": 0.025506,
+      "expected_value": -0.001876,
+      "stake_fraction": 0.0,
+      "timing_bucket": "D0",
+      "book_count": 5,
+      "qualifies": false,
+      "flags": [
+        "ev_below_threshold"
+      ],
+      "gate_reasons": [
+        "Model EV -0.2%; needs +4.0%"
       ]
     },
     {
@@ -430,37 +388,12 @@
       "opponent": "Marshall Thundering Herd",
       "side": "away",
       "kickoff": "2026-11-14T23:00:00.000Z",
-      "sportsbook": "draftkings",
-      "american_odds": -120,
-      "model_probability": 0.546584,
-      "market_probability": 0.521739,
-      "probability_edge": 0.024845,
-      "expected_value": 0.002071,
-      "stake_fraction": 0.0,
-      "timing_bucket": "D2",
-      "book_count": 5,
-      "qualifies": false,
-      "flags": [
-        "ev_below_threshold"
-      ],
-      "gate_reasons": [
-        "Model EV +0.2%; needs +4.0%"
-      ]
-    },
-    {
-      "rank": 15,
-      "event_id": "actionnetwork-289953",
-      "game": "Houston Cougars at Colorado Buffaloes",
-      "selection": "Houston Cougars",
-      "opponent": "Colorado Buffaloes",
-      "side": "away",
-      "kickoff": "2026-11-14T03:15:00.000Z",
       "sportsbook": "betmgm",
-      "american_odds": -375,
-      "model_probability": 0.783505,
-      "market_probability": 0.76,
-      "probability_edge": 0.023505,
-      "expected_value": -0.00756,
+      "american_odds": -118,
+      "model_probability": 0.546614,
+      "market_probability": 0.521739,
+      "probability_edge": 0.024875,
+      "expected_value": 0.009847,
       "stake_fraction": 0.0,
       "timing_bucket": "D1",
       "book_count": 5,
@@ -469,7 +402,32 @@
         "ev_below_threshold"
       ],
       "gate_reasons": [
-        "Model EV -0.8%; needs +4.0%"
+        "Model EV +1.0%; needs +4.0%"
+      ]
+    },
+    {
+      "rank": 15,
+      "event_id": "actionnetwork-290039",
+      "game": "Texas Tech Red Raiders at Oklahoma State Cowboys",
+      "selection": "Texas Tech Red Raiders",
+      "opponent": "Oklahoma State Cowboys",
+      "side": "away",
+      "kickoff": "2026-11-15T02:30:00.000Z",
+      "sportsbook": "draftkings",
+      "american_odds": 142,
+      "model_probability": 0.42493,
+      "market_probability": 0.400908,
+      "probability_edge": 0.024022,
+      "expected_value": 0.028331,
+      "stake_fraction": 0.0,
+      "timing_bucket": "D1",
+      "book_count": 5,
+      "qualifies": false,
+      "flags": [
+        "ev_below_threshold"
+      ],
+      "gate_reasons": [
+        "Model EV +2.8%; needs +4.0%"
       ]
     },
     {
@@ -482,69 +440,69 @@
       "kickoff": "2026-11-14T21:15:00.000Z",
       "sportsbook": "draftkings",
       "american_odds": 142,
-      "model_probability": 0.427159,
-      "market_probability": 0.404883,
-      "probability_edge": 0.022276,
-      "expected_value": 0.033724,
+      "model_probability": 0.426349,
+      "market_probability": 0.402919,
+      "probability_edge": 0.02343,
+      "expected_value": 0.031764,
       "stake_fraction": 0.0,
-      "timing_bucket": "D2",
+      "timing_bucket": "D1",
       "book_count": 5,
       "qualifies": false,
       "flags": [
         "ev_below_threshold"
       ],
       "gate_reasons": [
-        "Model EV +3.4%; needs +4.0%"
+        "Model EV +3.2%; needs +4.0%"
       ]
     },
     {
       "rank": 17,
-      "event_id": "actionnetwork-289963",
-      "game": "Auburn Tigers at Mississippi State Bulldogs",
-      "selection": "Mississippi State Bulldogs",
-      "opponent": "Auburn Tigers",
-      "side": "home",
-      "kickoff": "2026-11-14T17:00:00.000Z",
-      "sportsbook": "fanduel",
-      "american_odds": 122,
-      "model_probability": 0.45647,
-      "market_probability": 0.434682,
-      "probability_edge": 0.021788,
-      "expected_value": 0.013363,
-      "stake_fraction": 0.0,
-      "timing_bucket": "D2",
-      "book_count": 5,
-      "qualifies": false,
-      "flags": [
-        "ev_below_threshold"
-      ],
-      "gate_reasons": [
-        "Model EV +1.3%; needs +4.0%"
-      ]
-    },
-    {
-      "rank": 18,
       "event_id": "actionnetwork-290007",
       "game": "Ole Miss Rebels at Oklahoma Sooners",
       "selection": "Ole Miss Rebels",
       "opponent": "Oklahoma Sooners",
       "side": "away",
       "kickoff": "2026-11-14T21:15:00.000Z",
-      "sportsbook": "betmgm",
-      "american_odds": -105,
-      "model_probability": 0.521612,
-      "market_probability": 0.5,
-      "probability_edge": 0.021612,
-      "expected_value": 0.018386,
+      "sportsbook": "fanduel",
+      "american_odds": -104,
+      "model_probability": 0.518554,
+      "market_probability": 0.49567,
+      "probability_edge": 0.022884,
+      "expected_value": 0.017163,
       "stake_fraction": 0.0,
-      "timing_bucket": "D2",
+      "timing_bucket": "D1",
       "book_count": 5,
       "qualifies": false,
       "flags": [
         "ev_below_threshold"
       ],
       "gate_reasons": [
-        "Model EV +1.8%; needs +4.0%"
+        "Model EV +1.7%; needs +4.0%"
+      ]
+    },
+    {
+      "rank": 18,
+      "event_id": "actionnetwork-289963",
+      "game": "Auburn Tigers at Mississippi State Bulldogs",
+      "selection": "Mississippi State Bulldogs",
+      "opponent": "Auburn Tigers",
+      "side": "home",
+      "kickoff": "2026-11-14T17:00:00.000Z",
+      "sportsbook": "caesars",
+      "american_odds": 121,
+      "model_probability": 0.457629,
+      "market_probability": 0.436508,
+      "probability_edge": 0.021121,
+      "expected_value": 0.011359,
+      "stake_fraction": 0.0,
+      "timing_bucket": "D1",
+      "book_count": 5,
+      "qualifies": false,
+      "flags": [
+        "ev_below_threshold"
+      ],
+      "gate_reasons": [
+        "Model EV +1.1%; needs +4.0%"
       ]
     },
     {
@@ -555,21 +513,21 @@
       "opponent": "Duke Blue Devils",
       "side": "home",
       "kickoff": "2026-11-14T17:00:00.000Z",
-      "sportsbook": "fanduel",
+      "sportsbook": "draftkings",
       "american_odds": -550,
-      "model_probability": 0.837843,
-      "market_probability": 0.817259,
-      "probability_edge": 0.020584,
-      "expected_value": -0.009822,
+      "model_probability": 0.838243,
+      "market_probability": 0.817822,
+      "probability_edge": 0.020421,
+      "expected_value": -0.00935,
       "stake_fraction": 0.0,
-      "timing_bucket": "D2",
+      "timing_bucket": "D1",
       "book_count": 5,
       "qualifies": false,
       "flags": [
         "ev_below_threshold"
       ],
       "gate_reasons": [
-        "Model EV -1.0%; needs +4.0%"
+        "Model EV -0.9%; needs +4.0%"
       ]
     },
     {
@@ -580,21 +538,21 @@
       "opponent": "Stanford Cardinal",
       "side": "home",
       "kickoff": "2026-11-15T00:30:00.000Z",
-      "sportsbook": "betmgm",
-      "american_odds": -650,
-      "model_probability": 0.864862,
-      "market_probability": 0.844589,
-      "probability_edge": 0.020273,
-      "expected_value": -0.002082,
+      "sportsbook": "fanduel",
+      "american_odds": -690,
+      "model_probability": 0.86534,
+      "market_probability": 0.845411,
+      "probability_edge": 0.01993,
+      "expected_value": -0.009248,
       "stake_fraction": 0.0,
-      "timing_bucket": "D2",
+      "timing_bucket": "D1",
       "book_count": 5,
       "qualifies": false,
       "flags": [
         "ev_below_threshold"
       ],
       "gate_reasons": [
-        "Model EV -0.2%; needs +4.0%"
+        "Model EV -0.9%; needs +4.0%"
       ]
     }
   ],
@@ -629,7 +587,7 @@
       "window": "120\u2013144 hours",
       "signals": 58,
       "graded": 52,
-      "price_clv": 0.023395744347490612,
+      "price_clv": 0.02339574434749062,
       "roi": -0.2397785422614714
     },
     {
@@ -637,15 +595,15 @@
       "window": "96\u2013120 hours",
       "signals": 64,
       "graded": 60,
-      "price_clv": 0.01259685251744167,
-      "roi": -0.21515250738201083
+      "price_clv": 0.012596852517441673,
+      "roi": -0.2151525073820108
     },
     {
       "label": "D3",
       "window": "72\u201396 hours",
       "signals": 58,
       "graded": 53,
-      "price_clv": 0.0031747495253463143,
+      "price_clv": 0.0031747495253463156,
       "roi": -0.29168787895754333
     },
     {
@@ -653,15 +611,15 @@
       "window": "48\u201372 hours",
       "signals": 62,
       "graded": 58,
-      "price_clv": -0.0038133265991455675,
+      "price_clv": -0.003813326599145567,
       "roi": -0.34878333120703686
     },
     {
       "label": "D1",
       "window": "24\u201348 hours",
-      "signals": 66,
+      "signals": 68,
       "graded": 66,
-      "price_clv": 0.002287939559223885,
+      "price_clv": 0.0022879395592238856,
       "roi": -0.32080284257902836
     },
     {
@@ -706,47 +664,12 @@
           "american_odds": 295,
           "expected_value": 0.13722,
           "qualifies": true
-        }
-      ]
-    },
-    {
-      "event_id": "actionnetwork-290014",
-      "side": "away",
-      "selection": "Oregon State Beavers",
-      "snapshots": [
-        {
-          "captured_at": "2026-11-08T12:10:49Z",
-          "timing_bucket": "D6",
-          "american_odds": 180,
-          "expected_value": -0.092609,
-          "qualifies": false
         },
         {
-          "captured_at": "2026-11-09T12:11:07Z",
-          "timing_bucket": "D5",
-          "american_odds": 320,
-          "expected_value": -0.015598,
-          "qualifies": false
-        },
-        {
-          "captured_at": "2026-11-10T12:06:23Z",
-          "timing_bucket": "D4",
-          "american_odds": 400,
-          "expected_value": 0.03036,
-          "qualifies": false
-        },
-        {
-          "captured_at": "2026-11-11T12:11:28Z",
-          "timing_bucket": "D3",
-          "american_odds": 420,
-          "expected_value": 0.058548,
-          "qualifies": false
-        },
-        {
-          "captured_at": "2026-11-12T12:08:13Z",
-          "timing_bucket": "D2",
-          "american_odds": 480,
-          "expected_value": 0.079807,
+          "captured_at": "2026-11-13T15:23:15Z",
+          "timing_bucket": "D1",
+          "american_odds": 295,
+          "expected_value": 0.069668,
           "qualifies": true
         }
       ]
@@ -783,40 +706,12 @@
           "american_odds": 114,
           "expected_value": 0.05665,
           "qualifies": true
-        }
-      ]
-    },
-    {
-      "event_id": "actionnetwork-290048",
-      "side": "home",
-      "selection": "Temple Owls",
-      "snapshots": [
-        {
-          "captured_at": "2026-11-09T12:11:07Z",
-          "timing_bucket": "D5",
-          "american_odds": -130,
-          "expected_value": 0.043814,
-          "qualifies": true
         },
         {
-          "captured_at": "2026-11-10T12:06:23Z",
-          "timing_bucket": "D4",
-          "american_odds": -126,
-          "expected_value": 0.047422,
-          "qualifies": true
-        },
-        {
-          "captured_at": "2026-11-11T12:11:28Z",
-          "timing_bucket": "D3",
-          "american_odds": -126,
-          "expected_value": 0.047422,
-          "qualifies": true
-        },
-        {
-          "captured_at": "2026-11-12T12:08:13Z",
-          "timing_bucket": "D2",
-          "american_odds": -126,
-          "expected_value": 0.047422,
+          "captured_at": "2026-11-13T15:23:15Z",
+          "timing_bucket": "D1",
+          "american_odds": 115,
+          "expected_value": 0.050586,
           "qualifies": true
         }
       ]
@@ -830,7 +725,7 @@
       "description": "The production, paper-bet-eligible market/FPI residual model.",
       "research_only": false,
       "candidate": "market_fpi_residual",
-      "qualifying_count": 4,
+      "qualifying_count": 2,
       "qualified_bets": [
         {
           "rank": 1,
@@ -842,12 +737,12 @@
           "kickoff": "2026-11-14T21:00:00.000Z",
           "sportsbook": "draftkings",
           "american_odds": 295,
-          "model_probability": 0.287904,
+          "model_probability": 0.270802,
           "market_probability": 0.246537,
-          "probability_edge": 0.041367,
-          "expected_value": 0.13722,
-          "stake_fraction": 0.004652,
-          "timing_bucket": "D2",
+          "probability_edge": 0.024265,
+          "expected_value": 0.069668,
+          "stake_fraction": 0.002362,
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": true,
           "flags": [],
@@ -855,62 +750,20 @@
         },
         {
           "rank": 2,
-          "event_id": "actionnetwork-290014",
-          "game": "Oregon State Beavers at Boise State Broncos",
-          "selection": "Oregon State Beavers",
-          "opponent": "Boise State Broncos",
-          "side": "away",
-          "kickoff": "2026-11-14T23:00:00.000Z",
-          "sportsbook": "fanduel",
-          "american_odds": 480,
-          "model_probability": 0.186174,
-          "market_probability": 0.169122,
-          "probability_edge": 0.017051,
-          "expected_value": 0.079807,
-          "stake_fraction": 0.001663,
-          "timing_bucket": "D2",
-          "book_count": 5,
-          "qualifies": true,
-          "flags": [],
-          "gate_reasons": []
-        },
-        {
-          "rank": 3,
           "event_id": "actionnetwork-290047",
           "game": "Tulane Green Wave at Rice Owls",
           "selection": "Tulane Green Wave",
           "opponent": "Rice Owls",
           "side": "away",
           "kickoff": "2026-11-14T19:00:00.000Z",
-          "sportsbook": "draftkings",
-          "american_odds": 114,
-          "model_probability": 0.493761,
-          "market_probability": 0.45323,
-          "probability_edge": 0.040531,
-          "expected_value": 0.05665,
-          "stake_fraction": 0.004969,
-          "timing_bucket": "D2",
-          "book_count": 5,
-          "qualifies": true,
-          "flags": [],
-          "gate_reasons": []
-        },
-        {
-          "rank": 4,
-          "event_id": "actionnetwork-290048",
-          "game": "UAB Blazers at Temple Owls",
-          "selection": "Temple Owls",
-          "opponent": "UAB Blazers",
-          "side": "home",
-          "kickoff": "2026-11-14T18:00:00.000Z",
-          "sportsbook": "fanduel",
-          "american_odds": -126,
-          "model_probability": 0.583961,
-          "market_probability": 0.542744,
-          "probability_edge": 0.041217,
-          "expected_value": 0.047422,
-          "stake_fraction": 0.005,
-          "timing_bucket": "D2",
+          "sportsbook": "betmgm",
+          "american_odds": 115,
+          "model_probability": 0.488645,
+          "market_probability": 0.448559,
+          "probability_edge": 0.040086,
+          "expected_value": 0.050586,
+          "stake_fraction": 0.004399,
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": true,
           "flags": [],
@@ -920,27 +773,27 @@
       "watchlist": [
         {
           "rank": 1,
-          "event_id": "actionnetwork-289950",
-          "game": "Louisiana Ragin' Cajuns at UL-Monroe Warhawks",
-          "selection": "Louisiana Ragin' Cajuns",
-          "opponent": "UL-Monroe Warhawks",
-          "side": "away",
-          "kickoff": "2026-11-13T02:00:00.000Z",
-          "sportsbook": "draftkings",
-          "american_odds": -395,
-          "model_probability": 0.819644,
-          "market_probability": 0.766355,
-          "probability_edge": 0.053289,
-          "expected_value": 0.027149,
+          "event_id": "actionnetwork-290048",
+          "game": "UAB Blazers at Temple Owls",
+          "selection": "Temple Owls",
+          "opponent": "UAB Blazers",
+          "side": "home",
+          "kickoff": "2026-11-14T18:00:00.000Z",
+          "sportsbook": "betrivers",
+          "american_odds": -129,
+          "model_probability": 0.585748,
+          "market_probability": 0.544383,
+          "probability_edge": 0.041365,
+          "expected_value": 0.039816,
           "stake_fraction": 0.0,
-          "timing_bucket": "D0",
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": false,
           "flags": [
             "ev_below_threshold"
           ],
           "gate_reasons": [
-            "Model EV +2.7%; needs +4.0%"
+            "Model EV +4.0%; needs +4.0%"
           ]
         },
         {
@@ -951,21 +804,21 @@
           "opponent": "UConn Huskies",
           "side": "away",
           "kickoff": "2026-11-14T17:00:00.000Z",
-          "sportsbook": "betrivers",
-          "american_odds": -180,
-          "model_probability": 0.666165,
-          "market_probability": 0.625565,
-          "probability_edge": 0.0406,
-          "expected_value": 0.036257,
+          "sportsbook": "fanduel",
+          "american_odds": -182,
+          "model_probability": 0.667526,
+          "market_probability": 0.627643,
+          "probability_edge": 0.039883,
+          "expected_value": 0.034298,
           "stake_fraction": 0.0,
-          "timing_bucket": "D2",
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": false,
           "flags": [
             "ev_below_threshold"
           ],
           "gate_reasons": [
-            "Model EV +3.6%; needs +4.0%"
+            "Model EV +3.4%; needs +4.0%"
           ]
         },
         {
@@ -976,21 +829,21 @@
           "opponent": "Florida Atlantic Owls",
           "side": "home",
           "kickoff": "2026-11-14T20:30:00.000Z",
-          "sportsbook": "fanduel",
+          "sportsbook": "betrivers",
           "american_odds": -215,
-          "model_probability": 0.691344,
-          "market_probability": 0.656489,
-          "probability_edge": 0.034855,
-          "expected_value": 0.012899,
+          "model_probability": 0.692123,
+          "market_probability": 0.65812,
+          "probability_edge": 0.034003,
+          "expected_value": 0.01404,
           "stake_fraction": 0.0,
-          "timing_bucket": "D2",
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": false,
           "flags": [
             "ev_below_threshold"
           ],
           "gate_reasons": [
-            "Model EV +1.3%; needs +4.0%"
+            "Model EV +1.4%; needs +4.0%"
           ]
         },
         {
@@ -1001,71 +854,71 @@
           "opponent": "California Golden Bears",
           "side": "home",
           "kickoff": "2026-11-14T20:30:00.000Z",
-          "sportsbook": "fanduel",
-          "american_odds": -385,
-          "model_probability": 0.805346,
-          "market_probability": 0.772727,
-          "probability_edge": 0.032618,
-          "expected_value": 0.014526,
+          "sportsbook": "betmgm",
+          "american_odds": -400,
+          "model_probability": 0.805388,
+          "market_probability": 0.771505,
+          "probability_edge": 0.033882,
+          "expected_value": 0.006735,
           "stake_fraction": 0.0,
-          "timing_bucket": "D2",
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": false,
           "flags": [
             "ev_below_threshold"
           ],
           "gate_reasons": [
-            "Model EV +1.5%; needs +4.0%"
+            "Model EV +0.7%; needs +4.0%"
           ]
         },
         {
           "rank": 5,
+          "event_id": "actionnetwork-289962",
+          "game": "East Carolina Pirates at Charlotte 49ers",
+          "selection": "East Carolina Pirates",
+          "opponent": "Charlotte 49ers",
+          "side": "away",
+          "kickoff": "2026-11-14T18:00:00.000Z",
+          "sportsbook": "fanduel",
+          "american_odds": -450,
+          "model_probability": 0.817825,
+          "market_probability": 0.786744,
+          "probability_edge": 0.031082,
+          "expected_value": -0.000436,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D1",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Model EV -0.0%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 6,
           "event_id": "actionnetwork-290008",
           "game": "Alabama Crimson Tide at Vanderbilt Commodores",
           "selection": "Alabama Crimson Tide",
           "opponent": "Vanderbilt Commodores",
           "side": "away",
           "kickoff": "2026-11-14T17:45:00.000Z",
-          "sportsbook": "fanduel",
+          "sportsbook": "betmgm",
           "american_odds": -900,
-          "model_probability": 0.896509,
-          "market_probability": 0.864682,
-          "probability_edge": 0.031827,
-          "expected_value": -0.003879,
+          "model_probability": 0.897819,
+          "market_probability": 0.86711,
+          "probability_edge": 0.030709,
+          "expected_value": -0.002423,
           "stake_fraction": 0.0,
-          "timing_bucket": "D2",
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": false,
           "flags": [
             "ev_below_threshold"
           ],
           "gate_reasons": [
-            "Model EV -0.4%; needs +4.0%"
-          ]
-        },
-        {
-          "rank": 6,
-          "event_id": "actionnetwork-290046",
-          "game": "North Texas Mean Green at UTSA Roadrunners",
-          "selection": "North Texas Mean Green",
-          "opponent": "UTSA Roadrunners",
-          "side": "away",
-          "kickoff": "2026-11-15T02:00:00.000Z",
-          "sportsbook": "fanduel",
-          "american_odds": -122,
-          "model_probability": 0.562473,
-          "market_probability": 0.532468,
-          "probability_edge": 0.030006,
-          "expected_value": 0.023517,
-          "stake_fraction": 0.0,
-          "timing_bucket": "D2",
-          "book_count": 5,
-          "qualifies": false,
-          "flags": [
-            "ev_below_threshold"
-          ],
-          "gate_reasons": [
-            "Model EV +2.4%; needs +4.0%"
+            "Model EV -0.2%; needs +4.0%"
           ]
         },
         {
@@ -1076,75 +929,100 @@
           "opponent": "SMU Mustangs",
           "side": "away",
           "kickoff": "2026-11-14T17:00:00.000Z",
-          "sportsbook": "draftkings",
-          "american_odds": -105,
-          "model_probability": 0.523119,
-          "market_probability": 0.493413,
-          "probability_edge": 0.029706,
-          "expected_value": 0.021327,
+          "sportsbook": "fanduel",
+          "american_odds": -104,
+          "model_probability": 0.519181,
+          "market_probability": 0.489166,
+          "probability_edge": 0.030015,
+          "expected_value": 0.018394,
           "stake_fraction": 0.0,
-          "timing_bucket": "D2",
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": false,
           "flags": [
             "ev_below_threshold"
           ],
           "gate_reasons": [
-            "Model EV +2.1%; needs +4.0%"
+            "Model EV +1.8%; needs +4.0%"
           ]
         },
         {
           "rank": 8,
-          "event_id": "actionnetwork-289962",
-          "game": "East Carolina Pirates at Charlotte 49ers",
-          "selection": "East Carolina Pirates",
-          "opponent": "Charlotte 49ers",
+          "event_id": "actionnetwork-290046",
+          "game": "North Texas Mean Green at UTSA Roadrunners",
+          "selection": "North Texas Mean Green",
+          "opponent": "UTSA Roadrunners",
           "side": "away",
-          "kickoff": "2026-11-14T18:00:00.000Z",
-          "sportsbook": "draftkings",
-          "american_odds": -455,
-          "model_probability": 0.821166,
-          "market_probability": 0.791667,
-          "probability_edge": 0.029499,
-          "expected_value": 0.001641,
+          "kickoff": "2026-11-15T02:00:00.000Z",
+          "sportsbook": "caesars",
+          "american_odds": -124,
+          "model_probability": 0.562133,
+          "market_probability": 0.532468,
+          "probability_edge": 0.029665,
+          "expected_value": 0.015465,
           "stake_fraction": 0.0,
-          "timing_bucket": "D2",
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": false,
           "flags": [
             "ev_below_threshold"
           ],
           "gate_reasons": [
-            "Model EV +0.2%; needs +4.0%"
+            "Model EV +1.5%; needs +4.0%"
           ]
         },
         {
           "rank": 9,
+          "event_id": "actionnetwork-289998",
+          "game": "Arizona State Sun Devils at UCF Knights",
+          "selection": "UCF Knights",
+          "opponent": "Arizona State Sun Devils",
+          "side": "home",
+          "kickoff": "2026-11-14T20:30:00.000Z",
+          "sportsbook": "fanduel",
+          "american_odds": -152,
+          "model_probability": 0.611285,
+          "market_probability": 0.582993,
+          "probability_edge": 0.028292,
+          "expected_value": 0.013446,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D1",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Model EV +1.3%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 10,
           "event_id": "actionnetwork-289978",
           "game": "Minnesota Golden Gophers at Penn State Nittany Lions",
           "selection": "Penn State Nittany Lions",
           "opponent": "Minnesota Golden Gophers",
           "side": "home",
           "kickoff": "2026-11-15T00:00:00.000Z",
-          "sportsbook": "caesars",
-          "american_odds": -335,
-          "model_probability": 0.774551,
-          "market_probability": 0.747508,
-          "probability_edge": 0.027042,
-          "expected_value": 0.00576,
+          "sportsbook": "betmgm",
+          "american_odds": -350,
+          "model_probability": 0.776388,
+          "market_probability": 0.748359,
+          "probability_edge": 0.028029,
+          "expected_value": -0.001787,
           "stake_fraction": 0.0,
-          "timing_bucket": "D2",
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": false,
           "flags": [
             "ev_below_threshold"
           ],
           "gate_reasons": [
-            "Model EV +0.6%; needs +4.0%"
+            "Model EV -0.2%; needs +4.0%"
           ]
         },
         {
-          "rank": 10,
+          "rank": 11,
           "event_id": "actionnetwork-290003",
           "game": "Texas Longhorns at LSU Tigers",
           "selection": "Texas Longhorns",
@@ -1153,12 +1031,12 @@
           "kickoff": "2026-11-15T00:30:00.000Z",
           "sportsbook": "draftkings",
           "american_odds": 154,
-          "model_probability": 0.407677,
+          "model_probability": 0.407847,
           "market_probability": 0.381271,
-          "probability_edge": 0.026406,
-          "expected_value": 0.0355,
+          "probability_edge": 0.026576,
+          "expected_value": 0.035932,
           "stake_fraction": 0.0,
-          "timing_bucket": "D2",
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": false,
           "flags": [
@@ -1169,78 +1047,53 @@
           ]
         },
         {
-          "rank": 11,
-          "event_id": "actionnetwork-290039",
-          "game": "Texas Tech Red Raiders at Oklahoma State Cowboys",
-          "selection": "Texas Tech Red Raiders",
-          "opponent": "Oklahoma State Cowboys",
-          "side": "away",
-          "kickoff": "2026-11-15T02:30:00.000Z",
-          "sportsbook": "draftkings",
-          "american_odds": 142,
-          "model_probability": 0.42629,
-          "market_probability": 0.400729,
-          "probability_edge": 0.025561,
-          "expected_value": 0.031621,
-          "stake_fraction": 0.0,
-          "timing_bucket": "D2",
-          "book_count": 5,
-          "qualifies": false,
-          "flags": [
-            "ev_below_threshold"
-          ],
-          "gate_reasons": [
-            "Model EV +3.2%; needs +4.0%"
-          ]
-        },
-        {
           "rank": 12,
-          "event_id": "actionnetwork-289998",
-          "game": "Arizona State Sun Devils at UCF Knights",
-          "selection": "UCF Knights",
-          "opponent": "Arizona State Sun Devils",
-          "side": "home",
-          "kickoff": "2026-11-14T20:30:00.000Z",
-          "sportsbook": "fanduel",
-          "american_odds": -152,
-          "model_probability": 0.618462,
-          "market_probability": 0.59337,
-          "probability_edge": 0.025093,
-          "expected_value": 0.025346,
-          "stake_fraction": 0.0,
-          "timing_bucket": "D2",
-          "book_count": 5,
-          "qualifies": false,
-          "flags": [
-            "ev_below_threshold"
-          ],
-          "gate_reasons": [
-            "Model EV +2.5%; needs +4.0%"
-          ]
-        },
-        {
-          "rank": 13,
           "event_id": "actionnetwork-290042",
           "game": "Michigan Wolverines at Oregon Ducks",
           "selection": "Oregon Ducks",
           "opponent": "Michigan Wolverines",
           "side": "home",
           "kickoff": "2026-11-14T20:30:00.000Z",
-          "sportsbook": "draftkings",
-          "american_odds": -440,
-          "model_probability": 0.8075,
-          "market_probability": 0.782609,
-          "probability_edge": 0.024891,
-          "expected_value": -0.008977,
+          "sportsbook": "fanduel",
+          "american_odds": -410,
+          "model_probability": 0.803206,
+          "market_probability": 0.776833,
+          "probability_edge": 0.026373,
+          "expected_value": -0.00089,
           "stake_fraction": 0.0,
-          "timing_bucket": "D2",
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": false,
           "flags": [
             "ev_below_threshold"
           ],
           "gate_reasons": [
-            "Model EV -0.9%; needs +4.0%"
+            "Model EV -0.1%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 13,
+          "event_id": "actionnetwork-289953",
+          "game": "Houston Cougars at Colorado Buffaloes",
+          "selection": "Houston Cougars",
+          "opponent": "Colorado Buffaloes",
+          "side": "away",
+          "kickoff": "2026-11-14T03:15:00.000Z",
+          "sportsbook": "fanduel",
+          "american_odds": -350,
+          "model_probability": 0.776319,
+          "market_probability": 0.750813,
+          "probability_edge": 0.025506,
+          "expected_value": -0.001876,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D0",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Model EV -0.2%; needs +4.0%"
           ]
         },
         {
@@ -1251,37 +1104,12 @@
           "opponent": "Marshall Thundering Herd",
           "side": "away",
           "kickoff": "2026-11-14T23:00:00.000Z",
-          "sportsbook": "draftkings",
-          "american_odds": -120,
-          "model_probability": 0.546584,
-          "market_probability": 0.521739,
-          "probability_edge": 0.024845,
-          "expected_value": 0.002071,
-          "stake_fraction": 0.0,
-          "timing_bucket": "D2",
-          "book_count": 5,
-          "qualifies": false,
-          "flags": [
-            "ev_below_threshold"
-          ],
-          "gate_reasons": [
-            "Model EV +0.2%; needs +4.0%"
-          ]
-        },
-        {
-          "rank": 15,
-          "event_id": "actionnetwork-289953",
-          "game": "Houston Cougars at Colorado Buffaloes",
-          "selection": "Houston Cougars",
-          "opponent": "Colorado Buffaloes",
-          "side": "away",
-          "kickoff": "2026-11-14T03:15:00.000Z",
           "sportsbook": "betmgm",
-          "american_odds": -375,
-          "model_probability": 0.783505,
-          "market_probability": 0.76,
-          "probability_edge": 0.023505,
-          "expected_value": -0.00756,
+          "american_odds": -118,
+          "model_probability": 0.546614,
+          "market_probability": 0.521739,
+          "probability_edge": 0.024875,
+          "expected_value": 0.009847,
           "stake_fraction": 0.0,
           "timing_bucket": "D1",
           "book_count": 5,
@@ -1290,7 +1118,32 @@
             "ev_below_threshold"
           ],
           "gate_reasons": [
-            "Model EV -0.8%; needs +4.0%"
+            "Model EV +1.0%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 15,
+          "event_id": "actionnetwork-290039",
+          "game": "Texas Tech Red Raiders at Oklahoma State Cowboys",
+          "selection": "Texas Tech Red Raiders",
+          "opponent": "Oklahoma State Cowboys",
+          "side": "away",
+          "kickoff": "2026-11-15T02:30:00.000Z",
+          "sportsbook": "draftkings",
+          "american_odds": 142,
+          "model_probability": 0.42493,
+          "market_probability": 0.400908,
+          "probability_edge": 0.024022,
+          "expected_value": 0.028331,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D1",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Model EV +2.8%; needs +4.0%"
           ]
         },
         {
@@ -1303,69 +1156,69 @@
           "kickoff": "2026-11-14T21:15:00.000Z",
           "sportsbook": "draftkings",
           "american_odds": 142,
-          "model_probability": 0.427159,
-          "market_probability": 0.404883,
-          "probability_edge": 0.022276,
-          "expected_value": 0.033724,
+          "model_probability": 0.426349,
+          "market_probability": 0.402919,
+          "probability_edge": 0.02343,
+          "expected_value": 0.031764,
           "stake_fraction": 0.0,
-          "timing_bucket": "D2",
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": false,
           "flags": [
             "ev_below_threshold"
           ],
           "gate_reasons": [
-            "Model EV +3.4%; needs +4.0%"
+            "Model EV +3.2%; needs +4.0%"
           ]
         },
         {
           "rank": 17,
-          "event_id": "actionnetwork-289963",
-          "game": "Auburn Tigers at Mississippi State Bulldogs",
-          "selection": "Mississippi State Bulldogs",
-          "opponent": "Auburn Tigers",
-          "side": "home",
-          "kickoff": "2026-11-14T17:00:00.000Z",
-          "sportsbook": "fanduel",
-          "american_odds": 122,
-          "model_probability": 0.45647,
-          "market_probability": 0.434682,
-          "probability_edge": 0.021788,
-          "expected_value": 0.013363,
-          "stake_fraction": 0.0,
-          "timing_bucket": "D2",
-          "book_count": 5,
-          "qualifies": false,
-          "flags": [
-            "ev_below_threshold"
-          ],
-          "gate_reasons": [
-            "Model EV +1.3%; needs +4.0%"
-          ]
-        },
-        {
-          "rank": 18,
           "event_id": "actionnetwork-290007",
           "game": "Ole Miss Rebels at Oklahoma Sooners",
           "selection": "Ole Miss Rebels",
           "opponent": "Oklahoma Sooners",
           "side": "away",
           "kickoff": "2026-11-14T21:15:00.000Z",
-          "sportsbook": "betmgm",
-          "american_odds": -105,
-          "model_probability": 0.521612,
-          "market_probability": 0.5,
-          "probability_edge": 0.021612,
-          "expected_value": 0.018386,
+          "sportsbook": "fanduel",
+          "american_odds": -104,
+          "model_probability": 0.518554,
+          "market_probability": 0.49567,
+          "probability_edge": 0.022884,
+          "expected_value": 0.017163,
           "stake_fraction": 0.0,
-          "timing_bucket": "D2",
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": false,
           "flags": [
             "ev_below_threshold"
           ],
           "gate_reasons": [
-            "Model EV +1.8%; needs +4.0%"
+            "Model EV +1.7%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 18,
+          "event_id": "actionnetwork-289963",
+          "game": "Auburn Tigers at Mississippi State Bulldogs",
+          "selection": "Mississippi State Bulldogs",
+          "opponent": "Auburn Tigers",
+          "side": "home",
+          "kickoff": "2026-11-14T17:00:00.000Z",
+          "sportsbook": "caesars",
+          "american_odds": 121,
+          "model_probability": 0.457629,
+          "market_probability": 0.436508,
+          "probability_edge": 0.021121,
+          "expected_value": 0.011359,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D1",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Model EV +1.1%; needs +4.0%"
           ]
         },
         {
@@ -1376,21 +1229,21 @@
           "opponent": "Duke Blue Devils",
           "side": "home",
           "kickoff": "2026-11-14T17:00:00.000Z",
-          "sportsbook": "fanduel",
+          "sportsbook": "draftkings",
           "american_odds": -550,
-          "model_probability": 0.837843,
-          "market_probability": 0.817259,
-          "probability_edge": 0.020584,
-          "expected_value": -0.009822,
+          "model_probability": 0.838243,
+          "market_probability": 0.817822,
+          "probability_edge": 0.020421,
+          "expected_value": -0.00935,
           "stake_fraction": 0.0,
-          "timing_bucket": "D2",
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": false,
           "flags": [
             "ev_below_threshold"
           ],
           "gate_reasons": [
-            "Model EV -1.0%; needs +4.0%"
+            "Model EV -0.9%; needs +4.0%"
           ]
         },
         {
@@ -1401,21 +1254,21 @@
           "opponent": "Stanford Cardinal",
           "side": "home",
           "kickoff": "2026-11-15T00:30:00.000Z",
-          "sportsbook": "betmgm",
-          "american_odds": -650,
-          "model_probability": 0.864862,
-          "market_probability": 0.844589,
-          "probability_edge": 0.020273,
-          "expected_value": -0.002082,
+          "sportsbook": "fanduel",
+          "american_odds": -690,
+          "model_probability": 0.86534,
+          "market_probability": 0.845411,
+          "probability_edge": 0.01993,
+          "expected_value": -0.009248,
           "stake_fraction": 0.0,
-          "timing_bucket": "D2",
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": false,
           "flags": [
             "ev_below_threshold"
           ],
           "gate_reasons": [
-            "Model EV -0.2%; needs +4.0%"
+            "Model EV -0.9%; needs +4.0%"
           ]
         }
       ],
@@ -1452,47 +1305,12 @@
               "american_odds": 295,
               "expected_value": 0.13722,
               "qualifies": true
-            }
-          ]
-        },
-        {
-          "event_id": "actionnetwork-290014",
-          "side": "away",
-          "selection": "Oregon State Beavers",
-          "snapshots": [
-            {
-              "captured_at": "2026-11-08T12:10:49Z",
-              "timing_bucket": "D6",
-              "american_odds": 180,
-              "expected_value": -0.092609,
-              "qualifies": false
             },
             {
-              "captured_at": "2026-11-09T12:11:07Z",
-              "timing_bucket": "D5",
-              "american_odds": 320,
-              "expected_value": -0.015598,
-              "qualifies": false
-            },
-            {
-              "captured_at": "2026-11-10T12:06:23Z",
-              "timing_bucket": "D4",
-              "american_odds": 400,
-              "expected_value": 0.03036,
-              "qualifies": false
-            },
-            {
-              "captured_at": "2026-11-11T12:11:28Z",
-              "timing_bucket": "D3",
-              "american_odds": 420,
-              "expected_value": 0.058548,
-              "qualifies": false
-            },
-            {
-              "captured_at": "2026-11-12T12:08:13Z",
-              "timing_bucket": "D2",
-              "american_odds": 480,
-              "expected_value": 0.079807,
+              "captured_at": "2026-11-13T15:23:15Z",
+              "timing_bucket": "D1",
+              "american_odds": 295,
+              "expected_value": 0.069668,
               "qualifies": true
             }
           ]
@@ -1529,40 +1347,12 @@
               "american_odds": 114,
               "expected_value": 0.05665,
               "qualifies": true
-            }
-          ]
-        },
-        {
-          "event_id": "actionnetwork-290048",
-          "side": "home",
-          "selection": "Temple Owls",
-          "snapshots": [
-            {
-              "captured_at": "2026-11-09T12:11:07Z",
-              "timing_bucket": "D5",
-              "american_odds": -130,
-              "expected_value": 0.043814,
-              "qualifies": true
             },
             {
-              "captured_at": "2026-11-10T12:06:23Z",
-              "timing_bucket": "D4",
-              "american_odds": -126,
-              "expected_value": 0.047422,
-              "qualifies": true
-            },
-            {
-              "captured_at": "2026-11-11T12:11:28Z",
-              "timing_bucket": "D3",
-              "american_odds": -126,
-              "expected_value": 0.047422,
-              "qualifies": true
-            },
-            {
-              "captured_at": "2026-11-12T12:08:13Z",
-              "timing_bucket": "D2",
-              "american_odds": -126,
-              "expected_value": 0.047422,
+              "captured_at": "2026-11-13T15:23:15Z",
+              "timing_bucket": "D1",
+              "american_odds": 115,
+              "expected_value": 0.050586,
               "qualifies": true
             }
           ]
@@ -1580,6 +1370,27 @@
       "qualified_bets": [
         {
           "rank": 1,
+          "event_id": "actionnetwork-289995",
+          "game": "Illinois Fighting Illini at UCLA Bruins",
+          "selection": "Illinois Fighting Illini",
+          "opponent": "UCLA Bruins",
+          "side": "away",
+          "kickoff": "2026-11-14T02:00:00.000Z",
+          "sportsbook": "fanduel",
+          "american_odds": 320,
+          "model_probability": 0.275932,
+          "market_probability": 0.234098,
+          "probability_edge": 0.041834,
+          "expected_value": 0.158913,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D0",
+          "book_count": 5,
+          "qualifies": true,
+          "flags": [],
+          "gate_reasons": []
+        },
+        {
+          "rank": 2,
           "event_id": "actionnetwork-290004",
           "game": "UNLV Rebels at New Mexico Lobos",
           "selection": "UNLV Rebels",
@@ -1588,33 +1399,12 @@
           "kickoff": "2026-11-15T00:30:00.000Z",
           "sportsbook": "betrivers",
           "american_odds": 510,
-          "model_probability": 0.200642,
-          "market_probability": 0.175,
-          "probability_edge": 0.025642,
-          "expected_value": 0.223915,
+          "model_probability": 0.188697,
+          "market_probability": 0.167873,
+          "probability_edge": 0.020825,
+          "expected_value": 0.151055,
           "stake_fraction": 0.0,
-          "timing_bucket": "D2",
-          "book_count": 5,
-          "qualifies": true,
-          "flags": [],
-          "gate_reasons": []
-        },
-        {
-          "rank": 2,
-          "event_id": "actionnetwork-289992",
-          "game": "Fresno State Bulldogs at Texas State Bobcats",
-          "selection": "Fresno State Bulldogs",
-          "opponent": "Texas State Bobcats",
-          "side": "away",
-          "kickoff": "2026-11-14T21:00:00.000Z",
-          "sportsbook": "draftkings",
-          "american_odds": 295,
-          "model_probability": 0.29416,
-          "market_probability": 0.246537,
-          "probability_edge": 0.047623,
-          "expected_value": 0.161931,
-          "stake_fraction": 0.0,
-          "timing_bucket": "D2",
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": true,
           "flags": [],
@@ -1630,12 +1420,12 @@
           "kickoff": "2026-11-15T02:30:00.000Z",
           "sportsbook": "draftkings",
           "american_odds": 142,
-          "model_probability": 0.471472,
-          "market_probability": 0.400729,
-          "probability_edge": 0.070743,
-          "expected_value": 0.140962,
+          "model_probability": 0.470641,
+          "market_probability": 0.400908,
+          "probability_edge": 0.069733,
+          "expected_value": 0.138951,
           "stake_fraction": 0.0,
-          "timing_bucket": "D2",
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": true,
           "flags": [],
@@ -1649,14 +1439,14 @@
           "opponent": "Rice Owls",
           "side": "away",
           "kickoff": "2026-11-14T19:00:00.000Z",
-          "sportsbook": "draftkings",
-          "american_odds": 114,
-          "model_probability": 0.530966,
-          "market_probability": 0.45323,
-          "probability_edge": 0.077735,
-          "expected_value": 0.136266,
+          "sportsbook": "betmgm",
+          "american_odds": 115,
+          "model_probability": 0.526508,
+          "market_probability": 0.448559,
+          "probability_edge": 0.07795,
+          "expected_value": 0.131993,
           "stake_fraction": 0.0,
-          "timing_bucket": "D2",
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": true,
           "flags": [],
@@ -1664,18 +1454,18 @@
         },
         {
           "rank": 5,
-          "event_id": "actionnetwork-289995",
-          "game": "Illinois Fighting Illini at UCLA Bruins",
-          "selection": "Illinois Fighting Illini",
-          "opponent": "UCLA Bruins",
+          "event_id": "actionnetwork-289992",
+          "game": "Fresno State Bulldogs at Texas State Bobcats",
+          "selection": "Fresno State Bulldogs",
+          "opponent": "Texas State Bobcats",
           "side": "away",
-          "kickoff": "2026-11-14T02:00:00.000Z",
+          "kickoff": "2026-11-14T21:00:00.000Z",
           "sportsbook": "draftkings",
-          "american_odds": 310,
-          "model_probability": 0.275951,
-          "market_probability": 0.234098,
-          "probability_edge": 0.041853,
-          "expected_value": 0.131401,
+          "american_odds": 295,
+          "model_probability": 0.282824,
+          "market_probability": 0.246537,
+          "probability_edge": 0.036287,
+          "expected_value": 0.117154,
           "stake_fraction": 0.0,
           "timing_bucket": "D1",
           "book_count": 5,
@@ -1685,20 +1475,20 @@
         },
         {
           "rank": 6,
-          "event_id": "actionnetwork-289955",
-          "game": "Jacksonville State Gamecocks at Western Kentucky Hilltoppers",
-          "selection": "Western Kentucky Hilltoppers",
-          "opponent": "Jacksonville State Gamecocks",
-          "side": "home",
-          "kickoff": "2026-11-14T20:30:00.000Z",
+          "event_id": "actionnetwork-289960",
+          "game": "Kansas State Wildcats at TCU Horned Frogs",
+          "selection": "Kansas State Wildcats",
+          "opponent": "TCU Horned Frogs",
+          "side": "away",
+          "kickoff": "2026-11-14T19:00:00.000Z",
           "sportsbook": "fanduel",
-          "american_odds": 250,
-          "model_probability": 0.322433,
-          "market_probability": 0.289532,
-          "probability_edge": 0.032901,
-          "expected_value": 0.128516,
+          "american_odds": 360,
+          "model_probability": 0.240112,
+          "market_probability": 0.213592,
+          "probability_edge": 0.02652,
+          "expected_value": 0.104516,
           "stake_fraction": 0.0,
-          "timing_bucket": "D2",
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": true,
           "flags": [],
@@ -1712,14 +1502,14 @@
           "opponent": "North Dakota State Bison",
           "side": "home",
           "kickoff": "2026-11-15T04:00:00.000Z",
-          "sportsbook": "fanduel",
-          "american_odds": 205,
-          "model_probability": 0.362177,
+          "sportsbook": "draftkings",
+          "american_odds": 200,
+          "model_probability": 0.362596,
           "market_probability": 0.319444,
-          "probability_edge": 0.042732,
-          "expected_value": 0.10464,
+          "probability_edge": 0.043151,
+          "expected_value": 0.087787,
           "stake_fraction": 0.0,
-          "timing_bucket": "D2",
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": true,
           "flags": [],
@@ -1735,12 +1525,12 @@
           "kickoff": "2026-11-15T02:30:00.000Z",
           "sportsbook": "betrivers",
           "american_odds": 128,
-          "model_probability": 0.476282,
+          "model_probability": 0.475573,
           "market_probability": 0.434397,
-          "probability_edge": 0.041884,
-          "expected_value": 0.085922,
+          "probability_edge": 0.041176,
+          "expected_value": 0.084306,
           "stake_fraction": 0.0,
-          "timing_bucket": "D2",
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": true,
           "flags": [],
@@ -1748,20 +1538,20 @@
         },
         {
           "rank": 9,
-          "event_id": "actionnetwork-289960",
-          "game": "Kansas State Wildcats at TCU Horned Frogs",
-          "selection": "Kansas State Wildcats",
-          "opponent": "TCU Horned Frogs",
-          "side": "away",
-          "kickoff": "2026-11-14T19:00:00.000Z",
-          "sportsbook": "fanduel",
-          "american_odds": 320,
-          "model_probability": 0.255511,
-          "market_probability": 0.233645,
-          "probability_edge": 0.021866,
-          "expected_value": 0.073147,
+          "event_id": "actionnetwork-289955",
+          "game": "Jacksonville State Gamecocks at Western Kentucky Hilltoppers",
+          "selection": "Western Kentucky Hilltoppers",
+          "opponent": "Jacksonville State Gamecocks",
+          "side": "home",
+          "kickoff": "2026-11-14T20:30:00.000Z",
+          "sportsbook": "draftkings",
+          "american_odds": 240,
+          "model_probability": 0.317785,
+          "market_probability": 0.282546,
+          "probability_edge": 0.035238,
+          "expected_value": 0.080468,
           "stake_fraction": 0.0,
-          "timing_bucket": "D2",
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": true,
           "flags": [],
@@ -1775,14 +1565,14 @@
           "opponent": "Syracuse Orange",
           "side": "home",
           "kickoff": "2026-11-14T17:00:00.000Z",
-          "sportsbook": "fanduel",
-          "american_odds": 120,
-          "model_probability": 0.486536,
-          "market_probability": 0.443579,
-          "probability_edge": 0.042957,
-          "expected_value": 0.070379,
+          "sportsbook": "draftkings",
+          "american_odds": 124,
+          "model_probability": 0.479949,
+          "market_probability": 0.434397,
+          "probability_edge": 0.045552,
+          "expected_value": 0.075085,
           "stake_fraction": 0.0,
-          "timing_bucket": "D2",
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": true,
           "flags": [],
@@ -1790,20 +1580,20 @@
         },
         {
           "rank": 11,
-          "event_id": "actionnetwork-289969",
-          "game": "Florida Gators at Kentucky Wildcats",
-          "selection": "Florida Gators",
-          "opponent": "Kentucky Wildcats",
-          "side": "away",
-          "kickoff": "2026-11-14T23:15:00.000Z",
-          "sportsbook": "draftkings",
-          "american_odds": 145,
-          "model_probability": 0.435703,
-          "market_probability": 0.396243,
-          "probability_edge": 0.03946,
-          "expected_value": 0.067472,
+          "event_id": "actionnetwork-290048",
+          "game": "UAB Blazers at Temple Owls",
+          "selection": "Temple Owls",
+          "opponent": "UAB Blazers",
+          "side": "home",
+          "kickoff": "2026-11-14T18:00:00.000Z",
+          "sportsbook": "betrivers",
+          "american_odds": -129,
+          "model_probability": 0.595221,
+          "market_probability": 0.544383,
+          "probability_edge": 0.050838,
+          "expected_value": 0.056633,
           "stake_fraction": 0.0,
-          "timing_bucket": "D2",
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": true,
           "flags": [],
@@ -1811,20 +1601,20 @@
         },
         {
           "rank": 12,
-          "event_id": "actionnetwork-290048",
-          "game": "UAB Blazers at Temple Owls",
-          "selection": "Temple Owls",
-          "opponent": "UAB Blazers",
-          "side": "home",
-          "kickoff": "2026-11-14T18:00:00.000Z",
-          "sportsbook": "fanduel",
-          "american_odds": -126,
-          "model_probability": 0.593698,
-          "market_probability": 0.542744,
-          "probability_edge": 0.050955,
-          "expected_value": 0.064887,
+          "event_id": "actionnetwork-289969",
+          "game": "Florida Gators at Kentucky Wildcats",
+          "selection": "Florida Gators",
+          "opponent": "Kentucky Wildcats",
+          "side": "away",
+          "kickoff": "2026-11-14T23:15:00.000Z",
+          "sportsbook": "caesars",
+          "american_odds": 133,
+          "model_probability": 0.450748,
+          "market_probability": 0.417007,
+          "probability_edge": 0.033741,
+          "expected_value": 0.050244,
           "stake_fraction": 0.0,
-          "timing_bucket": "D2",
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": true,
           "flags": [],
@@ -1840,12 +1630,12 @@
           "kickoff": "2026-11-15T00:30:00.000Z",
           "sportsbook": "draftkings",
           "american_odds": 154,
-          "model_probability": 0.41025,
+          "model_probability": 0.41036,
           "market_probability": 0.381271,
-          "probability_edge": 0.028979,
-          "expected_value": 0.042034,
+          "probability_edge": 0.02909,
+          "expected_value": 0.042316,
           "stake_fraction": 0.0,
-          "timing_bucket": "D2",
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": true,
           "flags": [],
@@ -1853,20 +1643,20 @@
         },
         {
           "rank": 14,
-          "event_id": "actionnetwork-289977",
-          "game": "Cincinnati Bearcats at Iowa State Cyclones",
-          "selection": "Cincinnati Bearcats",
-          "opponent": "Iowa State Cyclones",
-          "side": "away",
-          "kickoff": "2026-11-14T17:00:00.000Z",
-          "sportsbook": "caesars",
-          "american_odds": 131,
-          "model_probability": 0.45085,
-          "market_probability": 0.425532,
-          "probability_edge": 0.025318,
-          "expected_value": 0.041464,
+          "event_id": "actionnetwork-289965",
+          "game": "Georgia Southern Eagles at Georgia State Panthers",
+          "selection": "Georgia State Panthers",
+          "opponent": "Georgia Southern Eagles",
+          "side": "home",
+          "kickoff": "2026-11-14T20:30:00.000Z",
+          "sportsbook": "fanduel",
+          "american_odds": 195,
+          "model_probability": 0.352711,
+          "market_probability": 0.330231,
+          "probability_edge": 0.02248,
+          "expected_value": 0.040497,
           "stake_fraction": 0.0,
-          "timing_bucket": "D2",
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": true,
           "flags": [],
@@ -1884,12 +1674,12 @@
           "kickoff": "2026-11-14T17:00:00.000Z",
           "sportsbook": "draftkings",
           "american_odds": -550,
-          "model_probability": 0.852186,
+          "model_probability": 0.851994,
           "market_probability": 0.811867,
-          "probability_edge": 0.04032,
-          "expected_value": 0.007129,
+          "probability_edge": 0.040127,
+          "expected_value": 0.006902,
           "stake_fraction": 0.0,
-          "timing_bucket": "D2",
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": false,
           "flags": [
@@ -1901,45 +1691,70 @@
         },
         {
           "rank": 2,
-          "event_id": "actionnetwork-290033",
-          "game": "James Madison Dukes at UConn Huskies",
-          "selection": "James Madison Dukes",
-          "opponent": "UConn Huskies",
-          "side": "away",
-          "kickoff": "2026-11-14T17:00:00.000Z",
-          "sportsbook": "betrivers",
-          "american_odds": -180,
-          "model_probability": 0.661837,
-          "market_probability": 0.625565,
-          "probability_edge": 0.036272,
-          "expected_value": 0.029524,
+          "event_id": "actionnetwork-290035",
+          "game": "New Mexico State Aggies at Missouri State Bears",
+          "selection": "Missouri State Bears",
+          "opponent": "New Mexico State Aggies",
+          "side": "home",
+          "kickoff": "2026-11-14T20:00:00.000Z",
+          "sportsbook": "fanduel",
+          "american_odds": -118,
+          "model_probability": 0.556156,
+          "market_probability": 0.519017,
+          "probability_edge": 0.037139,
+          "expected_value": 0.027474,
           "stake_fraction": 0.0,
-          "timing_bucket": "D2",
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": false,
           "flags": [
             "ev_below_threshold"
           ],
           "gate_reasons": [
-            "Model EV +3.0%; needs +4.0%"
+            "Model EV +2.7%; needs +4.0%"
           ]
         },
         {
           "rank": 3,
-          "event_id": "actionnetwork-289950",
-          "game": "Louisiana Ragin' Cajuns at UL-Monroe Warhawks",
-          "selection": "Louisiana Ragin' Cajuns",
-          "opponent": "UL-Monroe Warhawks",
+          "event_id": "actionnetwork-290033",
+          "game": "James Madison Dukes at UConn Huskies",
+          "selection": "James Madison Dukes",
+          "opponent": "UConn Huskies",
           "side": "away",
-          "kickoff": "2026-11-13T02:00:00.000Z",
-          "sportsbook": "draftkings",
-          "american_odds": -395,
-          "model_probability": 0.799024,
-          "market_probability": 0.766355,
-          "probability_edge": 0.032668,
-          "expected_value": 0.001308,
+          "kickoff": "2026-11-14T17:00:00.000Z",
+          "sportsbook": "fanduel",
+          "american_odds": -182,
+          "model_probability": 0.663219,
+          "market_probability": 0.627643,
+          "probability_edge": 0.035576,
+          "expected_value": 0.027625,
           "stake_fraction": 0.0,
-          "timing_bucket": "D0",
+          "timing_bucket": "D1",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Model EV +2.8%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 4,
+          "event_id": "actionnetwork-289962",
+          "game": "East Carolina Pirates at Charlotte 49ers",
+          "selection": "East Carolina Pirates",
+          "opponent": "Charlotte 49ers",
+          "side": "away",
+          "kickoff": "2026-11-14T18:00:00.000Z",
+          "sportsbook": "fanduel",
+          "american_odds": -450,
+          "model_probability": 0.818648,
+          "market_probability": 0.786744,
+          "probability_edge": 0.031904,
+          "expected_value": 0.000569,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": false,
           "flags": [
@@ -1950,31 +1765,6 @@
           ]
         },
         {
-          "rank": 4,
-          "event_id": "actionnetwork-290035",
-          "game": "New Mexico State Aggies at Missouri State Bears",
-          "selection": "Missouri State Bears",
-          "opponent": "New Mexico State Aggies",
-          "side": "home",
-          "kickoff": "2026-11-14T20:00:00.000Z",
-          "sportsbook": "draftkings",
-          "american_odds": -125,
-          "model_probability": 0.567687,
-          "market_probability": 0.535921,
-          "probability_edge": 0.031766,
-          "expected_value": 0.021836,
-          "stake_fraction": 0.0,
-          "timing_bucket": "D2",
-          "book_count": 5,
-          "qualifies": false,
-          "flags": [
-            "ev_below_threshold"
-          ],
-          "gate_reasons": [
-            "Model EV +2.2%; needs +4.0%"
-          ]
-        },
-        {
           "rank": 5,
           "event_id": "actionnetwork-289978",
           "game": "Minnesota Golden Gophers at Penn State Nittany Lions",
@@ -1982,39 +1772,14 @@
           "opponent": "Minnesota Golden Gophers",
           "side": "home",
           "kickoff": "2026-11-15T00:00:00.000Z",
-          "sportsbook": "caesars",
-          "american_odds": -335,
-          "model_probability": 0.778419,
-          "market_probability": 0.747508,
-          "probability_edge": 0.030911,
-          "expected_value": 0.010783,
+          "sportsbook": "betmgm",
+          "american_odds": -350,
+          "model_probability": 0.779755,
+          "market_probability": 0.748359,
+          "probability_edge": 0.031397,
+          "expected_value": 0.002543,
           "stake_fraction": 0.0,
-          "timing_bucket": "D2",
-          "book_count": 5,
-          "qualifies": false,
-          "flags": [
-            "ev_below_threshold"
-          ],
-          "gate_reasons": [
-            "Model EV +1.1%; needs +4.0%"
-          ]
-        },
-        {
-          "rank": 6,
-          "event_id": "actionnetwork-289962",
-          "game": "East Carolina Pirates at Charlotte 49ers",
-          "selection": "East Carolina Pirates",
-          "opponent": "Charlotte 49ers",
-          "side": "away",
-          "kickoff": "2026-11-14T18:00:00.000Z",
-          "sportsbook": "draftkings",
-          "american_odds": -455,
-          "model_probability": 0.821892,
-          "market_probability": 0.791667,
-          "probability_edge": 0.030225,
-          "expected_value": 0.002528,
-          "stake_fraction": 0.0,
-          "timing_bucket": "D2",
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": false,
           "flags": [
@@ -2025,46 +1790,71 @@
           ]
         },
         {
-          "rank": 7,
+          "rank": 6,
           "event_id": "actionnetwork-289959",
           "game": "Duke Blue Devils at Miami (FL) Hurricanes",
           "selection": "Miami (FL) Hurricanes",
           "opponent": "Duke Blue Devils",
           "side": "home",
           "kickoff": "2026-11-14T17:00:00.000Z",
-          "sportsbook": "fanduel",
+          "sportsbook": "draftkings",
           "american_odds": -550,
-          "model_probability": 0.846101,
-          "market_probability": 0.817259,
-          "probability_edge": 0.028842,
-          "expected_value": -6.2e-05,
+          "model_probability": 0.846472,
+          "market_probability": 0.817822,
+          "probability_edge": 0.02865,
+          "expected_value": 0.000376,
           "stake_fraction": 0.0,
-          "timing_bucket": "D2",
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": false,
           "flags": [
             "ev_below_threshold"
           ],
           "gate_reasons": [
-            "Model EV -0.0%; needs +4.0%"
+            "Model EV +0.0%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 7,
+          "event_id": "actionnetwork-289977",
+          "game": "Cincinnati Bearcats at Iowa State Cyclones",
+          "selection": "Cincinnati Bearcats",
+          "opponent": "Iowa State Cyclones",
+          "side": "away",
+          "kickoff": "2026-11-14T17:00:00.000Z",
+          "sportsbook": "caesars",
+          "american_odds": 127,
+          "model_probability": 0.456321,
+          "market_probability": 0.432357,
+          "probability_edge": 0.023964,
+          "expected_value": 0.035848,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D1",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Model EV +3.6%; needs +4.0%"
           ]
         },
         {
           "rank": 8,
-          "event_id": "actionnetwork-290049",
-          "game": "Florida Atlantic Owls at Tulsa Golden Hurricane",
-          "selection": "Tulsa Golden Hurricane",
-          "opponent": "Florida Atlantic Owls",
+          "event_id": "actionnetwork-290042",
+          "game": "Michigan Wolverines at Oregon Ducks",
+          "selection": "Oregon Ducks",
+          "opponent": "Michigan Wolverines",
           "side": "home",
           "kickoff": "2026-11-14T20:30:00.000Z",
           "sportsbook": "fanduel",
-          "american_odds": -215,
-          "model_probability": 0.679221,
-          "market_probability": 0.656489,
-          "probability_edge": 0.022733,
-          "expected_value": -0.004862,
+          "american_odds": -410,
+          "model_probability": 0.800042,
+          "market_probability": 0.776833,
+          "probability_edge": 0.023209,
+          "expected_value": -0.004826,
           "stake_fraction": 0.0,
-          "timing_bucket": "D2",
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": false,
           "flags": [
@@ -2076,52 +1866,52 @@
         },
         {
           "rank": 9,
-          "event_id": "actionnetwork-290042",
-          "game": "Michigan Wolverines at Oregon Ducks",
-          "selection": "Oregon Ducks",
-          "opponent": "Michigan Wolverines",
-          "side": "home",
-          "kickoff": "2026-11-14T20:30:00.000Z",
-          "sportsbook": "draftkings",
-          "american_odds": -440,
-          "model_probability": 0.804189,
-          "market_probability": 0.782609,
-          "probability_edge": 0.021581,
-          "expected_value": -0.01304,
-          "stake_fraction": 0.0,
-          "timing_bucket": "D2",
-          "book_count": 5,
-          "qualifies": false,
-          "flags": [
-            "ev_below_threshold"
-          ],
-          "gate_reasons": [
-            "Model EV -1.3%; needs +4.0%"
-          ]
-        },
-        {
-          "rank": 10,
           "event_id": "actionnetwork-290029",
           "game": "California Golden Bears at Virginia Cavaliers",
           "selection": "Virginia Cavaliers",
           "opponent": "California Golden Bears",
           "side": "home",
           "kickoff": "2026-11-14T20:30:00.000Z",
-          "sportsbook": "fanduel",
-          "american_odds": -385,
-          "model_probability": 0.794108,
-          "market_probability": 0.772727,
-          "probability_edge": 0.021381,
-          "expected_value": 0.00037,
+          "sportsbook": "betmgm",
+          "american_odds": -400,
+          "model_probability": 0.793856,
+          "market_probability": 0.771505,
+          "probability_edge": 0.02235,
+          "expected_value": -0.00768,
           "stake_fraction": 0.0,
-          "timing_bucket": "D2",
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": false,
           "flags": [
             "ev_below_threshold"
           ],
           "gate_reasons": [
-            "Model EV +0.0%; needs +4.0%"
+            "Model EV -0.8%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 10,
+          "event_id": "actionnetwork-290049",
+          "game": "Florida Atlantic Owls at Tulsa Golden Hurricane",
+          "selection": "Tulsa Golden Hurricane",
+          "opponent": "Florida Atlantic Owls",
+          "side": "home",
+          "kickoff": "2026-11-14T20:30:00.000Z",
+          "sportsbook": "betrivers",
+          "american_odds": -215,
+          "model_probability": 0.680129,
+          "market_probability": 0.65812,
+          "probability_edge": 0.022009,
+          "expected_value": -0.003533,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D1",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Model EV -0.4%; needs +4.0%"
           ]
         },
         {
@@ -2133,49 +1923,24 @@
           "side": "home",
           "kickoff": "2026-11-14T20:00:00.000Z",
           "sportsbook": "fanduel",
-          "american_odds": 116,
+          "american_odds": 120,
           "model_probability": 0.467827,
           "market_probability": 0.446631,
           "probability_edge": 0.021196,
-          "expected_value": 0.010507,
+          "expected_value": 0.02922,
           "stake_fraction": 0.0,
-          "timing_bucket": "D2",
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": false,
           "flags": [
             "ev_below_threshold"
           ],
           "gate_reasons": [
-            "Model EV +1.1%; needs +4.0%"
+            "Model EV +2.9%; needs +4.0%"
           ]
         },
         {
           "rank": 12,
-          "event_id": "actionnetwork-289965",
-          "game": "Georgia Southern Eagles at Georgia State Panthers",
-          "selection": "Georgia State Panthers",
-          "opponent": "Georgia Southern Eagles",
-          "side": "home",
-          "kickoff": "2026-11-14T20:30:00.000Z",
-          "sportsbook": "draftkings",
-          "american_odds": 185,
-          "model_probability": 0.360348,
-          "market_probability": 0.340924,
-          "probability_edge": 0.019424,
-          "expected_value": 0.026992,
-          "stake_fraction": 0.0,
-          "timing_bucket": "D2",
-          "book_count": 5,
-          "qualifies": false,
-          "flags": [
-            "ev_below_threshold"
-          ],
-          "gate_reasons": [
-            "Model EV +2.7%; needs +4.0%"
-          ]
-        },
-        {
-          "rank": 13,
           "event_id": "actionnetwork-289954",
           "game": "Kansas Jayhawks at West Virginia Mountaineers",
           "selection": "Kansas Jayhawks",
@@ -2183,24 +1948,24 @@
           "side": "away",
           "kickoff": "2026-11-14T22:30:00.000Z",
           "sportsbook": "betrivers",
-          "american_odds": 123,
-          "model_probability": 0.448551,
+          "american_odds": 125,
+          "model_probability": 0.448683,
           "market_probability": 0.431488,
-          "probability_edge": 0.017063,
-          "expected_value": 0.000268,
+          "probability_edge": 0.017195,
+          "expected_value": 0.009537,
           "stake_fraction": 0.0,
-          "timing_bucket": "D2",
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": false,
           "flags": [
             "ev_below_threshold"
           ],
           "gate_reasons": [
-            "Model EV +0.0%; needs +4.0%"
+            "Model EV +1.0%; needs +4.0%"
           ]
         },
         {
-          "rank": 14,
+          "rank": 13,
           "event_id": "actionnetwork-290018",
           "game": "Wisconsin Badgers at Maryland Terrapins",
           "selection": "Maryland Terrapins",
@@ -2209,46 +1974,75 @@
           "kickoff": "2026-11-14T17:00:00.000Z",
           "sportsbook": "draftkings",
           "american_odds": 275,
-          "model_probability": 0.27111,
+          "model_probability": 0.270896,
           "market_probability": 0.255931,
-          "probability_edge": 0.015179,
-          "expected_value": 0.016664,
+          "probability_edge": 0.014965,
+          "expected_value": 0.015859,
           "stake_fraction": 0.0,
-          "timing_bucket": "D2",
+          "timing_bucket": "D1",
           "book_count": 5,
-          "qualifies": false,
-          "flags": [
-            "ev_below_threshold"
-          ],
-          "gate_reasons": [
-            "Model EV +1.7%; needs +4.0%"
-          ]
-        },
-        {
-          "rank": 15,
-          "event_id": "actionnetwork-289994",
-          "game": "Boston College Eagles at Notre Dame Fighting Irish",
-          "selection": "Notre Dame Fighting Irish",
-          "opponent": "Boston College Eagles",
-          "side": "home",
-          "kickoff": "2026-11-14T20:30:00.000Z",
-          "sportsbook": "fanduel",
-          "american_odds": -4500,
-          "model_probability": 0.962702,
-          "market_probability": 0.948641,
-          "probability_edge": 0.014061,
-          "expected_value": -0.015905,
-          "stake_fraction": 0.0,
-          "timing_bucket": "D2",
-          "book_count": 4,
           "qualifies": false,
           "flags": [
             "edge_below_threshold",
             "ev_below_threshold"
           ],
           "gate_reasons": [
-            "Probability edge +1.4%; needs +1.5%",
-            "Model EV -1.6%; needs +4.0%"
+            "Probability edge +1.5%; needs +1.5%",
+            "Model EV +1.6%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 14,
+          "event_id": "actionnetwork-290031",
+          "game": "Missouri Tigers at Georgia Bulldogs",
+          "selection": "Georgia Bulldogs",
+          "opponent": "Missouri Tigers",
+          "side": "home",
+          "kickoff": "2026-11-14T20:30:00.000Z",
+          "sportsbook": "betmgm",
+          "american_odds": -700,
+          "model_probability": 0.859771,
+          "market_probability": 0.846501,
+          "probability_edge": 0.01327,
+          "expected_value": -0.017404,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D1",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "edge_below_threshold",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Probability edge +1.3%; needs +1.5%",
+            "Model EV -1.7%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 15,
+          "event_id": "actionnetwork-289989",
+          "game": "Stanford Cardinal at Virginia Tech Hokies",
+          "selection": "Virginia Tech Hokies",
+          "opponent": "Stanford Cardinal",
+          "side": "home",
+          "kickoff": "2026-11-15T00:30:00.000Z",
+          "sportsbook": "fanduel",
+          "american_odds": -690,
+          "model_probability": 0.858388,
+          "market_probability": 0.845411,
+          "probability_edge": 0.012977,
+          "expected_value": -0.017208,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D1",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "edge_below_threshold",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Probability edge +1.3%; needs +1.5%",
+            "Model EV -1.7%; needs +4.0%"
           ]
         },
         {
@@ -2259,41 +2053,14 @@
           "opponent": "Wake Forest Demon Deacons",
           "side": "home",
           "kickoff": "2026-11-14T17:00:00.000Z",
-          "sportsbook": "betrivers",
-          "american_odds": -106,
-          "model_probability": 0.5201,
-          "market_probability": 0.506587,
-          "probability_edge": 0.013513,
-          "expected_value": 0.01076,
+          "sportsbook": "caesars",
+          "american_odds": -113,
+          "model_probability": 0.523709,
+          "market_probability": 0.510834,
+          "probability_edge": 0.012875,
+          "expected_value": -0.012832,
           "stake_fraction": 0.0,
-          "timing_bucket": "D2",
-          "book_count": 5,
-          "qualifies": false,
-          "flags": [
-            "edge_below_threshold",
-            "ev_below_threshold"
-          ],
-          "gate_reasons": [
-            "Probability edge +1.4%; needs +1.5%",
-            "Model EV +1.1%; needs +4.0%"
-          ]
-        },
-        {
-          "rank": 17,
-          "event_id": "actionnetwork-289989",
-          "game": "Stanford Cardinal at Virginia Tech Hokies",
-          "selection": "Virginia Tech Hokies",
-          "opponent": "Stanford Cardinal",
-          "side": "home",
-          "kickoff": "2026-11-15T00:30:00.000Z",
-          "sportsbook": "betmgm",
-          "american_odds": -650,
-          "model_probability": 0.857889,
-          "market_probability": 0.844589,
-          "probability_edge": 0.013299,
-          "expected_value": -0.010128,
-          "stake_fraction": 0.0,
-          "timing_bucket": "D2",
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": false,
           "flags": [
@@ -2302,7 +2069,34 @@
           ],
           "gate_reasons": [
             "Probability edge +1.3%; needs +1.5%",
-            "Model EV -1.0%; needs +4.0%"
+            "Model EV -1.3%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 17,
+          "event_id": "actionnetwork-289994",
+          "game": "Boston College Eagles at Notre Dame Fighting Irish",
+          "selection": "Notre Dame Fighting Irish",
+          "opponent": "Boston College Eagles",
+          "side": "home",
+          "kickoff": "2026-11-14T20:30:00.000Z",
+          "sportsbook": "draftkings",
+          "american_odds": -5000,
+          "model_probability": 0.964386,
+          "market_probability": 0.951764,
+          "probability_edge": 0.012622,
+          "expected_value": -0.016326,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D1",
+          "book_count": 4,
+          "qualifies": false,
+          "flags": [
+            "edge_below_threshold",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Probability edge +1.3%; needs +1.5%",
+            "Model EV -1.6%; needs +4.0%"
           ]
         },
         {
@@ -2314,40 +2108,13 @@
           "side": "away",
           "kickoff": "2026-11-14T21:15:00.000Z",
           "sportsbook": "fanduel",
-          "american_odds": -150,
-          "model_probability": 0.608292,
-          "market_probability": 0.595117,
-          "probability_edge": 0.013175,
-          "expected_value": 0.01382,
+          "american_odds": -160,
+          "model_probability": 0.609327,
+          "market_probability": 0.597081,
+          "probability_edge": 0.012247,
+          "expected_value": -0.009843,
           "stake_fraction": 0.0,
-          "timing_bucket": "D2",
-          "book_count": 5,
-          "qualifies": false,
-          "flags": [
-            "edge_below_threshold",
-            "ev_below_threshold"
-          ],
-          "gate_reasons": [
-            "Probability edge +1.3%; needs +1.5%",
-            "Model EV +1.4%; needs +4.0%"
-          ]
-        },
-        {
-          "rank": 19,
-          "event_id": "actionnetwork-290024",
-          "game": "Kennesaw State Owls at Sam Houston State Bearkats",
-          "selection": "Sam Houston State Bearkats",
-          "opponent": "Kennesaw State Owls",
-          "side": "home",
-          "kickoff": "2026-11-14T19:00:00.000Z",
-          "sportsbook": "fanduel",
-          "american_odds": 240,
-          "model_probability": 0.295987,
-          "market_probability": 0.283862,
-          "probability_edge": 0.012125,
-          "expected_value": 0.006355,
-          "stake_fraction": 0.0,
-          "timing_bucket": "D2",
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": false,
           "flags": [
@@ -2356,32 +2123,61 @@
           ],
           "gate_reasons": [
             "Probability edge +1.2%; needs +1.5%",
-            "Model EV +0.6%; needs +4.0%"
+            "Model EV -1.0%; needs +4.0%"
+          ]
+        },
+        {
+          "rank": 19,
+          "event_id": "actionnetwork-290008",
+          "game": "Alabama Crimson Tide at Vanderbilt Commodores",
+          "selection": "Alabama Crimson Tide",
+          "opponent": "Vanderbilt Commodores",
+          "side": "away",
+          "kickoff": "2026-11-14T17:45:00.000Z",
+          "sportsbook": "betmgm",
+          "american_odds": -900,
+          "model_probability": 0.877804,
+          "market_probability": 0.86711,
+          "probability_edge": 0.010694,
+          "expected_value": -0.024662,
+          "stake_fraction": 0.0,
+          "timing_bucket": "D1",
+          "book_count": 5,
+          "qualifies": false,
+          "flags": [
+            "edge_below_threshold",
+            "ev_below_threshold"
+          ],
+          "gate_reasons": [
+            "Probability edge +1.1%; needs +1.5%",
+            "Model EV -2.5%; needs +4.0%"
           ]
         },
         {
           "rank": 20,
-          "event_id": "actionnetwork-290040",
-          "game": "Nevada Wolf Pack at Northern Illinois Huskies",
-          "selection": "Northern Illinois Huskies",
-          "opponent": "Nevada Wolf Pack",
+          "event_id": "actionnetwork-290024",
+          "game": "Kennesaw State Owls at Sam Houston State Bearkats",
+          "selection": "Sam Houston State Bearkats",
+          "opponent": "Kennesaw State Owls",
           "side": "home",
-          "kickoff": "2026-11-14T20:30:00.000Z",
-          "sportsbook": "betrivers",
+          "kickoff": "2026-11-14T19:00:00.000Z",
+          "sportsbook": "fanduel",
           "american_odds": 240,
-          "model_probability": 0.307237,
-          "market_probability": 0.295567,
-          "probability_edge": 0.01167,
-          "expected_value": 0.044605,
+          "model_probability": 0.299998,
+          "market_probability": 0.289532,
+          "probability_edge": 0.010466,
+          "expected_value": 0.019994,
           "stake_fraction": 0.0,
-          "timing_bucket": "D2",
+          "timing_bucket": "D1",
           "book_count": 5,
           "qualifies": false,
           "flags": [
-            "edge_below_threshold"
+            "edge_below_threshold",
+            "ev_below_threshold"
           ],
           "gate_reasons": [
-            "Probability edge +1.2%; needs +1.5%"
+            "Probability edge +1.0%; needs +1.5%",
+            "Model EV +2.0%; needs +4.0%"
           ]
         }
       ],
@@ -2417,6 +2213,13 @@
               "timing_bucket": "D2",
               "american_odds": 250,
               "expected_value": 0.128516,
+              "qualifies": false
+            },
+            {
+              "captured_at": "2026-11-13T15:23:15Z",
+              "timing_bucket": "D1",
+              "american_odds": 240,
+              "expected_value": 0.080468,
               "qualifies": false
             }
           ]
@@ -2460,6 +2263,55 @@
               "american_odds": 320,
               "expected_value": 0.073147,
               "qualifies": false
+            },
+            {
+              "captured_at": "2026-11-13T15:23:15Z",
+              "timing_bucket": "D1",
+              "american_odds": 360,
+              "expected_value": 0.104516,
+              "qualifies": false
+            }
+          ]
+        },
+        {
+          "event_id": "actionnetwork-289965",
+          "side": "home",
+          "selection": "Georgia State Panthers",
+          "snapshots": [
+            {
+              "captured_at": "2026-11-09T12:11:07Z",
+              "timing_bucket": "D5",
+              "american_odds": 175,
+              "expected_value": 0.019487,
+              "qualifies": false
+            },
+            {
+              "captured_at": "2026-11-10T12:06:23Z",
+              "timing_bucket": "D4",
+              "american_odds": 170,
+              "expected_value": 0.000951,
+              "qualifies": false
+            },
+            {
+              "captured_at": "2026-11-11T12:11:28Z",
+              "timing_bucket": "D3",
+              "american_odds": 170,
+              "expected_value": 0.000951,
+              "qualifies": false
+            },
+            {
+              "captured_at": "2026-11-12T12:08:13Z",
+              "timing_bucket": "D2",
+              "american_odds": 185,
+              "expected_value": 0.026992,
+              "qualifies": false
+            },
+            {
+              "captured_at": "2026-11-13T15:23:15Z",
+              "timing_bucket": "D1",
+              "american_odds": 195,
+              "expected_value": 0.040497,
+              "qualifies": false
             }
           ]
         },
@@ -2502,47 +2354,12 @@
               "american_odds": 145,
               "expected_value": 0.067472,
               "qualifies": false
-            }
-          ]
-        },
-        {
-          "event_id": "actionnetwork-289977",
-          "side": "away",
-          "selection": "Cincinnati Bearcats",
-          "snapshots": [
-            {
-              "captured_at": "2026-11-08T12:10:49Z",
-              "timing_bucket": "D6",
-              "american_odds": 108,
-              "expected_value": -0.005553,
-              "qualifies": false
             },
             {
-              "captured_at": "2026-11-09T12:11:07Z",
-              "timing_bucket": "D5",
-              "american_odds": 120,
-              "expected_value": 0.020325,
-              "qualifies": false
-            },
-            {
-              "captured_at": "2026-11-10T12:06:23Z",
-              "timing_bucket": "D4",
-              "american_odds": 131,
-              "expected_value": 0.027346,
-              "qualifies": false
-            },
-            {
-              "captured_at": "2026-11-11T12:11:28Z",
-              "timing_bucket": "D3",
-              "american_odds": 131,
-              "expected_value": 0.027333,
-              "qualifies": false
-            },
-            {
-              "captured_at": "2026-11-12T12:08:13Z",
-              "timing_bucket": "D2",
-              "american_odds": 131,
-              "expected_value": 0.041464,
+              "captured_at": "2026-11-13T15:23:15Z",
+              "timing_bucket": "D1",
+              "american_odds": 133,
+              "expected_value": 0.050244,
               "qualifies": false
             }
           ]
@@ -2579,6 +2396,13 @@
               "american_odds": 205,
               "expected_value": 0.10464,
               "qualifies": false
+            },
+            {
+              "captured_at": "2026-11-13T15:23:15Z",
+              "timing_bucket": "D1",
+              "american_odds": 200,
+              "expected_value": 0.087787,
+              "qualifies": false
             }
           ]
         },
@@ -2613,6 +2437,13 @@
               "timing_bucket": "D2",
               "american_odds": 295,
               "expected_value": 0.161931,
+              "qualifies": false
+            },
+            {
+              "captured_at": "2026-11-13T15:23:15Z",
+              "timing_bucket": "D1",
+              "american_odds": 295,
+              "expected_value": 0.117154,
               "qualifies": false
             }
           ]
@@ -2656,6 +2487,13 @@
               "american_odds": 310,
               "expected_value": 0.131401,
               "qualifies": false
+            },
+            {
+              "captured_at": "2026-11-13T15:23:15Z",
+              "timing_bucket": "D0",
+              "american_odds": 320,
+              "expected_value": 0.158913,
+              "qualifies": false
             }
           ]
         },
@@ -2698,6 +2536,13 @@
               "american_odds": 154,
               "expected_value": 0.042034,
               "qualifies": false
+            },
+            {
+              "captured_at": "2026-11-13T15:23:15Z",
+              "timing_bucket": "D1",
+              "american_odds": 154,
+              "expected_value": 0.042316,
+              "qualifies": false
             }
           ]
         },
@@ -2733,6 +2578,13 @@
               "american_odds": 510,
               "expected_value": 0.223915,
               "qualifies": false
+            },
+            {
+              "captured_at": "2026-11-13T15:23:15Z",
+              "timing_bucket": "D1",
+              "american_odds": 510,
+              "expected_value": 0.151055,
+              "qualifies": false
             }
           ]
         },
@@ -2767,6 +2619,13 @@
               "timing_bucket": "D2",
               "american_odds": 128,
               "expected_value": 0.085922,
+              "qualifies": false
+            },
+            {
+              "captured_at": "2026-11-13T15:23:15Z",
+              "timing_bucket": "D1",
+              "american_odds": 128,
+              "expected_value": 0.084306,
               "qualifies": false
             }
           ]
@@ -2810,6 +2669,13 @@
               "american_odds": 142,
               "expected_value": 0.140962,
               "qualifies": false
+            },
+            {
+              "captured_at": "2026-11-13T15:23:15Z",
+              "timing_bucket": "D1",
+              "american_odds": 142,
+              "expected_value": 0.138951,
+              "qualifies": false
             }
           ]
         },
@@ -2845,6 +2711,13 @@
               "american_odds": 114,
               "expected_value": 0.136266,
               "qualifies": false
+            },
+            {
+              "captured_at": "2026-11-13T15:23:15Z",
+              "timing_bucket": "D1",
+              "american_odds": 115,
+              "expected_value": 0.131993,
+              "qualifies": false
             }
           ]
         },
@@ -2879,6 +2752,13 @@
               "timing_bucket": "D2",
               "american_odds": -126,
               "expected_value": 0.064887,
+              "qualifies": false
+            },
+            {
+              "captured_at": "2026-11-13T15:23:15Z",
+              "timing_bucket": "D1",
+              "american_odds": -129,
+              "expected_value": 0.056633,
               "qualifies": false
             }
           ]
@@ -2921,6 +2801,13 @@
               "timing_bucket": "D2",
               "american_odds": 120,
               "expected_value": 0.070379,
+              "qualifies": false
+            },
+            {
+              "captured_at": "2026-11-13T15:23:15Z",
+              "timing_bucket": "D1",
+              "american_odds": 124,
+              "expected_value": 0.075085,
               "qualifies": false
             }
           ]
